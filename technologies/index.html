@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Alreflections Technologies</title>
+		<meta name="description" content="Alreflections Technologies — software, programming languages, platforms, AI tools and digital technologies created by Alreflections.">
+		<meta name="theme-color" content="#b81">
+
+		<style>
+			:root {
+				--gold: #b81;
+				--gold-light: #fff8e8;
+				--gold-pale: #fffaf0;
+				--gold-border: rgba(187, 136, 17, .22);
+				--white: #fff;
+				--text: #3b2c08;
+				--muted: #766b52;
+				--shadow: 0 18px 55px rgba(187, 136, 17, .10);
+				--radius: 20px;
+				--max-width: 1180px;
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			html {
+				scroll-behavior: smooth;
+			}
+
+			body {
+				font-family:
+					Inter,
+					-apple-system,
+					BlinkMacSystemFont,
+					"Segoe UI",
+					sans-serif;
+				background: var(--white);
+				color: var(--text);
+				line-height: 1.65;
+			}
+
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
+
+			img {
+				max-width: 100%;
+			}
+
+			.container {
+				width: min(var(--max-width), calc(100% - 40px));
+				margin: auto;
+			}
+
+			/* ---------------- HEADER ---------------- */
+
+			header {
+				position: sticky;
+				top: 0;
+				z-index: 1000;
+				background: rgba(255,255,255,.96);
+				border-bottom: 1px solid var(--gold-border);
+				backdrop-filter: blur(12px);
+			}
+
+			.navbar {
+				min-height: 78px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 30px;
+			}
+
+			.brand {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				font-weight: 900;
+				letter-spacing: -.04em;
+				color: var(--gold);
+				font-size: 1.15rem;
+			}
+
+			.brand-mark {
+				width: 38px;
+				height: 38px;
+				border-radius: 50%;
+				display: grid;
+				place-items: center;
+				border: 2px solid var(--gold);
+				font-weight: 900;
+			}
+
+			.brand span {
+				color: var(--text);
+			}
+
+			nav {
+				display: flex;
+				align-items: center;
+				gap: 28px;
+				font-size: .92rem;
+				font-weight: 600;
+			}
+
+			nav a {
+				transition: .2s ease;
+			}
+
+			nav a:hover {
+				color: var(--gold);
+			}
+
+			.nav-button {
+				padding: 10px 17px;
+				border-radius: 999px;
+				background: var(--gold);
+				color: white;
+			}
+
+			.nav-button:hover {
+				color: white;
+				transform: translateY(-1px);
+			}
+
+			/* ---------------- HERO ---------------- */
+
+			.hero {
+				position: relative;
+				overflow: hidden;
+				padding: 110px 0 120px;
+				background:
+					radial-gradient(
+						circle at 85% 20%,
+						rgba(187,136,17,.12),
+						transparent 30%
+					),
+					linear-gradient(
+						180deg,
+						var(--gold-pale),
+						white
+					);
+			}
+
+			.hero-content {
+				max-width: 900px;
+			}
+
+			.eyebrow {
+				display: inline-flex;
+				padding: 7px 14px;
+				border: 1px solid var(--gold-border);
+				border-radius: 999px;
+				color: var(--gold);
+				background: white;
+				font-size: .75rem;
+				font-weight: 800;
+				letter-spacing: .14em;
+				text-transform: uppercase;
+				margin-bottom: 25px;
+			}
+
+			.hero h1 {
+				font-size: clamp(3.4rem, 8vw, 7rem);
+				line-height: .92;
+				letter-spacing: -.075em;
+				color: var(--gold);
+				max-width: 1000px;
+			}
+
+			.hero h1 span {
+				color: var(--text);
+			}
+
+			.hero-description {
+				max-width: 700px;
+				margin: 32px 0;
+				color: var(--muted);
+				font-size: 1.15rem;
+			}
+
+			.hero-actions {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 12px;
+			}
+
+			.button {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				min-height: 48px;
+				padding: 0 21px;
+				border-radius: 12px;
+				border: 1px solid var(--gold);
+				font-weight: 800;
+				transition: .2s ease;
+			}
+
+			.button-primary {
+				background: var(--gold);
+				color: white;
+			}
+
+			.button-secondary {
+				background: white;
+				color: var(--gold);
+			}
+
+			.button:hover {
+				transform: translateY(-2px);
+				box-shadow: var(--shadow);
+			}
+
+			/* ---------------- SECTIONS ---------------- */
+
+			section {
+				padding: 105px 0;
+			}
+
+			.section-header {
+				display: grid;
+				grid-template-columns: 1fr .75fr;
+				gap: 60px;
+				align-items: end;
+				margin-bottom: 48px;
+			}
+
+			.section-label {
+				color: var(--gold);
+				font-size: .75rem;
+				font-weight: 900;
+				letter-spacing: .16em;
+				text-transform: uppercase;
+			}
+
+			h2 {
+				margin-top: 9px;
+				font-size: clamp(2.3rem, 5vw, 4.5rem);
+				line-height: 1;
+				letter-spacing: -.06em;
+				color: var(--gold);
+			}
+
+			.section-intro {
+				color: var(--muted);
+				font-size: 1rem;
+			}
+
+			/* ---------------- PROJECTS ---------------- */
+
+			.projects {
+				background: white;
+			}
+
+			.project-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 18px;
+			}
+
+			.project {
+				position: relative;
+				min-height: 290px;
+				padding: 28px;
+				border: 1px solid var(--gold-border);
+				border-radius: var(--radius);
+				background: white;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				overflow: hidden;
+				transition: .25s ease;
+			}
+
+			.project::before {
+				content: "";
+				position: absolute;
+				width: 150px;
+				height: 150px;
+				right: -70px;
+				top: -70px;
+				border-radius: 50%;
+				background: var(--gold-light);
+			}
+
+			.project:hover {
+				transform: translateY(-6px);
+				border-color: var(--gold);
+				box-shadow: var(--shadow);
+			}
+
+			.project-number {
+				position: relative;
+				color: var(--gold);
+				font-size: .75rem;
+				font-weight: 900;
+				letter-spacing: .12em;
+			}
+
+			.project h3 {
+				position: relative;
+				margin: 25px 0 10px;
+				color: var(--gold);
+				font-size: 1.45rem;
+				letter-spacing: -.035em;
+			}
+
+			.project p {
+				position: relative;
+				color: var(--muted);
+				font-size: .94rem;
+			}
+
+			.project-link {
+				position: relative;
+				margin-top: 25px;
+				color: var(--gold);
+				font-size: .82rem;
+				font-weight: 800;
+			}
+
+			/* ---------------- TECHNOLOGY AREAS ---------------- */
+
+			.technology-section {
+				background: var(--gold-pale);
+				border-top: 1px solid var(--gold-border);
+				border-bottom: 1px solid var(--gold-border);
+			}
+
+			.technology-grid {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 15px;
+			}
+
+			.technology {
+				background: white;
+				border: 1px solid var(--gold-border);
+				border-radius: 17px;
+				padding: 25px;
+				min-height: 190px;
+				transition: .2s ease;
+			}
+
+			.technology:hover {
+				border-color: var(--gold);
+				transform: translateY(-4px);
+			}
+
+			.technology-icon {
+				width: 42px;
+				height: 42px;
+				display: grid;
+				place-items: center;
+				border-radius: 12px;
+				color: white;
+				background: var(--gold);
+				font-weight: 900;
+				margin-bottom: 22px;
+			}
+
+			.technology h3 {
+				color: var(--gold);
+				margin-bottom: 7px;
+				font-size: 1.08rem;
+			}
+
+			.technology p {
+				color: var(--muted);
+				font-size: .87rem;
+			}
+
+			/* ---------------- ABOUT ---------------- */
+
+			.about-layout {
+				display: grid;
+				grid-template-columns: 1.2fr .8fr;
+				gap: 60px;
+				align-items: center;
+			}
+
+			.about-title {
+				color: var(--gold);
+				font-size: clamp(2.4rem, 5vw, 4.8rem);
+				line-height: 1;
+				letter-spacing: -.06em;
+			}
+
+			.about-text {
+				margin-top: 25px;
+				color: var(--muted);
+				max-width: 720px;
+			}
+
+			.principles {
+				border: 1px solid var(--gold-border);
+				border-radius: var(--radius);
+				overflow: hidden;
+				background: white;
+			}
+
+			.principle {
+				padding: 22px;
+				border-bottom: 1px solid var(--gold-border);
+			}
+
+			.principle:last-child {
+				border-bottom: 0;
+			}
+
+			.principle strong {
+				display: block;
+				color: var(--gold);
+				margin-bottom: 4px;
+			}
+
+			.principle span {
+				color: var(--muted);
+				font-size: .88rem;
+			}
+
+			/* ---------------- CTA ---------------- */
+
+			.cta {
+				padding-top: 20px;
+			}
+
+			.cta-box {
+				padding: 70px;
+				border-radius: 28px;
+				background: var(--gold);
+				color: white;
+				display: flex;
+				justify-content: space-between;
+				align-items: end;
+				gap: 40px;
+			}
+
+			.cta-box .section-label {
+				color: white;
+				opacity: .85;
+			}
+
+			.cta-box h2 {
+				color: white;
+				max-width: 700px;
+			}
+
+			.cta-box p {
+				max-width: 570px;
+				margin-top: 18px;
+				opacity: .9;
+			}
+
+			.cta-box .button {
+				flex-shrink: 0;
+				background: white;
+				color: var(--gold);
+				border-color: white;
+			}
+
+			/* ---------------- FOOTER ---------------- */
+
+			footer {
+				padding: 45px 0;
+				margin-top: 80px;
+				border-top: 1px solid var(--gold-border);
+			}
+
+			.footer-content {
+				display: flex;
+				justify-content: space-between;
+				gap: 30px;
+				color: var(--muted);
+				font-size: .85rem;
+			}
+
+			.footer-brand {
+				color: var(--gold);
+				font-weight: 900;
+			}
+
+			/* ---------------- MOBILE ---------------- */
+
+			@media (max-width: 900px) {
+
+				nav {
+					display: none;
+				}
+
+				.hero {
+					padding: 80px 0;
+				}
+
+				.section-header,
+				.about-layout {
+					grid-template-columns: 1fr;
+					gap: 25px;
+				}
+
+				.project-grid {
+					grid-template-columns: repeat(2, 1fr);
+				}
+
+				.technology-grid {
+					grid-template-columns: repeat(2, 1fr);
+				}
+
+				.cta-box {
+					display: block;
+					padding: 45px 30px;
+				}
+
+				.cta-box .button {
+					margin-top: 30px;
+				}
+			}
+
+			@media (max-width: 600px) {
+
+				.container {
+					width: min(var(--max-width), calc(100% - 28px));
+				}
+
+				.navbar {
+					min-height: 68px;
+				}
+
+				.brand span {
+					display: none;
+				}
+
+				.hero h1 {
+					font-size: 3.5rem;
+				}
+
+				section {
+					padding: 75px 0;
+				}
+
+				.project-grid,
+				.technology-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.project {
+					min-height: 250px;
+				}
+
+				.footer-content {
+					display: block;
+				}
+
+				.footer-content > * + * {
+					margin-top: 12px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+
+	<header>
+		<div class="container navbar">
+
+			<a href="#" class="brand">
+				<span class="brand-mark">A</span>
+				ALREFLECTIONS <span>TECHNOLOGIES</span>
+			</a>
+
+			<nav>
+				<a href="#projects">Projects</a>
+				<a href="#technology">Technology</a>
+				<a href="#about">About</a>
+				<a href="#contact" class="nav-button">Connect</a>
+			</nav>
+
+		</div>
+	</header>
+
+
+	<main>
+
+		<!-- HERO -->
+
+		<section class="hero">
+
+			<div class="container">
+
+				<div class="hero-content">
+
+					<div class="eyebrow">
+						Alreflections Technologies
+					</div>
+
+					<h1>
+						Technology
+						<span>built from ideas.</span>
+					</h1>
+
+					<p class="hero-description">
+						Alreflections Technologies is the technology side of
+						Alreflections — a growing collection of software,
+						programming languages, digital platforms, tools,
+						experiments and technological ideas.
+					</p>
+
+					<div class="hero-actions">
+
+						<a href="#projects"
+						   class="button button-primary">
+							Explore technologies
+						</a>
+
+						<a href="#about"
+						   class="button button-secondary">
+							About Alreflections
+						</a>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+
+
+		<!-- PROJECTS -->
+
+		<section id="projects">
+
+			<div class="container">
+
+				<div class="section-header">
+
+					<div>
+						<div class="section-label">
+							Technology portfolio
+						</div>
+
+						<h2>
+							Ideas made tangible.
+						</h2>
+					</div>
+
+					<p class="section-intro">
+						Explore selected technologies and projects within
+						the Alreflections ecosystem.
+					</p>
+
+				</div>
+
+
+				<div class="project-grid">
+
+					<a href="https://technologies.alreflections.net/"
+					   class="project"
+					   target="_blank">
+
+						<div>
+
+							<div class="project-number">
+								01 / TECHNOLOGIES
+							</div>
+
+							<h3>
+								Alreflections Technologies
+							</h3>
+
+							<p>
+								The home of technologies, experiments,
+								software and digital projects developed
+								within the Alreflections ecosystem.
+							</p>
+
+						</div>
+
+						<span class="project-link">
+							Explore →
+						</span>
+
+					</a>
+
+
+					<a href="https://atinas.alreflections.net/"
+					   class="project"
+					   target="_blank">
+
+						<div>
+
+							<div class="project-number">
+								02 / PLATFORM
+							</div>
+
+							<h3>
+								ATINAS
+							</h3>
+
+							<p>
+								A technology project focused on helping
+								people discover digital projects,
+								developers and useful online resources.
+							</p>
+
+						</div>
+
+						<span class="project-link">
+							Visit ATINAS →
+						</span>
+
+					</a>
+
+
+					<div class="project">
+
+						<div>
+
+							<div class="project-number">
+								03 / LANGUAGE
+							</div>
+
+							<h3>
+								EmtNuts
+							</h3>
+
+							<p>
+								An experimental programming technology
+								exploring another way of expressing
+								computational ideas.
+							</p>
+
+						</div>
+
+						<span class="project-link">
+							Programming language
+						</span>
+
+					</div>
+
+
+					<div class="project">
+
+						<div>
+
+							<div class="project-number">
+								04 / LANGUAGE
+							</div>
+
+							<h3>
+								Kibol
+							</h3>
+
+							<p>
+								An Alreflections programming-language
+								project created as part of continued
+								experimentation with software development.
+							</p>
+
+						</div>
+
+						<span class="project-link">
+							Programming technology
+						</span>
+
+					</div>
+
+
+					<div class="project">
+
+						<div>
+
+							<div class="project-number">
+								05 / LANGUAGE
+							</div>
+
+							<h3>
+								Nuts
+							</h3>
+
+							<p>
+								Another original programming technology
+								within the Alreflections collection of
+								developer-oriented experiments.
+							</p>
+
+						</div>
+
+						<span class="project-link">
+							Developer technology
+						</span>
+
+					</div>
+
+
+					<div class="project">
+
+						<div>
+
+							<div class="project-number">
+								06 / PRODUCT
+							</div>
+
+							<h3>
+								Prodcase
+							</h3>
+
+							<p>
+								A digital product concept within the
+								broader Alreflections technology portfolio.
+							</p>
+
+						</div>
+
+						<span class="project-link">
+							Digital product
+						</span>
+
+					</div>
+
+
+					<div class="project">
+
+						<div>
+
+							<div class="project-number">
+								07 / AI
+							</div>
+
+							<h3>
+								Little Shark
+							</h3>
+
+							<p>
+								An Alreflections technology project
+								exploring intelligent software and
+								AI-oriented possibilities.
+							</p>
+
+						</div>
+
+						<span class="project-link">
+							AI technology
+						</span>
+
+					</div>
+
+
+					<div class="project">
+
+						<div>
+
+							<div class="project-number">
+								08 / DIGITAL PRODUCT
+							</div>
+
+							<h3>
+								Couponeer
+							</h3>
+							<p>A digital product project belonging to the expanding Alreflections ecosystem.</p>
+						</div>
+						<span class="project-link">Digital technology</span>
+					</div>
+					<div class="project">
+						<div>
+							<div class="project-number">09 / PLATFORM</div>
+							<h3>Sawasoko</h3>
+							<p>A platform-oriented technology project developed as part of the wider Alreflections product ecosystem.</p>
+						</div>
+						<span class="project-link">Platform technology</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- TECHNOLOGY -->
+		<section id="technology" class="technology-section">
+			<div class="container">
+				<div class="section-header">
+					<div>
+						<div class="section-label">What is being built</div>
+						<h2>Across the technology spectrum.</h2>
+					</div>
+					<p class="section-intro">
+						Alreflections Technologies is not limited to one
+						type of software. It is an environment for
+						experimentation, development and useful digital
+						products.
+					</p>
+				</div>
+				<div class="technology-grid">
+					<div class="technology">
+						<div class="technology-icon">&lt;/&gt;</div>
+						<h3>Programming</h3>
+						<p>Programming languages, applications, developer tools and software experiments.</p>
+					</div>
+					<div class="technology">
+						<div class="technology-icon">AI</div>
+						<h3>Artificial Intelligence</h3>
+						<p>Intelligent tools and experiments exploring practical applications of AI.</p>
+					</div>
+					<div class="technology">
+						<div class="technology-icon">◇</div>
+						<h3>Platforms</h3>
+						<p>Web platforms and digital ecosystems designed around useful online experiences.</p>
+					</div>
+					<div class="technology">
+						<div class="technology-icon">+</div>
+						<h3>Experiments</h3>
+						<p>New ideas, prototypes and technological concepts developed without unnecessary limits.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ABOUT -->
+		<section id="about">
+			<div class="container">
+				<div class="about-layout">
+					<div>
+						<div class="section-label">About</div>
+						<h2 class="about-title">A technology ecosystem, not just a website.</h2>
+						<p class="about-text">
+							Alreflections Technologies represents the
+							technology-building side of Alreflections.
+							It brings together original software,
+							programming experiments, platforms, tools
+							and digital products under one identity.
+						</p>
+						<p class="about-text">
+							The objective is simple: explore ideas,
+							build useful things and make technology
+							accessible enough for those ideas to become
+							real.
+						</p>
+					</div>
+					<div class="principles">
+						<div class="principle">
+							<strong>Build</strong>
+							<span>Turn ideas into working technology.</span>
+						</div>
+						<div class="principle">
+							<strong>Experiment</strong>
+							<span>Explore unconventional technological possibilities.</span>
+						</div>
+						<div class="principle">
+							<strong>Simplify</strong>
+							<span>Make complicated technology more useful and understandable.</span>
+						</div>
+						<div class="principle">
+							<strong>Share</strong>
+							<span>Give ideas and technologies room to reach people who can use them.</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA -->
+		<section id="contact" class="cta">
+			<div class="container">
+				<div class="cta-box">
+					<div>
+						<div class="section-label">Alreflections</div>
+						<h2>There is always another idea worth building.</h2>
+						<p>
+							Explore the wider Alreflections ecosystem,
+							discover its technologies and follow the
+							continuing development of new digital ideas.
+						</p>
+					</div>
+					<a href="https://alreflections.net/" class="button" target="_blank">Visit Alreflections →</a>
+				</div>
+
+			</div>
+
+		</section>
+
+	</main>
+
+
+	<footer>
+		<div class="container footer-content">
+			<div><span class="footer-brand">ALREFLECTIONS TECHNOLOGIES</span></div>
+			<div>Technology · Software · Innovation</div>
+			<div>© 2026 Alreflections</div>
+		</div>
+	</footer>
+	</body>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7993870430763010" crossorigin="anonymous"></script>
+	<script src='https://reserve.alreflections.net/treateAlreflectionsBlogger.js' defer></script>
+</html>

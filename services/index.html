@@ -1,2258 +1,2180 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alreflections Services — Technology & Business Solutions</title>
-    <meta name="description" content="Alreflections Services provides technology, business, training, media, publishing, community and custom software solutions.">
-    <style>
-        :root {
-            --white: #ffffff;
-            --gold: #b88b01;
-            --gold-dark: #987200;
-            --gold-light: #d8bd70;
-            --gold-pale: #f4e9c9;
-
-            --cream: #faf7ef;
-            --cream-2: #f5efdf;
-
-            --text: #644b00;
-            --muted: #756e60;
-            --faint: #a39b8b;
-
-            --border: #e9e1cf;
-            --border-gold: #ddca94;
-
-            --shadow: 0 18px 50px rgba(80, 61, 15, .08);
-            --radius: 20px;
-            --radius-sm: 12px;
-        }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family:
-                Inter,
-                ui-sans-serif,
-                system-ui,
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                sans-serif;
-            color: var(--text);
-            background: var(--white);
-            line-height: 1.6;
-        }
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-        button,
-        input,
-        textarea,
-        select {
-            font: inherit;
-        }
-        button {
-            cursor: pointer;
-        }
-
-        .container {
-            width: min(1160px, calc(100% - 40px));
-            margin-inline: auto;
-        }
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(255,255,255,.96);
-            border-bottom: 1px solid var(--border);
-            backdrop-filter: blur(14px);
-        }
-
-        .nav {
-            min-height: 78px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-        }
-
-        .brand {
-            font-size: 21px;
-            font-weight: 800;
-            letter-spacing: -.5px;
-        }
-
-        .brand span {
-            color: var(--gold);
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--muted);
-            font-size: 14px;
-            font-weight: 600;
-            transition: .2s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--gold-dark);
-        }
-
-        .nav-cta {
-            padding: 11px 18px;
-            border: 1px solid var(--gold);
-            border-radius: 999px;
-            color: var(--gold-dark) !important;
-        }
-
-        .nav-cta:hover {
-            background: var(--gold);
-            color: var(--white) !important;
-        }
-
-        .menu-toggle {
-            display: none;
-            border: 0;
-            background: none;
-            color: var(--text);
-            font-size: 25px;
-        }
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            padding: 105px 0 90px;
-            background:
-                radial-gradient(circle at 85% 20%, rgba(216,189,112,.17), transparent 28%),
-                linear-gradient(to bottom, var(--white), var(--cream));
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.12fr .88fr;
-            align-items: center;
-            gap: 80px;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            margin-bottom: 22px;
-            color: var(--gold-dark);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: .14em;
-            text-transform: uppercase;
-        }
-
-        .eyebrow::before {
-            content: "";
-            width: 28px;
-            height: 1px;
-            background: var(--gold);
-        }
-
-        .hero h1 {
-            max-width: 720px;
-            font-size: clamp(44px, 6vw, 76px);
-            line-height: .98;
-            letter-spacing: -3px;
-            margin-bottom: 28px;
-        }
-
-        .hero h1 span {
-            color: var(--gold);
-        }
-
-        .hero-copy {
-            max-width: 640px;
-            color: var(--muted);
-            font-size: 18px;
-            line-height: 1.8;
-        }
-
-        .hero-actions {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-top: 34px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 48px;
-            padding: 0 22px;
-            border-radius: 999px;
-            border: 1px solid transparent;
-            font-size: 14px;
-            font-weight: 800;
-            transition: .2s ease;
-        }
-
-        .btn-primary {
-            background: var(--gold);
-            color: var(--white);
-            box-shadow: 0 10px 25px rgba(184,139,1,.18);
-        }
-
-        .btn-primary:hover {
-            background: var(--gold-dark);
-            transform: translateY(-1px);
-        }
-
-        .btn-secondary {
-            border-color: var(--border-gold);
-            color: var(--gold-dark);
-            background: var(--white);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--gold);
-            background: var(--cream);
-        }
-
-        .hero-panel {
-            position: relative;
-            min-height: 430px;
-            padding: 34px;
-            border: 1px solid var(--border);
-            border-radius: 28px;
-            background: var(--white);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-        }
-
-        .hero-panel::before {
-            content: "";
-            position: absolute;
-            width: 260px;
-            height: 260px;
-            border-radius: 50%;
-            background: var(--gold-pale);
-            right: -100px;
-            top: -100px;
-        }
-
-        .solution-card {
-            position: relative;
-            z-index: 1;
-            padding: 24px;
-            margin-bottom: 14px;
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            background: rgba(255,255,255,.9);
-        }
-
-        .solution-card strong {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 16px;
-        }
-
-        .solution-card p {
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        .solution-number {
-            display: block;
-            margin-bottom: 13px;
-            color: var(--gold);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: .1em;
-        }
-
-        /* =========================
-           TRUST STRIP
-        ========================= */
-
-        .trust {
-            border-block: 1px solid var(--border);
-            background: var(--white);
-        }
-
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-        }
-
-        .trust-item {
-            padding: 28px 20px;
-            border-right: 1px solid var(--border);
-        }
-
-        .trust-item:last-child {
-            border-right: 0;
-        }
-
-        .trust-item strong {
-            display: block;
-            margin-bottom: 3px;
-            font-size: 15px;
-        }
-
-        .trust-item span {
-            color: var(--muted);
-            font-size: 12px;
-        }
-
-        /* =========================
-           GENERAL SECTIONS
-        ========================= */
-
-        section {
-            padding: 100px 0;
-        }
-
-        .section-heading {
-            max-width: 680px;
-            margin-bottom: 50px;
-        }
-
-        .section-heading h2 {
-            font-size: clamp(32px, 4vw, 50px);
-            line-height: 1.08;
-            letter-spacing: -1.7px;
-            margin-bottom: 15px;
-        }
-
-        .section-heading p {
-            color: var(--muted);
-            font-size: 16px;
-        }
-
-        /* =========================
-           SERVICE FINDER
-        ========================= */
-
-        .finder-section {
-            background: var(--cream);
-        }
-
-        .finder-shell {
-            border: 1px solid var(--border);
-            border-radius: 28px;
-            background: var(--white);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-        }
-
-        .finder-top {
-            padding: 28px 34px;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .finder-top strong {
-            font-size: 15px;
-        }
-
-        .finder-top span {
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        .journey {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .journey-step {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            color: var(--faint);
-            font-size: 11px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: .08em;
-        }
-
-        .journey-step:not(:last-child)::after {
-            content: "";
-            width: 30px;
-            height: 1px;
-            margin-left: 4px;
-            background: var(--border);
-        }
-
-        .journey-step.active {
-            color: var(--gold-dark);
-        }
-
-        .journey-number {
-            display: grid;
-            place-items: center;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            border: 1px solid currentColor;
-            font-size: 10px;
-        }
-
-        /* Progressive stages */
-
-        .finder-stage {
-            padding: 38px;
-            animation: stageIn .3s ease;
-        }
-
-        @keyframes stageIn {
-            from {
-                opacity: 0;
-                transform: translateY(8px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .stage-heading {
-            margin-bottom: 28px;
-        }
-
-        .stage-heading small {
-            color: var(--gold-dark);
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-        }
-
-        .stage-heading h3 {
-            margin-top: 7px;
-            font-size: 27px;
-            letter-spacing: -.7px;
-        }
-
-        .stage-heading p {
-            max-width: 680px;
-            margin-top: 8px;
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-        }
-
-        .category-card {
-            width: 100%;
-            min-height: 150px;
-            padding: 22px;
-            text-align: left;
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            background: var(--white);
-            transition: .2s ease;
-        }
-
-        .category-card:hover {
-            border-color: var(--border-gold);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 28px rgba(80,61,15,.07);
-        }
-
-        .category-card .icon {
-            display: grid;
-            place-items: center;
-            width: 38px;
-            height: 38px;
-            margin-bottom: 18px;
-            border-radius: 10px;
-            background: var(--cream);
-            color: var(--gold-dark);
-            font-weight: 900;
-        }
-
-        .category-card strong {
-            display: block;
-            margin-bottom: 6px;
-            font-size: 15px;
-        }
-
-        .category-card span {
-            display: block;
-            color: var(--muted);
-            font-size: 12px;
-            line-height: 1.6;
-        }
-
-        /* Service selection */
-
-        .service-tools {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .search-box {
-            position: relative;
-            flex: 1;
-        }
-
-        .search-box input {
-            width: 100%;
-            height: 46px;
-            padding: 0 16px;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            outline: none;
-            color: var(--text);
-            background: var(--white);
-        }
-
-        .search-box input:focus {
-            border-color: var(--gold-light);
-            box-shadow: 0 0 0 3px rgba(184,139,1,.08);
-        }
-
-        .selected-count {
-            white-space: nowrap;
-            color: var(--muted);
-            font-size: 12px;
-        }
-
-        .services-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-        .service-option {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            min-height: 58px;
-            padding: 12px 15px;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            background: var(--white);
-            cursor: pointer;
-            transition: .18s ease;
-        }
-
-        .service-option:hover {
-            border-color: var(--border-gold);
-            background: var(--cream);
-        }
-
-        .service-option.selected {
-            border-color: var(--gold);
-            background: #fffaf0;
-        }
-
-        .service-check {
-            flex: 0 0 19px;
-            width: 19px;
-            height: 19px;
-            border: 1px solid var(--border-gold);
-            border-radius: 5px;
-            display: grid;
-            place-items: center;
-            color: var(--white);
-            font-size: 11px;
-        }
-
-        .service-option.selected .service-check {
-            border-color: var(--gold);
-            background: var(--gold);
-        }
-
-        .service-option span:last-child {
-            font-size: 13px;
-            line-height: 1.35;
-        }
-
-        .selection-summary {
-            display: none;
-            margin-top: 25px;
-            padding: 18px;
-            border: 1px solid var(--border-gold);
-            border-radius: 12px;
-            background: var(--cream);
-        }
-
-        .selection-summary.visible {
-            display: block;
-        }
-
-        .selection-summary-title {
-            margin-bottom: 10px;
-            color: var(--gold-dark);
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-        }
-
-        .selected-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 7px;
-        }
-
-        .selected-tag {
-            padding: 6px 9px;
-            border-radius: 999px;
-            background: var(--white);
-            border: 1px solid var(--border);
-            color: var(--text);
-            font-size: 11px;
-        }
-
-        /* Stage actions */
-
-        .stage-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 15px;
-            margin-top: 28px;
-        }
-
-        .back-button {
-            border: 0;
-            background: transparent;
-            color: var(--muted);
-            font-size: 13px;
-            font-weight: 700;
-        }
-
-        .back-button:hover {
-            color: var(--gold-dark);
-        }
-
-        .continue-button {
-            display: none;
-        }
-
-        .continue-button.visible {
-            display: inline-flex;
-        }
-
-        /* Project stage */
-
-        .project-stage {
-            display: none;
-        }
-
-        .project-stage.visible {
-            display: block;
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        .field {
-            display: flex;
-            flex-direction: column;
-            gap: 7px;
-        }
-
-        .field.full {
-            grid-column: 1 / -1;
-        }
-
-        .field label {
-            color: var(--text);
-            font-size: 12px;
-            font-weight: 800;
-        }
-
-        .field input,
-        .field textarea,
-        .field select {
-            width: 100%;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 12px 13px;
-            outline: none;
-            color: var(--text);
-            background: var(--white);
-        }
-
-        .field input,
-        .field select {
-            height: 46px;
-        }
-
-        .field textarea {
-            min-height: 135px;
-            resize: vertical;
-        }
-
-        .field input:focus,
-        .field textarea:focus,
-        .field select:focus {
-            border-color: var(--gold-light);
-            box-shadow: 0 0 0 3px rgba(184,139,1,.08);
-        }
-
-        .submit-area {
-            display: none;
-            margin-top: 25px;
-            padding-top: 25px;
-            border-top: 1px solid var(--border);
-        }
-
-        .submit-area.visible {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .submit-note {
-            color: var(--muted);
-            font-size: 12px;
-        }
-
-        /* =========================
-           CAPABILITIES
-        ========================= */
-
-        .capabilities {
-            background: var(--white);
-        }
-
-        .capability-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-
-        .capability {
-            padding: 27px;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            background: var(--white);
-        }
-
-        .capability-number {
-            color: var(--gold);
-            font-size: 11px;
-            font-weight: 900;
-            letter-spacing: .1em;
-        }
-
-        .capability h3 {
-            margin: 20px 0 8px;
-            font-size: 18px;
-        }
-
-        .capability p {
-            color: var(--muted);
-            font-size: 13px;
-            line-height: 1.7;
-        }
-
-        /* =========================
-           PROCESS
-        ========================= */
-
-        .process {
-            background: var(--cream);
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1px;
-            background: var(--border);
-            border: 1px solid var(--border);
-        }
-
-        .process-card {
-            padding: 28px;
-            background: var(--white);
-        }
-
-        .process-card span {
-            color: var(--gold);
-            font-size: 12px;
-            font-weight: 900;
-        }
-
-        .process-card h3 {
-            margin: 20px 0 8px;
-            font-size: 17px;
-        }
-
-        .process-card p {
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        /* =========================
-           CTA
-        ========================= */
-
-        .cta {
-            padding: 90px 0;
-        }
-
-        .cta-box {
-            position: relative;
-            overflow: hidden;
-            padding: 70px;
-            border: 1px solid var(--border-gold);
-            border-radius: 30px;
-            background:
-                radial-gradient(circle at 90% 20%, rgba(216,189,112,.25), transparent 30%),
-                var(--cream);
-        }
-
-        .cta-box h2 {
-            max-width: 700px;
-            font-size: clamp(34px, 4vw, 54px);
-            line-height: 1.05;
-            letter-spacing: -1.8px;
-        }
-
-        .cta-box p {
-            max-width: 620px;
-            margin-top: 17px;
-            color: var(--muted);
-        }
-
-        .cta-box .btn {
-            margin-top: 28px;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            border-top: 1px solid var(--border);
-            background: var(--white);
-        }
-
-        .footer-main {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 50px;
-            padding: 60px 0;
-        }
-
-        .footer-brand p {
-            max-width: 390px;
-            margin-top: 14px;
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        .footer-column h4 {
-            margin-bottom: 15px;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: .1em;
-        }
-
-        .footer-column a {
-            display: block;
-            margin-bottom: 9px;
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        .footer-column a:hover {
-            color: var(--gold-dark);
-        }
-
-        .footer-bottom {
-            padding: 20px 0;
-            border-top: 1px solid var(--border);
-            color: var(--faint);
-            font-size: 11px;
-        }
-
-        /* =========================
-           TOAST
-        ========================= */
-
-        .toast {
-            position: fixed;
-            right: 22px;
-            bottom: 22px;
-            z-index: 200;
-            max-width: 330px;
-            padding: 15px 18px;
-            border: 1px solid var(--border-gold);
-            border-radius: 12px;
-            background: var(--white);
-            box-shadow: 0 16px 40px rgba(60,45,10,.13);
-            color: var(--text);
-            font-size: 13px;
-            transform: translateY(20px);
-            opacity: 0;
-            pointer-events: none;
-            transition: .25s ease;
-        }
-
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media (max-width: 900px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 45px;
-            }
-
-            .category-grid,
-            .capability-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .process-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .trust-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .trust-item:nth-child(2) {
-                border-right: 0;
-            }
-
-            .trust-item:nth-child(-n+2) {
-                border-bottom: 1px solid var(--border);
-            }
-
-            .footer-main {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 700px) {
-            .container {
-                width: min(100% - 28px, 1160px);
-            }
-
-            .nav {
-                min-height: 68px;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 68px;
-                left: 14px;
-                right: 14px;
-                padding: 15px;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0;
-                border: 1px solid var(--border);
-                border-radius: 15px;
-                background: var(--white);
-                box-shadow: var(--shadow);
-            }
-
-            .nav-links.open {
-                display: flex;
-            }
-
-            .nav-links a {
-                display: block;
-                padding: 13px;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .hero {
-                padding: 70px 0;
-            }
-
-            .hero h1 {
-                font-size: 45px;
-                letter-spacing: -2px;
-            }
-
-            section {
-                padding: 70px 0;
-            }
-
-            .hero-panel {
-                min-height: auto;
-            }
-
-            .finder-top {
-                align-items: flex-start;
-                flex-direction: column;
-            }
-
-            .journey {
-                width: 100%;
-                justify-content: space-between;
-            }
-
-            .journey-step:not(:last-child)::after {
-                width: 14px;
-            }
-
-            .journey-step {
-                font-size: 9px;
-            }
-
-            .finder-stage {
-                padding: 25px 18px;
-            }
-
-            .category-grid,
-            .services-list,
-            .capability-grid,
-            .process-grid,
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .field.full {
-                grid-column: auto;
-            }
-
-            .service-tools {
-                align-items: stretch;
-                flex-direction: column;
-            }
-
-            .stage-actions,
-            .submit-area.visible {
-                align-items: stretch;
-                flex-direction: column;
-            }
-
-            .stage-actions .btn {
-                width: 100%;
-            }
-
-            .back-button {
-                order: 2;
-            }
-
-            .submit-area .btn {
-                width: 100%;
-            }
-
-            .cta-box {
-                padding: 40px 25px;
-            }
-
-            .footer-main {
-                grid-template-columns: 1fr;
-                gap: 35px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-<header>
-    <div class="container nav">
-
-        <a href="./" class="brand">
-            <span>Alreflections</span> Services
-        </a>
-
-        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
-            ☰
-        </button>
-
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#solutions">Solutions</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#process">How We Work</a></li>
-            <li><a href="#contact" class="nav-cta">Start a Project</a></li>
-        </ul>
-
-    </div>
-</header>
-
-
-<main>
-    <!-- HERO -->
-    <section class="hero" id="solutions">
-        <div class="container hero-grid">
-            <div>
-                <div class="eyebrow">
-                    Alreflections Services
-                </div>
-                <h1>
-                    Technology that
-                    <span>moves business forward.</span>
-                </h1>
-                <p class="hero-copy">
-                    Alreflections Services brings together ready-built technology
-                    solutions, digital services, business support and custom software
-                    to help organizations operate, grow and serve people better.
-                </p>
-                <div class="hero-actions">
-                    <a href="#services" class="btn btn-primary">
-                        Explore Solutions
-                    </a>
-                    <a href="#process" class="btn btn-secondary">
-                        How We Work
-                    </a>
-                </div>
-            </div>
-            <div class="hero-panel">
-                <div class="solution-card">
-                    <span class="solution-number">01 / DIGITAL</span>
-                    <strong>Digital & ICT Solutions</strong>
-                    <p>
-                        Websites, applications, hosting, SEO, technical support
-                        and practical digital infrastructure.
-                    </p>
-                </div>
-                <div class="solution-card">
-                    <span class="solution-number">02 / BUSINESS</span>
-                    <strong>Business & Marketing</strong>
-                    <p>
-                        Branding, business systems, marketing infrastructure
-                        and digital transformation support.
-                    </p>
-                </div>
-                <div class="solution-card">
-                    <span class="solution-number">03 / SOFTWARE</span>
-                    <strong>Custom Technology</strong>
-                    <p>
-                        Purpose-built software designed around real operational
-                        problems and opportunities.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- TRUST -->
-    <div class="trust">
-        <div class="container trust-grid">
-            <div class="trust-item">
-                <strong>Built for real needs</strong>
-                <span>Practical technology, not technology for its own sake.</span>
-            </div>
-            <div class="trust-item">
-                <strong>Ready-made solutions</strong>
-                <span>Use existing Alreflections solutions where they fit.</span>
-            </div>
-            <div class="trust-item">
-                <strong>Custom development</strong>
-                <span>Extend or create systems around your organization.</span>
-            </div>
-            <div class="trust-item">
-                <strong>One enterprise</strong>
-                <span>Technology, business and creative capabilities together.</span>
-            </div>
-        </div>
-    </div>
-    <!-- SERVICE FINDER -->
-    <section class="finder-section" id="services">
-        <div class="container">
-            <div class="section-heading">
-                <div class="eyebrow">
-                    Find a Solution
-                </div>
-                <h2>
-                    Tell us what you need.
-                </h2>
-                <p>
-                    Start with the area that best describes your need.
-                    We'll progressively guide you toward the right service.
-                </p>
-            </div>
-            <div class="finder-shell">
-                <div class="finder-top">
-                    <div>
-                        <strong>Solution Finder</strong>
-                        <span> — a guided way to begin your request</span>
-                    </div>
-                    <div class="journey">
-                        <div class="journey-step active" id="journey1">
-                            <span class="journey-number">1</span>
-                            Area
-                        </div>
-                        <div class="journey-step" id="journey2">
-                            <span class="journey-number">2</span>
-                            Services
-                        </div>
-                        <div class="journey-step" id="journey3">
-                            <span class="journey-number">3</span>
-                            Project
-                        </div>
-                    </div>
-                </div>
-                <!-- STEP 1 -->
-                <div class="finder-stage" id="categoryStage">
-                    <div class="stage-heading">
-                        <small>Step 01</small>
-                        <h3>What area can we help with?</h3>
-                        <p>
-                            Choose one area to continue. The previous section will
-                            automatically disappear as you progress.
-                        </p>
-                    </div>
-                    <div class="category-grid" id="categoryGrid"></div>
-                </div>
-                <!-- STEP 2 -->
-                <div class="finder-stage" id="serviceStage" style="display:none;">
-                    <div class="stage-heading">
-                        <small>Step 02</small>
-                        <h3 id="serviceHeading">
-                            Select the services you need.
-                        </h3>
-                        <p id="serviceDescription"></p>
-                    </div>
-                    <div class="service-tools">
-                        <div class="search-box">
-                            <input
-                                type="search"
-                                id="serviceSearch"
-                                placeholder="Search services..."
-                            >
-                        </div>
-                        <div class="selected-count" id="selectedCount">
-                            0 selected
-                        </div>
-                    </div>
-                    <div class="services-list" id="servicesList"></div>
-                    <div class="selection-summary" id="selectionSummary">
-                        <div class="selection-summary-title">
-                            Your selection
-                        </div>
-                        <div class="selected-tags" id="selectedTags"></div>
-                    </div>
-                    <div class="stage-actions">
-                        <button
-                            type="button"
-                            class="back-button"
-                            id="backToCategories"
-                        >
-                            ← Change area
-                        </button>
-                        <button
-                            type="button"
-                            class="btn btn-primary continue-button"
-                            id="continueToProject"
-                        >
-                            Continue to project details →
-                        </button>
-                    </div>
-                </div>
-                <!-- STEP 3 -->
-                <div
-                    class="finder-stage project-stage"
-                    id="projectStage"
-                >
-                    <div class="stage-heading">
-                        <small>Step 03</small>
-                        <h3>Tell us about your project.</h3>
-                        <p>
-                            Give us enough context to understand what you're
-                            trying to accomplish. You don't need to have
-                            everything figured out yet.
-                        </p>
-                    </div>
-                    <form id="projectForm" action="https://formworker.alreflections.net/plugin/ZXlKMWMyVnlJam9pTVNKOQ==" method="get">
-						<input id="serviceTags" name="services" hidden />
-						<input name="next" value="https://www.alreflections.net/p/thank-you-for-reaching-out.html" hidden />
-                        <div class="project-grid">
-                            <div class="field full">
-                                <label for="name">Your name</label>
-                                <input id="name" name="name" type="text" placeholder="Your name" required>
-                            </div>
-                            <div class="field full">
-                                <label for="organization">Organization / business</label>
-                                <input id="organization" name="organization" type="text" placeholder="Optional - Organization name"/>
-                            </div>
-                            <div class="field">
-                                <label for="email">Email address</label>
-                                <input id="email" name="email" type="email" placeholder="you@example.com" required />
-                            </div>
-                            <div class="field">
-                                <label for="phone">Phone number</label>
-                                <input id="phone" name="phone" type="tel" placeholder="+250 ... - Optional">
-                            </div>
-                            <div class="field">
-                                <label for="budget">Estimated budget</label>
-                                <select id="budget" name="budget">
-                                    <option value="Prefer not to say">Prefer not to say</option>
-                                    <option value="Under $250">Under $250</option>
-                                    <option value="$250 – $1,000">$250 – $1,000</option>
-                                    <option value="$1,000 – $5,000">$1,000 – $5,000</option>
-                                    <option value="$5,000 – $10,000">$5,000 – $10,000</option>
-                                    <option value="$10,000+">$10,000+</option>
-                                </select>
-                            </div>
-                            <div class="field">
-                                <label for="timeline">Desired timeline</label>
-                                <select id="timeline" name="timeline">
-                                    <option value="Not decided">Not decided</option>
-                                    <option value="As soon as possible">As soon as possible</option>
-                                    <option value="Within 1 month">Within 1 month</option>
-                                    <option value="1 – 3 months">1 – 3 months</option>
-                                    <option value="3+ months">3+ months</option>
-                                </select>
-                            </div>
-							<!--
-                            <div class="field full">
-                                <label for="description">What would you like us to help you with?</label>
-                                <textarea id="description" name="description" placeholder="Describe your project, business need or problem..." required></textarea>
-                            </div>
-							-->
-                        </div>
-                        <div class="stage-actions">
-                            <button type="button" class="back-button" id="backToServices">← Change services</button>
-                        </div>
-                        <div class="submit-area" id="submitArea">
-                            <div class="submit-note">
-                                Your selected services will be included with
-                                this project request.
-                            </div>
-                            <button type="submit" class="btn btn-primary">Send Project Request →</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- CAPABILITIES -->
-
-    <section class="capabilities">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <div class="eyebrow">
-                    What We Do
-                </div>
-
-                <h2>
-                    One enterprise. Multiple capabilities.
-                </h2>
-
-                <p>
-                    Alreflections Services combines technology, business,
-                    education, creative production and software development
-                    into one practical ecosystem.
-                </p>
-
-            </div>
-
-
-            <div class="capability-grid">
-
-                <article class="capability">
-                    <span class="capability-number">01</span>
-                    <h3>Digital & ICT</h3>
-                    <p>
-                        Websites, mobile applications, hosting, SEO,
-                        technical support and digital infrastructure.
-                    </p>
-                </article>
-
-                <article class="capability">
-                    <span class="capability-number">02</span>
-                    <h3>Business & Marketing</h3>
-                    <p>
-                        Branding, business systems, marketing infrastructure,
-                        automation and digitization.
-                    </p>
-                </article>
-
-                <article class="capability">
-                    <span class="capability-number">03</span>
-                    <h3>Training & Education</h3>
-                    <p>
-                        Digital skills, coding, entrepreneurship, marketing,
-                        freelancing and professional development.
-                    </p>
-                </article>
-
-                <article class="capability">
-                    <span class="capability-number">04</span>
-                    <h3>Media & Publishing</h3>
-                    <p>
-                        Publishing, content, newsletters, podcasts,
-                        document production and media services.
-                    </p>
-                </article>
-
-                <article class="capability">
-                    <span class="capability-number">05</span>
-                    <h3>Community Solutions</h3>
-                    <p>
-                        Digital tools and services designed to support
-                        communities, organizations and local initiatives.
-                    </p>
-                </article>
-
-                <article class="capability">
-                    <span class="capability-number">06</span>
-                    <h3>Custom Software</h3>
-                    <p>
-                        Purpose-built applications and internal systems
-                        designed around specific operational requirements.
-                    </p>
-                </article>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROCESS -->
-
-    <section class="process" id="process">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <div class="eyebrow">
-                    How We Work
-                </div>
-
-                <h2>
-                    From need to solution.
-                </h2>
-
-                <p>
-                    A straightforward process designed to understand the
-                    problem before deciding what technology should be used.
-                </p>
-
-            </div>
-
-
-            <div class="process-grid">
-
-                <article class="process-card">
-                    <span>01</span>
-                    <h3>Understand</h3>
-                    <p>
-                        We learn about your organization, objective,
-                        challenge and desired outcome.
-                    </p>
-                </article>
-
-                <article class="process-card">
-                    <span>02</span>
-                    <h3>Recommend</h3>
-                    <p>
-                        We identify an existing Alreflections solution
-                        or determine what needs to be built.
-                    </p>
-                </article>
-
-                <article class="process-card">
-                    <span>03</span>
-                    <h3>Build & Configure</h3>
-                    <p>
-                        We configure, customize, integrate or develop
-                        the solution around the requirement.
-                    </p>
-                </article>
-
-                <article class="process-card">
-                    <span>04</span>
-                    <h3>Support</h3>
-                    <p>
-                        We can continue with maintenance, training,
-                        improvements and technical support.
-                    </p>
-                </article>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CTA -->
-
-    <section class="cta" id="contact">
-
-        <div class="container">
-
-            <div class="cta-box">
-
-                <h2>
-                    Have a business problem worth solving?
-                </h2>
-
-                <p>
-                    Start with what you know. Tell Alreflections Services
-                    what you need and we'll help determine the right
-                    technology or service for the job.
-                </p>
-
-                <a href="#services" class="btn btn-primary">
-                    Find Your Solution →
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-</main>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-    <div class="container footer-main">
-
-        <div class="footer-brand">
-
-            <a href="./" class="brand">
-                <span>Alreflections</span> Services
-            </a>
-
-            <p>
-                Technology solutions, business services and custom digital
-                systems designed for organizations, entrepreneurs and
-                communities.
-            </p>
-
-        </div>
-
-
-        <div class="footer-column">
-
-            <h4>Enterprise</h4>
-
-            <a href="#solutions">Solutions</a>
-            <a href="#services">Services</a>
-            <a href="#process">How We Work</a>
-
-        </div>
-
-
-        <div class="footer-column">
-
-            <h4>Start</h4>
-
-            <a href="#services">Find a Solution</a>
-            <a href="#contact">Start a Project</a>
-
-        </div>
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-        <div class="container">
-            © <span id="year"></span> Alreflections Services. All rights reserved.
-        </div>
-
-    </div>
-
-</footer>
-
-
-<div class="toast" id="toast"></div>
-
-
-<script>
-    /* ============================================================
-       Alreflections Services
-       Progressive Service Finder
-    ============================================================ */
-
-    const serviceData = {
-        "Digital & ICT Services": {
-            description: "Digital technology, infrastructure and online services.",
-            services: [
-                "Website development",
-                "Mobile app development",
-                "Digital business cards",
-                "E-commerce store setup",
-                "Email hosting & setup",
-                "SEO services",
-                "Google Business Profile management",
-                "Social media management",
-                "Graphic design (logos, flyers, banners)",
-                "Motion graphics & video intros",
-                "Website maintenance",
-                "Data entry services",
-                "Cybersecurity audits for small businesses",
-                "Local software installation & support",
-                "CRM solutions",
-                "Bug fixing & system upgrades",
-                "Domain name registration assistance",
-                "Technical support for online tools",
-                "Personal portfolio website creation",
-                "Company profile design (PDF & Web)",
-                "Chatbot development for local SMEs",
-                "Website Hosting services"
-            ]
-        },
-
-        "Training & Education": {
-            description: "Build digital skills, professional skills and knowledge.",
-            services: [
-                "Coding bootcamps (beginner to advanced)",
-                "Computer literacy for beginners",
-                "Digital marketing training",
-                "Freelancing skills training",
-                "Blogging and monetization training",
-                "Online course platform setup",
-                "Virtual assistant skills program",
-                "Remote job readiness programs",
-                "ICT training for schools",
-                "Youth digital empowerment workshops",
-                "Business tech integration coaching",
-                "Affiliate marketing training",
-                "Low-code/no-code app building",
-                "Excel & data analysis courses",
-                "Video editing & YouTube monetization",
-                "Online exams with certificates",
-                "Personal branding for creators",
-                "Teachers’ digital toolkit training",
-                "LinkedIn optimization & training"
-            ]
-        },
-
-        "Business & Marketing Services": {
-            description: "Build your brand, market and business infrastructure.",
-            services: [
-                "Business registration support",
-                "Branding services (naming, identity)",
-                "Flyer & brochure creation",
-                "Business card design",
-                "Marketing strategy consultations",
-                "Business plan writing",
-                "Social media ad campaign setup",
-                "Local product photography",
-                "WhatsApp Business optimization",
-                "Small business digitization",
-                "Business email automation",
-                "Sales funnel setup",
-                "Landing page creation",
-                "Online invoice systems setup",
-                "Affiliate program setup for local businesses",
-                "Market research for local startups",
-                "Corporate video production",
-                "Online bookings & appointment systems"
-            ]
-        },
-
-        "Local Empowerment & Community Services": {
-            description: "Technology and services designed around people and communities.",
-            services: [
-                "Digital literacy outreach in rural areas",
-                "Job search support & resume creation",
-                "Youth entrepreneurship mentorship",
-                "Supporting artisans with digital catalogs",
-                "Free tools for NGOs and schools",
-                "Volunteer opportunity matching",
-                "Digital documentation for local cooperatives",
-                "Promotion of local talents",
-                "Farmer record digitization services",
-                "Urbanization project tracking tools",
-                "Election and public opinion poll software"
-            ]
-        },
-
-        "Media & Publishing": {
-            description: "Turn ideas, information and stories into publishable media.",
-            services: [
-                "Book publishing support",
-                "PDF conversion & document formatting",
-                "Magazine creation & distribution",
-                "Podcast production support",
-                "Press release writing & publishing",
-                "News blogging",
-                "Email newsletter creation",
-                "Voice-over services",
-                "Content writing for businesses",
-                "E-book store setup",
-                "Conversion writing service",
-                "Newsletter program setup"
-            ]
-        },
-
-        "Innovation & Custom Software": {
-            description: "Purpose-built software for organizations and new ideas.",
-            services: [
-                "Internal tools for SACCOs/Community Banks",
-                "Inventory management systems",
-                "School management software",
-                "Taxi or delivery app",
-                "Offline-first mobile apps",
-                "Freelancing marketplace for Rwanda",
-                "Church management software",
-                "Language learning applications",
-                "Electronic attendance tracker",
-                "Customized accounting tools",
-                "Online form handling for static sites",
-                "Programmable search engine design",
-                "Business help center or knowledge-base development"
-            ]
-        }
-    };
-
-
-    const categoryPresentation = {
-        "Digital & ICT Services": "Digital technology, infrastructure and online services.",
-        "Training & Education": "Build digital skills, professional skills and knowledge.",
-        "Business & Marketing Services": "Build your brand, market and business infrastructure.",
-        "Local Empowerment & Community Services": "Technology and services designed around people and communities.",
-        "Media & Publishing": "Turn ideas, information and stories into publishable media.",
-        "Innovation & Custom Software": "Purpose-built software for organizations and new ideas."
-    };
-
-
-    const categoryIcons = {
-        "Digital & ICT Services": "01",
-        "Training & Education": "02",
-        "Business & Marketing Services": "03",
-        "Local Empowerment & Community Services": "04",
-        "Media & Publishing": "05",
-        "Innovation & Custom Software": "06"
-    };
-
-
-    let currentCategory = null;
-    let selectedServices = new Set();
-
-
-    /* ============================================================
-       ELEMENTS
-    ============================================================ */
-
-    const categoryStage = document.getElementById("categoryStage");
-    const serviceStage = document.getElementById("serviceStage");
-    const projectStage = document.getElementById("projectStage");
-
-    const categoryGrid = document.getElementById("categoryGrid");
-    const servicesList = document.getElementById("servicesList");
-
-    const serviceHeading = document.getElementById("serviceHeading");
-    const serviceDescription = document.getElementById("serviceDescription");
-
-    const serviceSearch = document.getElementById("serviceSearch");
-
-    const selectedCount = document.getElementById("selectedCount");
-    const selectionSummary = document.getElementById("selectionSummary");
-    const selectedTags = document.getElementById("selectedTags");
-
-    const continueToProject =
-        document.getElementById("continueToProject");
-
-    const backToCategories =
-        document.getElementById("backToCategories");
-
-    const backToServices =
-        document.getElementById("backToServices");
-
-    const submitArea =
-        document.getElementById("submitArea");
-
-    const journey1 =
-        document.getElementById("journey1");
-
-    const journey2 =
-        document.getElementById("journey2");
-
-    const journey3 =
-        document.getElementById("journey3");
-
-
-    /* ============================================================
-       RENDER CATEGORIES
-    ============================================================ */
-
-    function renderCategories() {
-
-        categoryGrid.innerHTML = "";
-
-        Object.entries(serviceData).forEach(([category, data]) => {
-
-            const button = document.createElement("button");
-
-            button.type = "button";
-            button.className = "category-card";
-
-            button.innerHTML = `
-                <span class="icon">
-                    ${categoryIcons[category]}
-                </span>
-
-                <strong>${category}</strong>
-
-                <span>
-                    ${data.description}
-                </span>
-            `;
-
-            button.addEventListener("click", () => {
-                chooseCategory(category);
-            });
-
-            categoryGrid.appendChild(button);
-        });
-    }
-
-
-    /* ============================================================
-       STEP 1 → STEP 2
-       IMPORTANT:
-       The old category section disappears.
-    ============================================================ */
-
-    function chooseCategory(category) {
-
-        currentCategory = category;
-
-        selectedServices.clear();
-
-        serviceHeading.textContent =
-            `What would you like help with?`;
-
-        serviceDescription.textContent =
-            serviceData[category].description;
-
-        renderServices();
-
-        serviceSearch.value = "";
-
-        updateSelection();
-
-        /*
-         * Hide the old choice section completely.
-         */
-        categoryStage.style.display = "none";
-
-        /*
-         * Reveal only the new choice section.
-         */
-        serviceStage.style.display = "block";
-
-        projectStage.classList.remove("visible");
-
-        setJourney(2);
-
-        serviceStage.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-    }
-
-
-    /* ============================================================
-       RENDER SERVICES
-    ============================================================ */
-
-    function renderServices(filter = "") {
-
-        servicesList.innerHTML = "";
-
-        const services =
-            serviceData[currentCategory].services;
-
-        const normalizedFilter =
-            filter.trim().toLowerCase();
-
-        const filteredServices =
-            services.filter(service =>
-                service.toLowerCase().includes(normalizedFilter)
-            );
-
-        if (!filteredServices.length) {
-
-            servicesList.innerHTML = `
-                <div style="
-                    grid-column:1/-1;
-                    padding:30px;
-                    text-align:center;
-                    border:1px solid var(--border);
-                    border-radius:12px;
-                    color:var(--muted);
-                    font-size:13px;
-                ">
-                    No services match your search.
-                </div>
-            `;
-
-            return;
-        }
-
-
-        filteredServices.forEach(service => {
-
-            const button =
-                document.createElement("button");
-
-            button.type = "button";
-
-            button.className =
-                "service-option" +
-                (selectedServices.has(service)
-                    ? " selected"
-                    : "");
-
-            button.innerHTML = `
-                <span class="service-check">
-                    ${selectedServices.has(service) ? "✓" : ""}
-                </span>
-
-                <span>${service}</span>
-            `;
-
-            button.addEventListener("click", () => {
-
-                if (selectedServices.has(service)) {
-                    selectedServices.delete(service);
-                } else {
-                    selectedServices.add(service);
-                }
-
-                renderServices(serviceSearch.value);
-                updateSelection();
-            });
-
-            servicesList.appendChild(button);
-        });
-    }
-
-
-    /* ============================================================
-       UPDATE SERVICE SELECTION
-    ============================================================ */
-
-    function updateSelection() {
-
-        const count = selectedServices.size;
-
-        selectedCount.textContent =
-            `${count} selected`;
-
-        selectedTags.innerHTML = "";
-
-        selectedServices.forEach(service => {
-
-            const tag =
-                document.createElement("span");
-
-            tag.className = "selected-tag";
-            tag.textContent = service;
-
-            selectedTags.appendChild(tag);
-        });
-
-
-        /*
-         * Do not reveal the next action until
-         * the user actually chooses a service.
-         */
-
-        if (count > 0) {
-
-            selectionSummary.classList.add("visible");
-            continueToProject.classList.add("visible");
-
-        } else {
-
-            selectionSummary.classList.remove("visible");
-            continueToProject.classList.remove("visible");
-        }
-    }
-
-
-    /* ============================================================
-       STEP 2 → STEP 3
-       IMPORTANT:
-       The old service section disappears.
-    ============================================================ */
-
-    function continueToProjectStage() {
-
-        if (!selectedServices.size) {
-            return;
-        }
-		serviceTags.value=Array.from(selectedServices).join(", ");
-        /*
-         * Hide the previous choice section.
-         */
-        serviceStage.style.display = "none";
-
-        /*
-         * Reveal the new choice section.
-         */
-        projectStage.classList.add("visible");
-
-        /*
-         * Only now expose the final submit action.
-         */
-        setTimeout(() => {
-            submitArea.classList.add("visible");
-        }, 250);
-
-        setJourney(3);
-
-        projectStage.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-    }
-
-
-    /* ============================================================
-       BACK TO CATEGORIES
-       Restores the previous section and hides the current one.
-    ============================================================ */
-
-    function goBackToCategories() {
-
-        serviceStage.style.display = "none";
-
-        projectStage.classList.remove("visible");
-
-        categoryStage.style.display = "block";
-
-        selectedServices.clear();
-
-        serviceSearch.value = "";
-
-        updateSelection();
-
-        setJourney(1);
-
-        categoryStage.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-    }
-
-
-    /* ============================================================
-       BACK TO SERVICES
-    ============================================================ */
-
-    function goBackToServices() {
-
-        projectStage.classList.remove("visible");
-
-        submitArea.classList.remove("visible");
-
-        serviceStage.style.display = "block";
-
-        setJourney(2);
-
-        serviceStage.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-    }
-
-
-    /* ============================================================
-       JOURNEY INDICATOR
-    ============================================================ */
-
-    function setJourney(step) {
-
-        [journey1, journey2, journey3].forEach(item => {
-            item.classList.remove("active");
-        });
-
-        if (step >= 1) {
-            journey1.classList.add("active");
-        }
-
-        if (step >= 2) {
-            journey2.classList.add("active");
-        }
-
-        if (step >= 3) {
-            journey3.classList.add("active");
-        }
-    }
-
-
-    /* ============================================================
-       SERVICE SEARCH
-    ============================================================ */
-
-    serviceSearch.addEventListener("input", () => {
-        renderServices(serviceSearch.value);
-    });
-
-
-    /* ============================================================
-       NAVIGATION
-    ============================================================ */
-
-    continueToProject.addEventListener(
-        "click",
-        continueToProjectStage
-    );
-
-    backToCategories.addEventListener(
-        "click",
-        goBackToCategories
-    );
-
-    backToServices.addEventListener(
-        "click",
-        goBackToServices
-    );
-
-
-    /* ============================================================
-       PROJECT FORM
-    ============================================================ */
-	
-	/*
-    document
-        .getElementById("projectForm")
-        .addEventListener("submit", function(event) {
-            event.preventDefault();
-            const formData=new FormData(this);
-            const request={
-                category: currentCategory,
-                services: Array.from(selectedServices),
-                name: formData.get("name"),
-                organization: formData.get("organization"),
-                email: formData.get("email"),
-                phone: formData.get("phone"),
-                budget: formData.get("budget"),
-                timeline: formData.get("timeline"),
-                //description: formData.get("description"),
-                services: formData.get("services"),
-            };
-			fetch("https://formworker.alreflections.net/plugin/ZXlKMWMyVnlJam9pTVNKOQ==", {
-				method: "POST",
-				mode: "no-cors",
-				body: formData
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Alreflections Services — Technology & Business Solutions</title>
+		<meta name="description" content="Alreflections Services provides technology, business, training, media, publishing, community and custom software solutions.">
+		<style>
+			:root {
+				--white: #ffffff;
+				--gold: #b88b01;
+				--gold-dark: #987200;
+				--gold-light: #d8bd70;
+				--gold-pale: #f4e9c9;
+
+				--cream: #faf7ef;
+				--cream-2: #f5efdf;
+
+				--text: #644b00;
+				--muted: #756e60;
+				--faint: #a39b8b;
+
+				--border: #e9e1cf;
+				--border-gold: #ddca94;
+
+				--shadow: 0 18px 50px rgba(80, 61, 15, .08);
+				--radius: 20px;
+				--radius-sm: 12px;
+			}
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+			html {
+				scroll-behavior: smooth;
+			}
+			body {
+				font-family:
+					Inter,
+					ui-sans-serif,
+					system-ui,
+					-apple-system,
+					BlinkMacSystemFont,
+					"Segoe UI",
+					sans-serif;
+				color: var(--text);
+				background: var(--white);
+				line-height: 1.6;
+			}
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
+			button,
+			input,
+			textarea,
+			select {
+				font: inherit;
+			}
+			button {
+				cursor: pointer;
+			}
+
+			.container {
+				width: min(1160px, calc(100% - 40px));
+				margin-inline: auto;
+			}
+
+			/* =========================
+			   HEADER
+			========================= */
+
+			header {
+				position: sticky;
+				top: 0;
+				z-index: 100;
+				background: rgba(255,255,255,.96);
+				border-bottom: 1px solid var(--border);
+				backdrop-filter: blur(14px);
+			}
+
+			.nav {
+				min-height: 78px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 30px;
+			}
+
+			.brand {
+				font-size: 21px;
+				font-weight: 800;
+				letter-spacing: -.5px;
+			}
+
+			.brand span {
+				color: var(--gold);
+			}
+
+			.nav-links {
+				display: flex;
+				align-items: center;
+				gap: 30px;
+				list-style: none;
+			}
+
+			.nav-links a {
+				color: var(--muted);
+				font-size: 14px;
+				font-weight: 600;
+				transition: .2s ease;
+			}
+
+			.nav-links a:hover {
+				color: var(--gold-dark);
+			}
+
+			.nav-cta {
+				padding: 11px 18px;
+				border: 1px solid var(--gold);
+				border-radius: 999px;
+				color: var(--gold-dark) !important;
+			}
+
+			.nav-cta:hover {
+				background: var(--gold);
+				color: var(--white) !important;
+			}
+
+			.menu-toggle {
+				display: none;
+				border: 0;
+				background: none;
+				color: var(--text);
+				font-size: 25px;
+			}
+
+			/* =========================
+			   HERO
+			========================= */
+
+			.hero {
+				padding: 105px 0 90px;
+				background:
+					radial-gradient(circle at 85% 20%, rgba(216,189,112,.17), transparent 28%),
+					linear-gradient(to bottom, var(--white), var(--cream));
+			}
+
+			.hero-grid {
+				display: grid;
+				grid-template-columns: 1.12fr .88fr;
+				align-items: center;
+				gap: 80px;
+			}
+
+			.eyebrow {
+				display: inline-flex;
+				align-items: center;
+				gap: 9px;
+				margin-bottom: 22px;
+				color: var(--gold-dark);
+				font-size: 12px;
+				font-weight: 800;
+				letter-spacing: .14em;
+				text-transform: uppercase;
+			}
+
+			.eyebrow::before {
+				content: "";
+				width: 28px;
+				height: 1px;
+				background: var(--gold);
+			}
+
+			.hero h1 {
+				max-width: 720px;
+				font-size: clamp(44px, 6vw, 76px);
+				line-height: .98;
+				letter-spacing: -3px;
+				margin-bottom: 28px;
+			}
+
+			.hero h1 span {
+				color: var(--gold);
+			}
+
+			.hero-copy {
+				max-width: 640px;
+				color: var(--muted);
+				font-size: 18px;
+				line-height: 1.8;
+			}
+
+			.hero-actions {
+				display: flex;
+				align-items: center;
+				gap: 14px;
+				margin-top: 34px;
+				flex-wrap: wrap;
+			}
+
+			.btn {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				min-height: 48px;
+				padding: 0 22px;
+				border-radius: 999px;
+				border: 1px solid transparent;
+				font-size: 14px;
+				font-weight: 800;
+				transition: .2s ease;
+			}
+
+			.btn-primary {
+				background: var(--gold);
+				color: var(--white);
+				box-shadow: 0 10px 25px rgba(184,139,1,.18);
+			}
+
+			.btn-primary:hover {
+				background: var(--gold-dark);
+				transform: translateY(-1px);
+			}
+
+			.btn-secondary {
+				border-color: var(--border-gold);
+				color: var(--gold-dark);
+				background: var(--white);
+			}
+
+			.btn-secondary:hover {
+				border-color: var(--gold);
+				background: var(--cream);
+			}
+
+			.hero-panel {
+				position: relative;
+				min-height: 430px;
+				padding: 34px;
+				border: 1px solid var(--border);
+				border-radius: 28px;
+				background: var(--white);
+				box-shadow: var(--shadow);
+				overflow: hidden;
+			}
+
+			.hero-panel::before {
+				content: "";
+				position: absolute;
+				width: 260px;
+				height: 260px;
+				border-radius: 50%;
+				background: var(--gold-pale);
+				right: -100px;
+				top: -100px;
+			}
+
+			.solution-card {
+				position: relative;
+				z-index: 1;
+				padding: 24px;
+				margin-bottom: 14px;
+				border: 1px solid var(--border);
+				border-radius: var(--radius-sm);
+				background: rgba(255,255,255,.9);
+			}
+
+			.solution-card strong {
+				display: block;
+				margin-bottom: 5px;
+				font-size: 16px;
+			}
+
+			.solution-card p {
+				color: var(--muted);
+				font-size: 13px;
+			}
+
+			.solution-number {
+				display: block;
+				margin-bottom: 13px;
+				color: var(--gold);
+				font-size: 12px;
+				font-weight: 800;
+				letter-spacing: .1em;
+			}
+
+			/* =========================
+			   TRUST STRIP
+			========================= */
+
+			.trust {
+				border-block: 1px solid var(--border);
+				background: var(--white);
+			}
+
+			.trust-grid {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+			}
+
+			.trust-item {
+				padding: 28px 20px;
+				border-right: 1px solid var(--border);
+			}
+
+			.trust-item:last-child {
+				border-right: 0;
+			}
+
+			.trust-item strong {
+				display: block;
+				margin-bottom: 3px;
+				font-size: 15px;
+			}
+
+			.trust-item span {
+				color: var(--muted);
+				font-size: 12px;
+			}
+
+			/* =========================
+			   GENERAL SECTIONS
+			========================= */
+
+			section {
+				padding: 100px 0;
+			}
+
+			.section-heading {
+				max-width: 680px;
+				margin-bottom: 50px;
+			}
+
+			.section-heading h2 {
+				font-size: clamp(32px, 4vw, 50px);
+				line-height: 1.08;
+				letter-spacing: -1.7px;
+				margin-bottom: 15px;
+			}
+
+			.section-heading p {
+				color: var(--muted);
+				font-size: 16px;
+			}
+
+			/* =========================
+			   SERVICE FINDER
+			========================= */
+
+			.finder-section {
+				background: var(--cream);
+			}
+
+			.finder-shell {
+				border: 1px solid var(--border);
+				border-radius: 28px;
+				background: var(--white);
+				box-shadow: var(--shadow);
+				overflow: hidden;
+			}
+
+			.finder-top {
+				padding: 28px 34px;
+				border-bottom: 1px solid var(--border);
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 20px;
+			}
+
+			.finder-top strong {
+				font-size: 15px;
+			}
+
+			.finder-top span {
+				color: var(--muted);
+				font-size: 13px;
+			}
+
+			.journey {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+			}
+
+			.journey-step {
+				display: flex;
+				align-items: center;
+				gap: 7px;
+				color: var(--faint);
+				font-size: 11px;
+				font-weight: 800;
+				text-transform: uppercase;
+				letter-spacing: .08em;
+			}
+
+			.journey-step:not(:last-child)::after {
+				content: "";
+				width: 30px;
+				height: 1px;
+				margin-left: 4px;
+				background: var(--border);
+			}
+
+			.journey-step.active {
+				color: var(--gold-dark);
+			}
+
+			.journey-number {
+				display: grid;
+				place-items: center;
+				width: 24px;
+				height: 24px;
+				border-radius: 50%;
+				border: 1px solid currentColor;
+				font-size: 10px;
+			}
+
+			/* Progressive stages */
+
+			.finder-stage {
+				padding: 38px;
+				animation: stageIn .3s ease;
+			}
+
+			@keyframes stageIn {
+				from {
+					opacity: 0;
+					transform: translateY(8px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.stage-heading {
+				margin-bottom: 28px;
+			}
+
+			.stage-heading small {
+				color: var(--gold-dark);
+				font-size: 11px;
+				font-weight: 800;
+				letter-spacing: .12em;
+				text-transform: uppercase;
+			}
+
+			.stage-heading h3 {
+				margin-top: 7px;
+				font-size: 27px;
+				letter-spacing: -.7px;
+			}
+
+			.stage-heading p {
+				max-width: 680px;
+				margin-top: 8px;
+				color: var(--muted);
+				font-size: 14px;
+			}
+
+			.category-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 14px;
+			}
+
+			.category-card {
+				width: 100%;
+				min-height: 150px;
+				padding: 22px;
+				text-align: left;
+				border: 1px solid var(--border);
+				border-radius: var(--radius-sm);
+				background: var(--white);
+				transition: .2s ease;
+			}
+
+			.category-card:hover {
+				border-color: var(--border-gold);
+				transform: translateY(-2px);
+				box-shadow: 0 10px 28px rgba(80,61,15,.07);
+			}
+
+			.category-card .icon {
+				display: grid;
+				place-items: center;
+				width: 38px;
+				height: 38px;
+				margin-bottom: 18px;
+				border-radius: 10px;
+				background: var(--cream);
+				color: var(--gold-dark);
+				font-weight: 900;
+			}
+
+			.category-card strong {
+				display: block;
+				margin-bottom: 6px;
+				font-size: 15px;
+			}
+
+			.category-card span {
+				display: block;
+				color: var(--muted);
+				font-size: 12px;
+				line-height: 1.6;
+			}
+
+			/* Service selection */
+
+			.service-tools {
+				display: flex;
+				gap: 12px;
+				align-items: center;
+				margin-bottom: 20px;
+			}
+
+			.search-box {
+				position: relative;
+				flex: 1;
+			}
+
+			.search-box input {
+				width: 100%;
+				height: 46px;
+				padding: 0 16px;
+				border: 1px solid var(--border);
+				border-radius: 10px;
+				outline: none;
+				color: var(--text);
+				background: var(--white);
+			}
+
+			.search-box input:focus {
+				border-color: var(--gold-light);
+				box-shadow: 0 0 0 3px rgba(184,139,1,.08);
+			}
+
+			.selected-count {
+				white-space: nowrap;
+				color: var(--muted);
+				font-size: 12px;
+			}
+
+			.services-list {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 10px;
+			}
+
+			.service-option {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+				min-height: 58px;
+				padding: 12px 15px;
+				border: 1px solid var(--border);
+				border-radius: 10px;
+				background: var(--white);
+				cursor: pointer;
+				transition: .18s ease;
+			}
+
+			.service-option:hover {
+				border-color: var(--border-gold);
+				background: var(--cream);
+			}
+
+			.service-option.selected {
+				border-color: var(--gold);
+				background: #fffaf0;
+			}
+
+			.service-check {
+				flex: 0 0 19px;
+				width: 19px;
+				height: 19px;
+				border: 1px solid var(--border-gold);
+				border-radius: 5px;
+				display: grid;
+				place-items: center;
+				color: var(--white);
+				font-size: 11px;
+			}
+
+			.service-option.selected .service-check {
+				border-color: var(--gold);
+				background: var(--gold);
+			}
+
+			.service-option span:last-child {
+				font-size: 13px;
+				line-height: 1.35;
+			}
+
+			.selection-summary {
+				display: none;
+				margin-top: 25px;
+				padding: 18px;
+				border: 1px solid var(--border-gold);
+				border-radius: 12px;
+				background: var(--cream);
+			}
+
+			.selection-summary.visible {
+				display: block;
+			}
+
+			.selection-summary-title {
+				margin-bottom: 10px;
+				color: var(--gold-dark);
+				font-size: 11px;
+				font-weight: 800;
+				letter-spacing: .1em;
+				text-transform: uppercase;
+			}
+
+			.selected-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 7px;
+			}
+
+			.selected-tag {
+				padding: 6px 9px;
+				border-radius: 999px;
+				background: var(--white);
+				border: 1px solid var(--border);
+				color: var(--text);
+				font-size: 11px;
+			}
+
+			/* Stage actions */
+
+			.stage-actions {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: 15px;
+				margin-top: 28px;
+			}
+
+			.back-button {
+				border: 0;
+				background: transparent;
+				color: var(--muted);
+				font-size: 13px;
+				font-weight: 700;
+			}
+
+			.back-button:hover {
+				color: var(--gold-dark);
+			}
+
+			.continue-button {
+				display: none;
+			}
+
+			.continue-button.visible {
+				display: inline-flex;
+			}
+
+			/* Project stage */
+
+			.project-stage {
+				display: none;
+			}
+
+			.project-stage.visible {
+				display: block;
+			}
+
+			.project-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 16px;
+			}
+
+			.field {
+				display: flex;
+				flex-direction: column;
+				gap: 7px;
+			}
+
+			.field.full {
+				grid-column: 1 / -1;
+			}
+
+			.field label {
+				color: var(--text);
+				font-size: 12px;
+				font-weight: 800;
+			}
+
+			.field input,
+			.field textarea,
+			.field select {
+				width: 100%;
+				border: 1px solid var(--border);
+				border-radius: 10px;
+				padding: 12px 13px;
+				outline: none;
+				color: var(--text);
+				background: var(--white);
+			}
+
+			.field input,
+			.field select {
+				height: 46px;
+			}
+
+			.field textarea {
+				min-height: 135px;
+				resize: vertical;
+			}
+
+			.field input:focus,
+			.field textarea:focus,
+			.field select:focus {
+				border-color: var(--gold-light);
+				box-shadow: 0 0 0 3px rgba(184,139,1,.08);
+			}
+
+			.submit-area {
+				display: none;
+				margin-top: 25px;
+				padding-top: 25px;
+				border-top: 1px solid var(--border);
+			}
+
+			.submit-area.visible {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 20px;
+			}
+
+			.submit-note {
+				color: var(--muted);
+				font-size: 12px;
+			}
+
+			/* =========================
+			   CAPABILITIES
+			========================= */
+
+			.capabilities {
+				background: var(--white);
+			}
+
+			.capability-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 15px;
+			}
+
+			.capability {
+				padding: 27px;
+				border: 1px solid var(--border);
+				border-radius: var(--radius);
+				background: var(--white);
+			}
+
+			.capability-number {
+				color: var(--gold);
+				font-size: 11px;
+				font-weight: 900;
+				letter-spacing: .1em;
+			}
+
+			.capability h3 {
+				margin: 20px 0 8px;
+				font-size: 18px;
+			}
+
+			.capability p {
+				color: var(--muted);
+				font-size: 13px;
+				line-height: 1.7;
+			}
+
+			/* =========================
+			   PROCESS
+			========================= */
+
+			.process {
+				background: var(--cream);
+			}
+
+			.process-grid {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 1px;
+				background: var(--border);
+				border: 1px solid var(--border);
+			}
+
+			.process-card {
+				padding: 28px;
+				background: var(--white);
+			}
+
+			.process-card span {
+				color: var(--gold);
+				font-size: 12px;
+				font-weight: 900;
+			}
+
+			.process-card h3 {
+				margin: 20px 0 8px;
+				font-size: 17px;
+			}
+
+			.process-card p {
+				color: var(--muted);
+				font-size: 13px;
+			}
+
+			/* =========================
+			   CTA
+			========================= */
+
+			.cta {
+				padding: 90px 0;
+			}
+
+			.cta-box {
+				position: relative;
+				overflow: hidden;
+				padding: 70px;
+				border: 1px solid var(--border-gold);
+				border-radius: 30px;
+				background:
+					radial-gradient(circle at 90% 20%, rgba(216,189,112,.25), transparent 30%),
+					var(--cream);
+			}
+
+			.cta-box h2 {
+				max-width: 700px;
+				font-size: clamp(34px, 4vw, 54px);
+				line-height: 1.05;
+				letter-spacing: -1.8px;
+			}
+
+			.cta-box p {
+				max-width: 620px;
+				margin-top: 17px;
+				color: var(--muted);
+			}
+
+			.cta-box .btn {
+				margin-top: 28px;
+			}
+
+			/* =========================
+			   FOOTER
+			========================= */
+
+			footer {
+				border-top: 1px solid var(--border);
+				background: var(--white);
+			}
+
+			.footer-main {
+				display: grid;
+				grid-template-columns: 1.5fr 1fr 1fr;
+				gap: 50px;
+				padding: 60px 0;
+			}
+
+			.footer-brand p {
+				max-width: 390px;
+				margin-top: 14px;
+				color: var(--muted);
+				font-size: 13px;
+			}
+
+			.footer-column h4 {
+				margin-bottom: 15px;
+				font-size: 12px;
+				text-transform: uppercase;
+				letter-spacing: .1em;
+			}
+
+			.footer-column a {
+				display: block;
+				margin-bottom: 9px;
+				color: var(--muted);
+				font-size: 13px;
+			}
+
+			.footer-column a:hover {
+				color: var(--gold-dark);
+			}
+
+			.footer-bottom {
+				padding: 20px 0;
+				border-top: 1px solid var(--border);
+				color: var(--faint);
+				font-size: 11px;
+			}
+
+			/* =========================
+			   TOAST
+			========================= */
+
+			.toast {
+				position: fixed;
+				right: 22px;
+				bottom: 22px;
+				z-index: 200;
+				max-width: 330px;
+				padding: 15px 18px;
+				border: 1px solid var(--border-gold);
+				border-radius: 12px;
+				background: var(--white);
+				box-shadow: 0 16px 40px rgba(60,45,10,.13);
+				color: var(--text);
+				font-size: 13px;
+				transform: translateY(20px);
+				opacity: 0;
+				pointer-events: none;
+				transition: .25s ease;
+			}
+
+			.toast.show {
+				transform: translateY(0);
+				opacity: 1;
+			}
+
+			/* =========================
+			   RESPONSIVE
+			========================= */
+
+			@media (max-width: 900px) {
+				.hero-grid {
+					grid-template-columns: 1fr;
+					gap: 45px;
+				}
+
+				.category-grid,
+				.capability-grid {
+					grid-template-columns: repeat(2, 1fr);
+				}
+
+				.process-grid {
+					grid-template-columns: repeat(2, 1fr);
+				}
+
+				.trust-grid {
+					grid-template-columns: repeat(2, 1fr);
+				}
+
+				.trust-item:nth-child(2) {
+					border-right: 0;
+				}
+
+				.trust-item:nth-child(-n+2) {
+					border-bottom: 1px solid var(--border);
+				}
+
+				.footer-main {
+					grid-template-columns: 1fr 1fr;
+				}
+			}
+
+			@media (max-width: 700px) {
+				.container {
+					width: min(100% - 28px, 1160px);
+				}
+
+				.nav {
+					min-height: 68px;
+				}
+
+				.nav-links {
+					display: none;
+					position: absolute;
+					top: 68px;
+					left: 14px;
+					right: 14px;
+					padding: 15px;
+					flex-direction: column;
+					align-items: stretch;
+					gap: 0;
+					border: 1px solid var(--border);
+					border-radius: 15px;
+					background: var(--white);
+					box-shadow: var(--shadow);
+				}
+
+				.nav-links.open {
+					display: flex;
+				}
+
+				.nav-links a {
+					display: block;
+					padding: 13px;
+				}
+
+				.menu-toggle {
+					display: block;
+				}
+
+				.hero {
+					padding: 70px 0;
+				}
+
+				.hero h1 {
+					font-size: 45px;
+					letter-spacing: -2px;
+				}
+
+				section {
+					padding: 70px 0;
+				}
+
+				.hero-panel {
+					min-height: auto;
+				}
+
+				.finder-top {
+					align-items: flex-start;
+					flex-direction: column;
+				}
+
+				.journey {
+					width: 100%;
+					justify-content: space-between;
+				}
+
+				.journey-step:not(:last-child)::after {
+					width: 14px;
+				}
+
+				.journey-step {
+					font-size: 9px;
+				}
+
+				.finder-stage {
+					padding: 25px 18px;
+				}
+
+				.category-grid,
+				.services-list,
+				.capability-grid,
+				.process-grid,
+				.project-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.field.full {
+					grid-column: auto;
+				}
+
+				.service-tools {
+					align-items: stretch;
+					flex-direction: column;
+				}
+
+				.stage-actions,
+				.submit-area.visible {
+					align-items: stretch;
+					flex-direction: column;
+				}
+
+				.stage-actions .btn {
+					width: 100%;
+				}
+
+				.back-button {
+					order: 2;
+				}
+
+				.submit-area .btn {
+					width: 100%;
+				}
+
+				.cta-box {
+					padding: 40px 25px;
+				}
+
+				.footer-main {
+					grid-template-columns: 1fr;
+					gap: 35px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+	<header>
+		<div class="container nav">
+			<a href="./" class="brand"><span>Alreflections</span> Services</a>
+			<button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+			<ul class="nav-links" id="navLinks">
+				<li><a href="#solutions">Solutions</a></li>
+				<li><a href="#services">Services</a></li>
+				<li><a href="#process">How We Work</a></li>
+				<li><a href="#contact" class="nav-cta">Start a Project</a></li>
+			</ul>
+		</div>
+	</header>
+	<main>
+		<!-- HERO -->
+		<section class="hero" id="solutions">
+			<div class="container hero-grid">
+				<div>
+					<div class="eyebrow">Alreflections Services</div>
+					<h1>Technology that <span>moves business forward.</span></h1>
+					<p class="hero-copy">
+						Alreflections Services brings together ready-built technology
+						solutions, digital services, business support and custom software
+						to help organizations operate, grow and serve people better.
+					</p>
+					<div class="hero-actions">
+						<a href="#services" class="btn btn-primary">Explore Solutions</a>
+						<a href="#process" class="btn btn-secondary">How We Work</a>
+					</div>
+				</div>
+				<div class="hero-panel">
+					<div class="solution-card">
+						<span class="solution-number">01 / DIGITAL</span>
+						<strong>Digital & ICT Solutions</strong>
+						<p>
+							Websites, applications, hosting, SEO, technical support
+							and practical digital infrastructure.
+						</p>
+					</div>
+					<div class="solution-card">
+						<span class="solution-number">02 / BUSINESS</span>
+						<strong>Business & Marketing</strong>
+						<p>
+							Branding, business systems, marketing infrastructure
+							and digital transformation support.
+						</p>
+					</div>
+					<div class="solution-card">
+						<span class="solution-number">03 / SOFTWARE</span>
+						<strong>Custom Technology</strong>
+						<p>
+							Purpose-built software designed around real operational
+							problems and opportunities.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- TRUST -->
+		<div class="trust">
+			<div class="container trust-grid">
+				<div class="trust-item">
+					<strong>Built for real needs</strong>
+					<span>Practical technology, not technology for its own sake.</span>
+				</div>
+				<div class="trust-item">
+					<strong>Ready-made solutions</strong>
+					<span>Use existing Alreflections solutions where they fit.</span>
+				</div>
+				<div class="trust-item">
+					<strong>Custom development</strong>
+					<span>Extend or create systems around your organization.</span>
+				</div>
+				<div class="trust-item">
+					<strong>One enterprise</strong>
+					<span>Technology, business and creative capabilities together.</span>
+				</div>
+			</div>
+		</div>
+		<!-- SERVICE FINDER -->
+		<section class="finder-section" id="services">
+			<div class="container">
+				<div class="section-heading">
+					<div class="eyebrow">Find a Solution</div>
+					<h2>Tell us what you need.</h2>
+					<p>
+						Start with the area that best describes your need.
+						We'll progressively guide you toward the right service.
+					</p>
+				</div>
+				<div class="finder-shell">
+					<div class="finder-top">
+						<div>
+							<strong>Solution Finder</strong>
+							<span> — a guided way to begin your request</span>
+						</div>
+						<div class="journey">
+							<div class="journey-step active" id="journey1">
+								<span class="journey-number">1</span>
+								Area
+							</div>
+							<div class="journey-step" id="journey2">
+								<span class="journey-number">2</span>
+								Services
+							</div>
+							<div class="journey-step" id="journey3">
+								<span class="journey-number">3</span>
+								Project
+							</div>
+						</div>
+					</div>
+					<!-- STEP 1 -->
+					<div class="finder-stage" id="categoryStage">
+						<div class="stage-heading">
+							<small>Step 01</small>
+							<h3>What area can we help with?</h3>
+							<p>
+								Choose one area to continue. The previous section will
+								automatically disappear as you progress.
+							</p>
+						</div>
+						<div class="category-grid" id="categoryGrid"></div>
+					</div>
+					<!-- STEP 2 -->
+					<div class="finder-stage" id="serviceStage" style="display:none;">
+						<div class="stage-heading">
+							<small>Step 02</small>
+							<h3 id="serviceHeading">Select the services you need.</h3>
+							<p id="serviceDescription"></p>
+						</div>
+						<div class="service-tools">
+							<div class="search-box">
+								<input type="search" id="serviceSearch" placeholder="Search services...">
+							</div>
+							<div class="selected-count" id="selectedCount">0 selected</div>
+						</div>
+						<div class="services-list" id="servicesList"></div>
+						<div class="selection-summary" id="selectionSummary">
+							<div class="selection-summary-title">Your selection</div>
+							<div class="selected-tags" id="selectedTags"></div>
+						</div>
+						<div class="stage-actions">
+							<button	type="button"	class="back-button"	id="backToCategories">← Change area</button>
+							<button type="button" class="btn btn-primary continue-button" id="continueToProject">Continue to project details →</button>
+						</div>
+					</div>
+					<!-- STEP 3 -->
+					<div class="finder-stage project-stage" id="projectStage">
+						<div class="stage-heading">
+							<small>Step 03</small>
+							<h3>Tell us about your project.</h3>
+							<p>
+								Give us enough context to understand what you're
+								trying to accomplish. You don't need to have
+								everything figured out yet.
+							</p>
+						</div>
+						<form id="projectForm" action="https://formworker.alreflections.net/plugin/ZXlKMWMyVnlJam9pTVNKOQ==" method="get">
+							<input id="serviceTags" name="services" hidden />
+							<input name="next" value="https://www.alreflections.net/p/thank-you-for-reaching-out.html" hidden />
+							<div class="project-grid">
+								<div class="field full">
+									<label for="name">Your name</label>
+									<input id="name" name="name" type="text" placeholder="Your name" required>
+								</div>
+								<div class="field full">
+									<label for="organization">Organization / business</label>
+									<input id="organization" name="organization" type="text" placeholder="Optional - Organization name"/>
+								</div>
+								<div class="field">
+									<label for="email">Email address</label>
+									<input id="email" name="email" type="email" placeholder="you@example.com" required />
+								</div>
+								<div class="field">
+									<label for="phone">Phone number</label>
+									<input id="phone" name="phone" type="tel" placeholder="+250 ... - Optional">
+								</div>
+								<div class="field">
+									<label for="budget">Estimated budget</label>
+									<select id="budget" name="budget">
+										<option value="Prefer not to say">Prefer not to say</option>
+										<option value="Under $250">Under $250</option>
+										<option value="$250 – $1,000">$250 – $1,000</option>
+										<option value="$1,000 – $5,000">$1,000 – $5,000</option>
+										<option value="$5,000 – $10,000">$5,000 – $10,000</option>
+										<option value="$10,000+">$10,000+</option>
+									</select>
+								</div>
+								<div class="field">
+									<label for="timeline">Desired timeline</label>
+									<select id="timeline" name="timeline">
+										<option value="Not decided">Not decided</option>
+										<option value="As soon as possible">As soon as possible</option>
+										<option value="Within 1 month">Within 1 month</option>
+										<option value="1 – 3 months">1 – 3 months</option>
+										<option value="3+ months">3+ months</option>
+									</select>
+								</div>
+								<!--
+								<div class="field full">
+									<label for="description">What would you like us to help you with?</label>
+									<textarea id="description" name="description" placeholder="Describe your project, business need or problem..." required></textarea>
+								</div>
+								-->
+							</div>
+							<div class="stage-actions">
+								<button type="button" class="back-button" id="backToServices">← Change services</button>
+							</div>
+							<div class="submit-area" id="submitArea">
+								<div class="submit-note">Your selected services will be included with this project request.</div>
+								<button type="submit" class="btn btn-primary">Send Project Request →</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- CAPABILITIES -->
+		<section class="capabilities">
+			<div class="container">
+				<div class="section-heading">
+					<div class="eyebrow">What We Do</div>
+					<h2>One enterprise. Multiple capabilities.</h2>
+					<p>
+						Alreflections Services combines technology, business,
+						education, creative production and software development
+						into one practical ecosystem.
+					</p>
+				</div>
+				<div class="capability-grid">
+					<article class="capability">
+						<span class="capability-number">01</span>
+						<h3>Digital & ICT</h3>
+						<p>
+							Websites, mobile applications, hosting, SEO,
+							technical support and digital infrastructure.
+						</p>
+					</article>
+					<article class="capability">
+						<span class="capability-number">02</span>
+						<h3>Business & Marketing</h3>
+						<p>Branding, business systems, marketing infrastructure, automation and digitization.</p>
+					</article>
+					<article class="capability">
+						<span class="capability-number">03</span>
+						<h3>Training & Education</h3>
+						<p>Digital skills, coding, entrepreneurship, marketing, freelancing and professional development.</p>
+					</article>
+					<article class="capability">
+						<span class="capability-number">04</span>
+						<h3>Media & Publishing</h3>
+						<p>Publishing, content, newsletters, podcasts, document production and media services.</p>
+					</article>
+					<article class="capability">
+						<span class="capability-number">05</span>
+						<h3>Community Solutions</h3>
+						<p>
+							Digital tools and services designed to support
+							communities, organizations and local initiatives.
+						</p>
+					</article>
+
+					<article class="capability">
+						<span class="capability-number">06</span>
+						<h3>Custom Software</h3>
+						<p>
+							Purpose-built applications and internal systems
+							designed around specific operational requirements.
+						</p>
+					</article>
+
+				</div>
+
+			</div>
+
+		</section>
+
+
+		<!-- PROCESS -->
+
+		<section class="process" id="process">
+
+			<div class="container">
+
+				<div class="section-heading">
+
+					<div class="eyebrow">
+						How We Work
+					</div>
+
+					<h2>
+						From need to solution.
+					</h2>
+
+					<p>
+						A straightforward process designed to understand the
+						problem before deciding what technology should be used.
+					</p>
+
+				</div>
+
+
+				<div class="process-grid">
+
+					<article class="process-card">
+						<span>01</span>
+						<h3>Understand</h3>
+						<p>
+							We learn about your organization, objective,
+							challenge and desired outcome.
+						</p>
+					</article>
+
+					<article class="process-card">
+						<span>02</span>
+						<h3>Recommend</h3>
+						<p>
+							We identify an existing Alreflections solution
+							or determine what needs to be built.
+						</p>
+					</article>
+
+					<article class="process-card">
+						<span>03</span>
+						<h3>Build & Configure</h3>
+						<p>
+							We configure, customize, integrate or develop
+							the solution around the requirement.
+						</p>
+					</article>
+
+					<article class="process-card">
+						<span>04</span>
+						<h3>Support</h3>
+						<p>
+							We can continue with maintenance, training,
+							improvements and technical support.
+						</p>
+					</article>
+
+				</div>
+
+			</div>
+
+		</section>
+
+
+		<!-- CTA -->
+
+		<section class="cta" id="contact">
+
+			<div class="container">
+
+				<div class="cta-box">
+
+					<h2>
+						Have a business problem worth solving?
+					</h2>
+
+					<p>
+						Start with what you know. Tell Alreflections Services
+						what you need and we'll help determine the right
+						technology or service for the job.
+					</p>
+
+					<a href="#services" class="btn btn-primary">
+						Find Your Solution →
+					</a>
+
+				</div>
+
+			</div>
+
+		</section>
+
+	</main>
+
+
+	<!-- FOOTER -->
+
+	<footer>
+
+		<div class="container footer-main">
+
+			<div class="footer-brand">
+
+				<a href="./" class="brand">
+					<span>Alreflections</span> Services
+				</a>
+
+				<p>
+					Technology solutions, business services and custom digital
+					systems designed for organizations, entrepreneurs and
+					communities.
+				</p>
+
+			</div>
+
+
+			<div class="footer-column">
+
+				<h4>Enterprise</h4>
+
+				<a href="#solutions">Solutions</a>
+				<a href="#services">Services</a>
+				<a href="#process">How We Work</a>
+
+			</div>
+
+
+			<div class="footer-column">
+
+				<h4>Start</h4>
+
+				<a href="#services">Find a Solution</a>
+				<a href="#contact">Start a Project</a>
+
+			</div>
+
+		</div>
+
+
+		<div class="footer-bottom">
+
+			<div class="container">
+				© <span id="year"></span> Alreflections Services. All rights reserved.
+			</div>
+
+		</div>
+
+	</footer>
+
+
+	<div class="toast" id="toast"></div>
+
+
+	<script>
+		/* ============================================================
+		   Alreflections Services
+		   Progressive Service Finder
+		============================================================ */
+
+		const serviceData = {
+			"Digital & ICT Services": {
+				description: "Digital technology, infrastructure and online services.",
+				services: [
+					"Website development",
+					"Mobile app development",
+					"Digital business cards",
+					"E-commerce store setup",
+					"Email hosting & setup",
+					"SEO services",
+					"Google Business Profile management",
+					"Social media management",
+					"Graphic design (logos, flyers, banners)",
+					"Motion graphics & video intros",
+					"Website maintenance",
+					"Data entry services",
+					"Cybersecurity audits for small businesses",
+					"Local software installation & support",
+					"CRM solutions",
+					"Bug fixing & system upgrades",
+					"Domain name registration assistance",
+					"Technical support for online tools",
+					"Personal portfolio website creation",
+					"Company profile design (PDF & Web)",
+					"Chatbot development for local SMEs",
+					"Website Hosting services"
+				]
+			},
+
+			"Training & Education": {
+				description: "Build digital skills, professional skills and knowledge.",
+				services: [
+					"Coding bootcamps (beginner to advanced)",
+					"Computer literacy for beginners",
+					"Digital marketing training",
+					"Freelancing skills training",
+					"Blogging and monetization training",
+					"Online course platform setup",
+					"Virtual assistant skills program",
+					"Remote job readiness programs",
+					"ICT training for schools",
+					"Youth digital empowerment workshops",
+					"Business tech integration coaching",
+					"Affiliate marketing training",
+					"Low-code/no-code app building",
+					"Excel & data analysis courses",
+					"Video editing & YouTube monetization",
+					"Online exams with certificates",
+					"Personal branding for creators",
+					"Teachers’ digital toolkit training",
+					"LinkedIn optimization & training"
+				]
+			},
+
+			"Business & Marketing Services": {
+				description: "Build your brand, market and business infrastructure.",
+				services: [
+					"Business registration support",
+					"Branding services (naming, identity)",
+					"Flyer & brochure creation",
+					"Business card design",
+					"Marketing strategy consultations",
+					"Business plan writing",
+					"Social media ad campaign setup",
+					"Local product photography",
+					"WhatsApp Business optimization",
+					"Small business digitization",
+					"Business email automation",
+					"Sales funnel setup",
+					"Landing page creation",
+					"Online invoice systems setup",
+					"Affiliate program setup for local businesses",
+					"Market research for local startups",
+					"Corporate video production",
+					"Online bookings & appointment systems"
+				]
+			},
+
+			"Local Empowerment & Community Services": {
+				description: "Technology and services designed around people and communities.",
+				services: [
+					"Digital literacy outreach in rural areas",
+					"Job search support & resume creation",
+					"Youth entrepreneurship mentorship",
+					"Supporting artisans with digital catalogs",
+					"Free tools for NGOs and schools",
+					"Volunteer opportunity matching",
+					"Digital documentation for local cooperatives",
+					"Promotion of local talents",
+					"Farmer record digitization services",
+					"Urbanization project tracking tools",
+					"Election and public opinion poll software"
+				]
+			},
+
+			"Media & Publishing": {
+				description: "Turn ideas, information and stories into publishable media.",
+				services: [
+					"Book publishing support",
+					"PDF conversion & document formatting",
+					"Magazine creation & distribution",
+					"Podcast production support",
+					"Press release writing & publishing",
+					"News blogging",
+					"Email newsletter creation",
+					"Voice-over services",
+					"Content writing for businesses",
+					"E-book store setup",
+					"Conversion writing service",
+					"Newsletter program setup"
+				]
+			},
+
+			"Innovation & Custom Software": {
+				description: "Purpose-built software for organizations and new ideas.",
+				services: [
+					"Internal tools for SACCOs/Community Banks",
+					"Inventory management systems",
+					"School management software",
+					"Taxi or delivery app",
+					"Offline-first mobile apps",
+					"Freelancing marketplace for Rwanda",
+					"Church management software",
+					"Language learning applications",
+					"Electronic attendance tracker",
+					"Customized accounting tools",
+					"Online form handling for static sites",
+					"Programmable search engine design",
+					"Business help center or knowledge-base development"
+				]
+			}
+		};
+
+
+		const categoryPresentation = {
+			"Digital & ICT Services": "Digital technology, infrastructure and online services.",
+			"Training & Education": "Build digital skills, professional skills and knowledge.",
+			"Business & Marketing Services": "Build your brand, market and business infrastructure.",
+			"Local Empowerment & Community Services": "Technology and services designed around people and communities.",
+			"Media & Publishing": "Turn ideas, information and stories into publishable media.",
+			"Innovation & Custom Software": "Purpose-built software for organizations and new ideas."
+		};
+
+
+		const categoryIcons = {
+			"Digital & ICT Services": "01",
+			"Training & Education": "02",
+			"Business & Marketing Services": "03",
+			"Local Empowerment & Community Services": "04",
+			"Media & Publishing": "05",
+			"Innovation & Custom Software": "06"
+		};
+
+
+		let currentCategory = null;
+		let selectedServices = new Set();
+
+
+		/* ============================================================
+		   ELEMENTS
+		============================================================ */
+
+		const categoryStage = document.getElementById("categoryStage");
+		const serviceStage = document.getElementById("serviceStage");
+		const projectStage = document.getElementById("projectStage");
+
+		const categoryGrid = document.getElementById("categoryGrid");
+		const servicesList = document.getElementById("servicesList");
+
+		const serviceHeading = document.getElementById("serviceHeading");
+		const serviceDescription = document.getElementById("serviceDescription");
+
+		const serviceSearch = document.getElementById("serviceSearch");
+
+		const selectedCount = document.getElementById("selectedCount");
+		const selectionSummary = document.getElementById("selectionSummary");
+		const selectedTags = document.getElementById("selectedTags");
+
+		const continueToProject =
+			document.getElementById("continueToProject");
+
+		const backToCategories =
+			document.getElementById("backToCategories");
+
+		const backToServices =
+			document.getElementById("backToServices");
+
+		const submitArea =
+			document.getElementById("submitArea");
+
+		const journey1 =
+			document.getElementById("journey1");
+
+		const journey2 =
+			document.getElementById("journey2");
+
+		const journey3 =
+			document.getElementById("journey3");
+
+
+		/* ============================================================
+		   RENDER CATEGORIES
+		============================================================ */
+
+		function renderCategories() {
+
+			categoryGrid.innerHTML = "";
+
+			Object.entries(serviceData).forEach(([category, data]) => {
+
+				const button = document.createElement("button");
+
+				button.type = "button";
+				button.className = "category-card";
+
+				button.innerHTML = `
+					<span class="icon">
+						${categoryIcons[category]}
+					</span>
+
+					<strong>${category}</strong>
+
+					<span>
+						${data.description}
+					</span>
+				`;
+
+				button.addEventListener("click", () => {
+					chooseCategory(category);
+				});
+
+				categoryGrid.appendChild(button);
+			});
+		}
+
+
+		/* ============================================================
+		   STEP 1 → STEP 2
+		   IMPORTANT:
+		   The old category section disappears.
+		============================================================ */
+
+		function chooseCategory(category) {
+
+			currentCategory = category;
+
+			selectedServices.clear();
+
+			serviceHeading.textContent =
+				`What would you like help with?`;
+
+			serviceDescription.textContent =
+				serviceData[category].description;
+
+			renderServices();
+
+			serviceSearch.value = "";
+
+			updateSelection();
+
+			/*
+			 * Hide the old choice section completely.
+			 */
+			categoryStage.style.display = "none";
+
+			/*
+			 * Reveal only the new choice section.
+			 */
+			serviceStage.style.display = "block";
+
+			projectStage.classList.remove("visible");
+
+			setJourney(2);
+
+			serviceStage.scrollIntoView({
+				behavior: "smooth",
+				block: "start"
+			});
+		}
+
+
+		/* ============================================================
+		   RENDER SERVICES
+		============================================================ */
+
+		function renderServices(filter = "") {
+
+			servicesList.innerHTML = "";
+
+			const services =
+				serviceData[currentCategory].services;
+
+			const normalizedFilter =
+				filter.trim().toLowerCase();
+
+			const filteredServices =
+				services.filter(service =>
+					service.toLowerCase().includes(normalizedFilter)
+				);
+
+			if (!filteredServices.length) {
+
+				servicesList.innerHTML = `
+					<div style="
+						grid-column:1/-1;
+						padding:30px;
+						text-align:center;
+						border:1px solid var(--border);
+						border-radius:12px;
+						color:var(--muted);
+						font-size:13px;
+					">
+						No services match your search.
+					</div>
+				`;
+
+				return;
+			}
+
+
+			filteredServices.forEach(service => {
+
+				const button =
+					document.createElement("button");
+
+				button.type = "button";
+
+				button.className =
+					"service-option" +
+					(selectedServices.has(service)
+						? " selected"
+						: "");
+
+				button.innerHTML = `
+					<span class="service-check">
+						${selectedServices.has(service) ? "✓" : ""}
+					</span>
+
+					<span>${service}</span>
+				`;
+
+				button.addEventListener("click", () => {
+
+					if (selectedServices.has(service)) {
+						selectedServices.delete(service);
+					} else {
+						selectedServices.add(service);
+					}
+
+					renderServices(serviceSearch.value);
+					updateSelection();
+				});
+
+				servicesList.appendChild(button);
+			});
+		}
+
+
+		/* ============================================================
+		   UPDATE SERVICE SELECTION
+		============================================================ */
+
+		function updateSelection() {
+
+			const count = selectedServices.size;
+
+			selectedCount.textContent =
+				`${count} selected`;
+
+			selectedTags.innerHTML = "";
+
+			selectedServices.forEach(service => {
+
+				const tag =
+					document.createElement("span");
+
+				tag.className = "selected-tag";
+				tag.textContent = service;
+
+				selectedTags.appendChild(tag);
 			});
 
-            console.log("Alreflections Services request:",request);
-            showToast("Your project request has been prepared successfully.");
-        });
-	*/
+
+			/*
+			 * Do not reveal the next action until
+			 * the user actually chooses a service.
+			 */
+
+			if (count > 0) {
+
+				selectionSummary.classList.add("visible");
+				continueToProject.classList.add("visible");
+
+			} else {
+
+				selectionSummary.classList.remove("visible");
+				continueToProject.classList.remove("visible");
+			}
+		}
 
 
-    /* ============================================================
-       MOBILE MENU
-    ============================================================ */
+		/* ============================================================
+		   STEP 2 → STEP 3
+		   IMPORTANT:
+		   The old service section disappears.
+		============================================================ */
 
-    const menuToggle =
-        document.getElementById("menuToggle");
+		function continueToProjectStage() {
 
-    const navLinks =
-        document.getElementById("navLinks");
+			if (!selectedServices.size) {
+				return;
+			}
+			serviceTags.value=Array.from(selectedServices).join(", ");
+			/*
+			 * Hide the previous choice section.
+			 */
+			serviceStage.style.display = "none";
 
-    menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("open");
-    });
+			/*
+			 * Reveal the new choice section.
+			 */
+			projectStage.classList.add("visible");
 
+			/*
+			 * Only now expose the final submit action.
+			 */
+			setTimeout(() => {
+				submitArea.classList.add("visible");
+			}, 250);
 
-    navLinks.querySelectorAll("a").forEach(link => {
+			setJourney(3);
 
-        link.addEventListener("click", () => {
-            navLinks.classList.remove("open");
-        });
-
-    });
-
-
-    /* ============================================================
-       TOAST
-    ============================================================ */
-
-    let toastTimer;
-
-    function showToast(message) {
-
-        const toast =
-            document.getElementById("toast");
-
-        toast.textContent = message;
-
-        toast.classList.add("show");
-
-        clearTimeout(toastTimer);
-
-        toastTimer =
-            setTimeout(() => {
-                toast.classList.remove("show");
-            }, 4000);
-    }
+			projectStage.scrollIntoView({
+				behavior: "smooth",
+				block: "start"
+			});
+		}
 
 
-    /* ============================================================
-       YEAR
-    ============================================================ */
+		/* ============================================================
+		   BACK TO CATEGORIES
+		   Restores the previous section and hides the current one.
+		============================================================ */
 
-    document.getElementById("year").textContent =
-        new Date().getFullYear();
+		function goBackToCategories() {
+
+			serviceStage.style.display = "none";
+
+			projectStage.classList.remove("visible");
+
+			categoryStage.style.display = "block";
+
+			selectedServices.clear();
+
+			serviceSearch.value = "";
+
+			updateSelection();
+
+			setJourney(1);
+
+			categoryStage.scrollIntoView({
+				behavior: "smooth",
+				block: "start"
+			});
+		}
 
 
-    /* ============================================================
-       INITIALIZE
-    ============================================================ */
+		/* ============================================================
+		   BACK TO SERVICES
+		============================================================ */
 
-    renderCategories();
+		function goBackToServices() {
 
-</script>
+			projectStage.classList.remove("visible");
 
-</body>
+			submitArea.classList.remove("visible");
+
+			serviceStage.style.display = "block";
+
+			setJourney(2);
+
+			serviceStage.scrollIntoView({
+				behavior: "smooth",
+				block: "start"
+			});
+		}
+
+
+		/* ============================================================
+		   JOURNEY INDICATOR
+		============================================================ */
+
+		function setJourney(step) {
+
+			[journey1, journey2, journey3].forEach(item => {
+				item.classList.remove("active");
+			});
+
+			if (step >= 1) {
+				journey1.classList.add("active");
+			}
+
+			if (step >= 2) {
+				journey2.classList.add("active");
+			}
+
+			if (step >= 3) {
+				journey3.classList.add("active");
+			}
+		}
+
+
+		/* ============================================================
+		   SERVICE SEARCH
+		============================================================ */
+
+		serviceSearch.addEventListener("input", () => {
+			renderServices(serviceSearch.value);
+		});
+
+
+		/* ============================================================
+		   NAVIGATION
+		============================================================ */
+
+		continueToProject.addEventListener(
+			"click",
+			continueToProjectStage
+		);
+
+		backToCategories.addEventListener(
+			"click",
+			goBackToCategories
+		);
+
+		backToServices.addEventListener(
+			"click",
+			goBackToServices
+		);
+
+
+		/* ============================================================
+		   PROJECT FORM
+		============================================================ */
+		
+		/*
+		document
+			.getElementById("projectForm")
+			.addEventListener("submit", function(event) {
+				event.preventDefault();
+				const formData=new FormData(this);
+				const request={
+					category: currentCategory,
+					services: Array.from(selectedServices),
+					name: formData.get("name"),
+					organization: formData.get("organization"),
+					email: formData.get("email"),
+					phone: formData.get("phone"),
+					budget: formData.get("budget"),
+					timeline: formData.get("timeline"),
+					//description: formData.get("description"),
+					services: formData.get("services"),
+				};
+				fetch("https://formworker.alreflections.net/plugin/ZXlKMWMyVnlJam9pTVNKOQ==", {
+					method: "POST",
+					mode: "no-cors",
+					body: formData
+				});
+
+				console.log("Alreflections Services request:",request);
+				showToast("Your project request has been prepared successfully.");
+			});
+		*/
+
+
+		/* ============================================================
+		   MOBILE MENU
+		============================================================ */
+
+		const menuToggle =
+			document.getElementById("menuToggle");
+
+		const navLinks =
+			document.getElementById("navLinks");
+
+		menuToggle.addEventListener("click", () => {
+			navLinks.classList.toggle("open");
+		});
+
+
+		navLinks.querySelectorAll("a").forEach(link => {
+
+			link.addEventListener("click", () => {
+				navLinks.classList.remove("open");
+			});
+
+		});
+
+
+		/* ============================================================
+		   TOAST
+		============================================================ */
+
+		let toastTimer;
+
+		function showToast(message) {
+
+			const toast =
+				document.getElementById("toast");
+
+			toast.textContent = message;
+
+			toast.classList.add("show");
+
+			clearTimeout(toastTimer);
+
+			toastTimer =
+				setTimeout(() => {
+					toast.classList.remove("show");
+				}, 4000);
+		}
+
+
+		/* ============================================================
+		   YEAR
+		============================================================ */
+
+		document.getElementById("year").textContent =
+			new Date().getFullYear();
+
+
+		/* ============================================================
+		   INITIALIZE
+		============================================================ */
+
+		renderCategories();
+
+	</script>
+
+	</body>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7993870430763010" crossorigin="anonymous"></script>
+	<script src='https://reserve.alreflections.net/treateAlreflectionsBlogger.js' defer></script>
 </html>
