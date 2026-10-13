@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="theme-color" content="#b88b01">
+		<meta name="description" content="XPSMA helps schools simplify administration, organize student records, manage attendance and bring school operations into one clear system.">
+		<title>XPSMA — A Better Way to Run Your School</title>
+		<style>
+			:root{--gold:#b88b01;--gold-dark:#927000;--gold-soft:#fff7dc;--ink:#44370c;--muted:#766b49;--paper:#fffdf7;--line:#f0e4bb;--white:#fff}
+			*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}.announcement{background:var(--gold);color:#fff;text-align:center;padding:9px 16px;font-size:.86rem;font-weight:650}.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px 0}.brand{display:flex;align-items:center;gap:11px;font-size:1.28rem;font-weight:850;letter-spacing:-.04em}.brand-mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#d8ac20,#a87b00);display:grid;place-items:center;color:#fff;font-weight:900;box-shadow:0 7px 18px #b88b0130}.brand small{display:block;font-size:.65rem;letter-spacing:.13em;color:var(--muted);font-weight:700;text-transform:uppercase;line-height:1.2}.navlinks{display:flex;gap:28px;align-items:center;color:#6d6038;font-size:.94rem;font-weight:650}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 20px;border-radius:12px;border:1px solid transparent;background:var(--gold);color:#fff;font-weight:800;box-shadow:0 8px 20px #b88b0126;transition:.2s;cursor:pointer}.btn:hover{background:var(--gold-dark);transform:translateY(-2px)}.btn.secondary{background:#fff;color:var(--gold-dark);border-color:#e7d28a;box-shadow:none}.btn.secondary:hover{background:var(--gold-soft)}.hero{padding:54px 0 72px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:580px;height:580px;border-radius:50%;background:radial-gradient(circle,#f9e9ac8c,transparent 68%);right:-150px;top:-160px;pointer-events:none}.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:56px;position:relative}.eyebrow{display:inline-flex;align-items:center;gap:9px;background:#fff5d4;border:1px solid #f0dfa5;border-radius:999px;padding:7px 13px;color:#886700;font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}.eyebrow i{width:8px;height:8px;border-radius:50%;background:#b88b01;display:inline-block}.hero h1{font-size:clamp(2.65rem,5vw,4.6rem);line-height:1.04;letter-spacing:-.065em;margin:22px 0 20px;max-width:650px;color:#3f3309}.hero h1 span{color:var(--gold)}.hero-copy{font-size:1.13rem;max-width:590px;color:#766b49;margin:0 0 28px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px}.microtrust{display:flex;flex-wrap:wrap;gap:17px;margin-top:24px;color:#776b47;font-size:.86rem;font-weight:650}.microtrust span{display:flex;align-items:center;gap:7px}.check{color:var(--gold);font-weight:900}.dashboard{position:relative;background:#fff;border:1px solid #efdfaa;border-radius:24px;padding:19px;box-shadow:0 28px 80px #8e6c0e1a;transform:rotate(1deg)}.dash-top{display:flex;align-items:center;justify-content:space-between;padding:3px 2px 17px;border-bottom:1px solid #f2e8c9}.dash-title{font-weight:850;font-size:.97rem}.live{font-size:.73rem;color:#7c650d;background:#fff5cf;border-radius:999px;padding:5px 9px;font-weight:800}.dash-greeting{padding:19px 2px 15px}.dash-greeting strong{font-size:1.25rem;display:block}.dash-greeting span{font-size:.84rem;color:#8a7c55}.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{padding:14px 11px;background:#fffaf0;border:1px solid #f4e9c9;border-radius:14px}.stat label{font-size:.72rem;color:#82744d;display:block}.stat strong{display:block;font-size:1.35rem;letter-spacing:-.04em;margin:5px 0 0}.mini-chart{margin-top:13px;border:1px solid #f0e5c5;border-radius:15px;padding:16px}.chart-head{display:flex;justify-content:space-between;font-size:.83rem;font-weight:800}.chart-head span{color:#9a7a12;font-size:.75rem}.bars{height:105px;display:flex;align-items:end;gap:9px;padding:13px 5px 0}.bars i{display:block;flex:1;border-radius:6px 6px 2px 2px;background:linear-gradient(180deg,#e5c354,#b88b01);min-height:14px}.task{display:flex;align-items:center;gap:12px;margin-top:12px;padding:12px;background:#fffdf7;border:1px solid #f2e8ca;border-radius:13px}.task-icon{width:38px;height:38px;border-radius:11px;background:#fff1be;display:grid;place-items:center;color:#997400;font-weight:900}.task b{font-size:.84rem;display:block}.task small{color:#8b7c54;font-size:.73rem}.task em{margin-left:auto;font-style:normal;font-size:.72rem;color:#846800;background:#fff3c5;padding:5px 8px;border-radius:7px}.float-note{position:absolute;bottom:22px;left:-24px;background:#fff;border:1px solid #efdfaa;border-radius:14px;padding:13px 16px;box-shadow:0 12px 28px #765b1017;font-size:.82rem;font-weight:800;transform:rotate(-2deg)}.float-note span{display:block;color:#8a7b53;font-size:.72rem;font-weight:600}.trust-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fffaf0;padding:22px 0}.trust-row{display:flex;justify-content:center;align-items:center;gap:34px;flex-wrap:wrap;text-align:center}.trust-row strong{font-size:.91rem}.trust-row span{color:#86784f;font-size:.88rem}.section{padding:86px 0}.section-head{text-align:center;max-width:730px;margin:0 auto 42px}.kicker{font-size:.78rem;font-weight:850;text-transform:uppercase;letter-spacing:.13em;color:var(--gold-dark)}h2{font-size:clamp(2rem,3.4vw,3.15rem);line-height:1.12;letter-spacing:-.05em;margin:12px 0 15px;color:#433609}.section-head p{color:var(--muted);font-size:1.04rem;margin:0}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{background:#fff;border:1px solid var(--line);border-radius:19px;padding:26px;transition:.2s}.feature:hover{transform:translateY(-4px);box-shadow:0 18px 38px #96710b12;border-color:#dfc66e}.feature-icon{width:49px;height:49px;display:grid;place-items:center;border-radius:15px;background:#fff4cc;color:#997500;font-size:1.4rem;margin-bottom:17px}.feature h3{margin:0 0 8px;font-size:1.1rem}.feature p{margin:0;color:#7c704d;font-size:.94rem}.split{display:grid;grid-template-columns:.95fr 1.05fr;gap:58px;align-items:center}.checklist{display:grid;gap:17px;margin:25px 0}.checkitem{display:flex;gap:12px;align-items:flex-start}.check-circle{flex:0 0 25px;height:25px;border-radius:50%;display:grid;place-items:center;background:#fff0b7;color:#997400;font-size:.8rem;font-weight:900;margin-top:1px}.checkitem strong{display:block;margin-bottom:2px}.checkitem p{margin:0;color:#7c704d;font-size:.93rem}.outcome-panel{background:linear-gradient(145deg,#fff7dc,#fff);border:1px solid #efdfa9;border-radius:24px;padding:28px}.outcome-panel h3{margin:0 0 8px;font-size:1.3rem}.outcome-panel>p{margin:0;color:#7c704d}.outcome-row{display:flex;align-items:center;gap:14px;padding:17px 0;border-bottom:1px solid #efe2b9}.outcome-row:last-child{border:0;padding-bottom:0}.outcome-num{font-size:1.35rem;font-weight:900;color:var(--gold);min-width:45px}.outcome-row strong{display:block}.outcome-row small{color:#83754d}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:steps}.step{border-top:2px solid #e3cb74;padding:22px 20px 0;counter-increment:steps}.step:before{content:"0" counter(steps);display:block;color:var(--gold);font-size:.82rem;font-weight:900;letter-spacing:.1em;margin-bottom:12px}.step h3{margin:0 0 8px}.step p{margin:0;color:#7c704d;font-size:.94rem}.cta-section{padding:0 0 86px}.cta-panel{background:linear-gradient(110deg,#fff2bf,#fffaf0);border:1px solid #ead58c;border-radius:28px;padding:48px;display:flex;justify-content:space-between;align-items:center;gap:28px}.cta-panel h2{font-size:clamp(1.9rem,3vw,2.8rem);max-width:650px;margin:0 0 12px}.cta-panel p{color:#75663c;margin:0;max-width:620px}.cta-actions{display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0}.faq{max-width:820px;margin:auto}.faq details{border-bottom:1px solid var(--line);padding:18px 0}.faq summary{cursor:pointer;font-weight:800;list-style:none;display:flex;justify-content:space-between;gap:20px}.faq summary:after{content:"+";font-size:1.3rem;color:var(--gold)}.faq details[open] summary:after{content:"−"}.faq details p{color:#7c704d;margin:12px 0 0}.footer{border-top:1px solid var(--line);background:#fffaf0;padding:30px 0}.footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer p{color:#82754f;font-size:.85rem;margin:7px 0 0}.footer-links{display:flex;gap:20px;flex-wrap:wrap;font-size:.88rem;color:#76683e;font-weight:650}.contact-form{display:grid;gap:12px;margin-top:18px}.contact-form input,.contact-form textarea,.contact-form select{width:100%;border:1px solid #e8d9a6;border-radius:11px;background:#fff;padding:13px 14px;color:var(--ink);outline:none}.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--gold);box-shadow:0 0 0 3px #b88b011c}.contact-form textarea{min-height:100px;resize:vertical}.form-note{font-size:.78rem;color:#8a7b55}.mobile-menu{display:none}
+			@media(max-width:850px){.navlinks{display:none}.hero-grid,.split{grid-template-columns:1fr;gap:38px}.hero{padding-top:35px}.dashboard{max-width:560px;margin:auto;width:100%}.float-note{left:-7px}.feature-grid{grid-template-columns:repeat(2,1fr)}.cta-panel{align-items:flex-start;flex-direction:column;padding:32px}.steps{gap:12px}}@media(max-width:560px){.wrap{width:min(100% - 28px,1160px)}.nav{padding:14px 0}.brand{font-size:1.1rem}.nav>.btn{padding:10px 12px;font-size:.84rem}.hero h1{font-size:2.75rem}.hero-copy{font-size:1rem}.hero-actions .btn{width:100%}.microtrust{gap:10px}.stat-grid{gap:6px}.stat{padding:11px 8px}.stat strong{font-size:1.15rem}.stat label{font-size:.66rem}.dashboard{padding:13px}.float-note{bottom:5px}.section{padding:62px 0}.feature-grid,.steps{grid-template-columns:1fr}.feature{padding:22px}.cta-panel{padding:25px}.cta-actions,.cta-actions .btn{width:100%}.trust-row{gap:13px}.trust-row span{width:100%}.footer-row{align-items:flex-start;flex-direction:column}}
+		</style>
+	</head>
+	<body>
+		<div class="announcement">A clearer way to manage your school — meet XPSMA.</div>
+		<header class="wrap nav">
+			<a class="brand" href="#top" aria-label="XPSMA home"><span class="brand-mark">X</span><span>XPSMA<small>School Management</small></span></a>
+			<nav class="navlinks" aria-label="Main navigation"><a href="#benefits">Benefits</a><a href="#features">Features</a><a href="#how-it-works">How it works</a><a href="#faq">FAQ</a></nav>
+			<a class="btn" href="#contact">Request a Demo <span aria-hidden="true">↗</span></a>
+		</header>
+		<main id="top">
+			<section class="hero">
+				<div class="wrap hero-grid">
+					<div>
+						<div class="eyebrow"><i></i> School operations, made clearer</div>
+						<h1>Spend less time managing paperwork. <span>More time shaping futures.</span></h1>
+						<p class="hero-copy">XPSMA is a school management system designed to bring everyday school administration into a more organized, manageable workflow — so your team can focus on students, teaching and progress.</p>
+						<div class="hero-actions"><a class="btn" href="#contact">Book a Personal Demo <span aria-hidden="true">→</span></a><a class="btn secondary" href="#features">Explore the System</a></div>
+						<div class="microtrust"><span><b class="check">✓</b> One organized workflow</span><span><b class="check">✓</b> Built for school teams</span><span><b class="check">✓</b> Demo before you decide</span></div>
+					</div>
+					<div class="dashboard" aria-label="Illustrative school management dashboard preview">
+						<div class="dash-top"><div class="dash-title">XPSMA <span style="font-weight:500;color:#8a7b53">/ Overview</span></div><span class="live">SCHOOL OVERVIEW</span></div>
+						<div class="dash-greeting"><strong>Your school, at a glance.</strong><span>A simple visual concept of a unified school workspace.</span></div>
+						<div class="stat-grid"><div class="stat"><label>Student records</label><strong>Organized</strong></div><div class="stat"><label>Daily routines</label><strong>Clearer</strong></div><div class="stat"><label>Admin workload</label><strong>Focused</strong></div></div>
+						<div class="mini-chart"><div class="chart-head">A more structured school day <span>WORKFLOW PREVIEW</span></div><div class="bars"><i style="height:39%"></i><i style="height:58%"></i><i style="height:48%"></i><i style="height:75%"></i><i style="height:63%"></i><i style="height:90%"></i><i style="height:72%"></i><i style="height:98%"></i></div></div>
+						<div class="task"><div class="task-icon">✓</div><div><b>Keep key school information together</b><small>Less hunting across disconnected records</small></div><em>Organized</em></div>
+						<div class="task"><div class="task-icon">↗</div><div><b>Make everyday admin easier to follow</b><small>A clearer view for school teams</small></div><em>Streamlined</em></div>
+						<div class="float-note">Designed around school workflows<span>See whether it fits your institution</span></div>
+					</div>
+				</div>
+			</section>
+			<div class="trust-strip"><div class="wrap trust-row"><strong>For school leaders</strong><span>Administration · Student information · Daily coordination</span><strong>One goal: better-organized school operations</strong></div></div>
+			<section class="section" id="benefits">
+				<div class="wrap">
+					<div class="section-head">
+						<div class="kicker">Why XPSMA</div>
+						<h2>Give your school a more organized way forward.</h2>
+						<p>When information is scattered, simple tasks can consume valuable time. XPSMA is built around the idea that school administration should feel more connected and easier to manage.</p>
+					</div>
+					<div class="feature-grid">
+						<article class="feature"><div class="feature-icon">▦</div><h3>Bring information together</h3><p>Work toward a more consistent place to manage important school information instead of relying on scattered records.</p></article>
+						<article class="feature"><div class="feature-icon">◷</div><h3>Reduce repetitive admin</h3><p>Give staff a clearer process for recurring tasks and create more room for work that needs human attention.</p></article>
+						<article class="feature"><div class="feature-icon">◎</div><h3>Support better visibility</h3><p>Help school leaders understand everyday operations with information that is easier to find and follow.</p></article>
+						<article class="feature"><div class="feature-icon">⌂</div><h3>Keep teams aligned</h3><p>Build a more consistent workflow for the people who keep your school moving each day.</p></article>
+						<article class="feature"><div class="feature-icon">↗</div><h3>Make room for progress</h3><p>Spend less energy navigating administrative friction and more energy improving the school experience.</p></article>
+						<article class="feature"><div class="feature-icon">◇</div><h3>Evaluate before committing</h3><p>Request a guided walkthrough and discuss your school's needs before deciding whether XPSMA is right for you.</p></article>
+					</div>
+				</div>
+			</section>
+			<section class="section" style="background:#fffaf0;border-top:1px solid #f0e4bb;border-bottom:1px solid #f0e4bb" id="features">
+				<div class="wrap split">
+					<div>
+						<div class="kicker">Built around real school needs</div>
+						<h2>Make the everyday work of running a school feel less complicated.</h2>
+						<p style="color:#766b49">A school management platform should serve the people using it — not create another layer of complexity. Start with the workflows that matter most to your institution.</p>
+						<div class="checklist">
+							<div class="checkitem"><span class="check-circle">✓</span><div><strong>Student information and records</strong><p>Explore how your school can keep important student information better organized.</p></div></div>
+							<div class="checkitem"><span class="check-circle">✓</span><div><strong>Everyday administration</strong><p>Discuss the recurring tasks and processes that take the most time at your school.</p></div></div>
+							<div class="checkitem"><span class="check-circle">✓</span><div><strong>A workflow that fits your institution</strong><p>See the system, ask questions and assess how it fits your school's current way of working.</p></div></div>
+						</div>
+						<a class="btn" href="#contact">Talk to Us About Your School →</a>
+					</div>
+					<div class="outcome-panel">
+						<h3>What should a demo help you answer?</h3>
+						<p>A practical conversation focused on your school — not a generic sales pitch.</p>
+						<div class="outcome-row"><div class="outcome-num">01</div><div><strong>What can we manage with XPSMA?</strong><small>Review relevant workflows and capabilities.</small></div></div>
+						<div class="outcome-row"><div class="outcome-num">02</div><div><strong>How would our team use it?</strong><small>Discuss roles, routines and your current process.</small></div></div>
+						<div class="outcome-row"><div class="outcome-num">03</div><div><strong>What would getting started involve?</strong><small>Understand the next steps, requirements and fit.</small></div></div>
+					</div>
+				</div>
+			</section>
+			<section class="section" id="how-it-works">
+				<div class="wrap">
+					<div class="section-head">
+						<div class="kicker">Simple next steps</div>
+						<h2>From curiosity to clarity in three steps.</h2>
+						<p>Get the information you need to make a confident decision for your school.</p>
+					</div>
+					<div class="steps">
+						<div class="step">
+							<h3>Tell us about your school</h3>
+							<p>Share your institution's name, your role and the administrative challenges you'd most like to improve.</p>
+						</div>
+						<div class="step">
+							<h3>See a guided walkthrough</h3>
+							<p>Discuss the system's available capabilities and how they relate to your school's day-to-day needs.</p>
+						</div>
+						<div class="step">
+							<h3>Decide on your next move</h3>
+							<p>Review fit, requirements and the way forward before making a commitment.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="cta-section">
+				<div class="wrap">
+					<div class="cta-panel">
+						<div>
+							<div class="kicker">Your next step starts here</div>
+							<h2>Let's make school administration work better for your team.</h2>
+							<p>Request a personal XPSMA walkthrough. Tell us what your school needs, and start a practical conversation about a better-organized workflow.</p>
+						</div>
+						<div class="cta-actions">
+							<a class="btn" href="#contact">Request a Demo →</a>
+							<a class="btn secondary" href="mailto:ceo@alreflections.net?subject=XPSMA%20School%20Management%20Enquiry">Email XPSMA</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="section" id="faq" style="padding-top:0">
+				<div class="wrap">
+					<div class="section-head">
+						<div class="kicker">Questions, answered</div>
+						<h2>Before you request a demo.</h2>
+					</div>
+					<div class="faq">
+						<details><summary>What is XPSMA?</summary><p>XPSMA is a school management system intended to help schools organize administration and school information. Request a demo to confirm the features currently available and how they fit your needs.</p></details>
+						<details><summary>Who should enquire about XPSMA?</summary><p>School owners, headteachers, administrators and other decision-makers who want to review options for improving school operations are welcome to get in touch.</p></details>
+						<details><summary>Can I see the system before deciding?</summary><p>Use the enquiry form to request a walkthrough and discuss the available demonstration options before making a decision.</p></details>
+						<details><summary>How much does XPSMA cost?</summary><p>Pricing is not listed on this page because the appropriate plan and requirements should be confirmed directly. Send an enquiry to ask about pricing, implementation and any applicable requirements.</p></details>
+						<details><summary>What should I prepare before the demo?</summary><p>It helps to know your school's approximate size, the tasks you want to improve and the way you currently manage school information. Please do not submit sensitive student information through this page.</p></details>
+					</div>
+				</div>
+			</section>
+			<section class="section" id="contact" style="background:#fffaf0;border-top:1px solid #f0e4bb">
+				<div class="wrap split">
+					<div>
+						<div class="kicker">Request a walkthrough</div>
+						<h2>Tell us what your school needs.</h2>
+						<p style="color:#766b49">Share a few details and your enquiry will open as a pre-filled email to the Alreflections team. You can review it before sending.</p>
+						<p style="color:#766b49;font-size:.92rem"><strong>Prefer email?</strong><br><a style="color:#927000;font-weight:800" href="mailto:ceo@alreflections.net">ceo@alreflections.net</a></p>
+					</div>
+					<div class="outcome-panel">
+						<form class="contact-form" id="leadForm" action="https://formworker.alreflections.net/plugin/ZXlKMWMyVnlJam9pTVNKOQ==" method="get">
+							<input name="next" value="https://www.alreflections.net/p/thank-you-for-reaching-out.html" hidden />
+							<label for="school">School or institution name</label><input id="school" name="school" placeholder="e.g. Green Valley School" required>
+							<label for="name">Your name</label><input id="name" name="name" placeholder="Full name" required>
+							<label for="role">Your role</label><select id="role" name="role" required><option value="">Choose your role</option><option>School owner / Director</option><option>Headteacher / Principal</option><option>Administrator</option><option>Teacher</option><option>Parent / Guardian</option><option>Other</option></select>
+							<label for="email">Your email address</label><input id="email" name="email" type="email" placeholder="you@school.org" required>
+							<label for="needs">What would you like to improve?</label><textarea id="needs" name="needs" placeholder="Tell us about your school's priorities (optional)"></textarea>
+							<button class="btn" type="submit">Prepare My Demo Request →</button><div class="form-note">Your email app will open with your enquiry ready to review. This page does not submit or store your information.</div>
+						</form>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="#top"><span class="brand-mark">X</span><span>XPSMA<small>School Management</small></span></a><p>Presented by Alreflections · Building practical digital solutions.</p></div><div class="footer-links"><a href="#benefits">Benefits</a><a href="#features">Features</a><a href="#faq">FAQ</a><a href="mailto:ceo@alreflections.net">Contact</a></div><p>© <span id="year"></span> XPSMA. All rights reserved.</p></div></footer>
+		<script>
+			document.getElementById('year').textContent = new Date().getFullYear();
+			/*
+			document.getElementById('leadForm').addEventListener('submit', function(e){
+				e.preventDefault();
+				const d = new FormData(this);
+				const subject = 'XPSMA Demo Request — ' + d.get('school');
+				const body = [
+					'Hello Alreflections team,',
+					'',
+					'I would like to enquire about XPSMA and request a walkthrough.',
+					'',
+					'School / Institution: ' + d.get('school'),
+					'Name: ' + d.get('name'),
+					'Role: ' + d.get('role'),
+					'Email: ' + d.get('email'),
+					'Priorities: ' + (d.get('needs') || 'Not specified'),
+					'',
+					'Please let me know the next steps.',
+					'',
+					'Kind regards,',
+					d.get('name')
+				].join('\n');
+				window.location.href = 'mailto:ceo@alreflections.net?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+			});
+			*/
+		</script>
+	</body>
+	<!-- Start of HubSpot Embed Code -->
+	<script async='async' defer='defer' id='hs-script-loader' src='//js.hs-scripts.com/23541408.js' type='text/javascript'></script>
+	<!-- End of HubSpot Embed Code -->
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7993870430763010" crossorigin="anonymous"></script>
+	<script src='https://reserve.alreflections.net/treateAlreflectionsBlogger.js' defer></script>
+</html>
