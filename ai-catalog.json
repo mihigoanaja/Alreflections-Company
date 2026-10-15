@@ -1,0 +1,168 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Alreflections",
+    "identifier": "alreflections.net",
+    "documentationUrl": "https://company.alreflections.net/",
+    "logoUrl": "https://alreflections.net/favicon.ico"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:alreflections.net:website:corporate",
+      "displayName": "Alreflections Corporate Website",
+      "type": "text/html",
+      "url": "https://company.alreflections.net/",
+      "description": "The official corporate website of Alreflections, a global marketing and technology company delivering programming services, digital solutions, training, and opportunities.",
+      "tags": [
+        "Alreflections",
+        "corporate",
+        "technology",
+        "marketing",
+        "digital solutions"
+      ],
+      "representativeQueries": [
+        "What is Alreflections and what does the company do?",
+        "Find the official Alreflections website and company information."
+      ]
+    },
+    {
+      "identifier": "urn:air:alreflections.net:website:leadership",
+      "displayName": "Founder and CEO Profile",
+      "type": "text/html",
+      "url": "https://company.alreflections.net/ceo/",
+      "description": "The official profile of Mihigo ER Anaja, founder and CEO of Alreflections, including leadership information and professional work.",
+      "tags": [
+        "leadership",
+        "CEO",
+        "founder",
+        "Mihigo ER Anaja"
+      ],
+      "representativeQueries": [
+        "Who founded Alreflections?",
+        "Find the CEO of Alreflections and his professional profile."
+      ]
+    },
+    {
+      "identifier": "urn:air:alreflections.net:website:technology",
+      "displayName": "Alreflections Technologies",
+      "type": "text/html",
+      "url": "https://technologies.alreflections.net/",
+      "description": "Alreflections' technology-focused website for discovering digital products, platforms, programming capabilities, and technology initiatives.",
+      "tags": [
+        "technology",
+        "software development",
+        "programming",
+        "digital products"
+      ],
+      "representativeQueries": [
+        "What technology products and platforms does Alreflections offer?",
+        "Find Alreflections software development capabilities."
+      ]
+    },
+    {
+      "identifier": "urn:air:alreflections.net:platform:sawasoko",
+      "displayName": "SawaSoko Marketplace",
+      "type": "text/html",
+      "url": "https://sawasoko.alreflections.net/",
+      "description": "A multi-vendor marketplace connecting sellers and buyers, with individual storefronts and tools for managing online commerce.",
+      "tags": [
+        "SawaSoko",
+        "marketplace",
+        "e-commerce",
+        "vendors",
+        "online stores"
+      ],
+      "representativeQueries": [
+        "Find the SawaSoko online marketplace.",
+        "How can a seller establish an online store with SawaSoko?"
+      ]
+    },
+    {
+      "identifier": "urn:air:alreflections.net:platform:atinas",
+      "displayName": "ATINAS Network",
+      "type": "text/html",
+      "url": "https://atinas.alreflections.net/",
+      "description": "The Advanced Tools Integrated Network And Search ecosystem, supporting integrated digital tools, search, and platform connectivity.",
+      "tags": [
+        "ATINAS",
+        "search",
+        "digital tools",
+        "integrations",
+        "APIs"
+      ],
+      "representativeQueries": [
+        "What is ATINAS and what does it enable?",
+        "Find the ATINAS search API and integrated tools."
+      ]
+    },
+    {
+      "identifier": "urn:air:alreflections.net:platform:skillbase",
+      "displayName": "Skillbase",
+      "type": "text/html",
+      "url": "https://skillbase.alreflections.net/",
+      "description": "An educational platform for discovering learning opportunities, courses, and skills development resources.",
+      "tags": [
+        "Skillbase",
+        "education",
+        "training",
+        "courses",
+        "skills development"
+      ],
+      "representativeQueries": [
+        "Find learning and training opportunities from Alreflections.",
+        "Discover courses and educational resources on Skillbase."
+      ]
+    },
+    {
+      "identifier": "urn:air:alreflections.net:platform:camaraderie",
+      "displayName": "Camaraderie",
+      "type": "text/html",
+      "url": "https://camaraderie.alreflections.net/",
+      "description": "A digital community and resource platform supporting collaboration, learning, tools, and opportunities.",
+      "tags": [
+        "Camaraderie",
+        "community",
+        "collaboration",
+        "learning",
+        "opportunities"
+      ],
+      "representativeQueries": [
+        "Find the Alreflections community and collaboration platform.",
+        "Discover digital resources and opportunities through Camaraderie."
+      ]
+    },
+    {
+      "identifier": "urn:air:alreflections.net:resource:llms-txt",
+      "displayName": "Alreflections AI Instructions and Resource Index",
+      "type": "text/plain",
+      "url": "https://company.alreflections.net/llms.txt",
+      "description": "A concise AI-readable guide to Alreflections, its identity, principal services, and important official resources.",
+      "tags": [
+        "llms.txt",
+        "AI discovery",
+        "machine-readable documentation"
+      ],
+      "representativeQueries": [
+        "Find the concise AI-readable company profile for Alreflections.",
+        "Locate official Alreflections resources for AI assistants."
+      ]
+    },
+    {
+      "identifier": "urn:air:alreflections.net:resource:llms-full",
+      "displayName": "Alreflections Comprehensive AI Reference",
+      "type": "text/plain",
+      "url": "https://company.alreflections.net/llms-full.txt",
+      "description": "A comprehensive AI-readable reference describing Alreflections' confirmed products, services, platforms, and official resources.",
+      "tags": [
+        "llms-full.txt",
+        "AI documentation",
+        "company reference",
+        "product catalog"
+      ],
+      "representativeQueries": [
+        "Find detailed information about Alreflections' products and services.",
+        "Retrieve the comprehensive AI-readable reference for Alreflections."
+      ]
+    }
+  ]
+}
