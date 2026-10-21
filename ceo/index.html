@@ -1,691 +1,1993 @@
 <!DOCTYPE html>
-<html  >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/kinbook-logo-24.02.22.png" type="image/x-icon">
-  <meta name="description" content="Mihigo ER Anaja, also known as the author of time and legacy. He basically writes booklets, complete books and computer programs.">
-  <meta property="og:image" content="./assets/images/a82f8460-c518-41fc-923d-0708a15cd160.jpeg" />
-	<meta name="author" content="Mihigo ER Anaja" />
-  
-  <title>Mihigo ER Anaja</title>
-  <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/parallax/jarallax.css">
-  <link rel="stylesheet" href="assets/dropdown/css/style.css">
-  <link rel="stylesheet" href="assets/socicon/css/styles.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=D7glSZ"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=D7glSZ" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mihigo ER Anaja | CEO & Chief Architect - Alreflections</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ==========================================
+           ROOT VARIABLES & DESIGN TOKENS (LIGHT DEFAULT)
+           ========================================== */
+        :root {
+            /* Light Theme Palette (Default) */
+            --bg-canvas: #FAF9F5;
+            --bg-surface: #FFFFFF;
+            --bg-subtle: #F3F0E8;
+            --bg-card: #FFFFFF;
+            
+            --gold-primary: #B8860B;
+            --gold-light: #D4AF37;
+            --gold-dark: #8B6508;
+            --gold-subtle: rgba(184, 134, 11, 0.12);
+            --gold-border: rgba(184, 134, 11, 0.28);
+            --gold-gradient: linear-gradient(135deg, #B8860B 0%, #D4AF37 50%, #9A7B1C 100%);
 
-  
-  <script type='application/ld+json'>{"@context":"https://schema.org","@type":"WebSite","url":"https://mihigoanaja.alreflections.net/","name":"Mihigo ER Anaja"}</script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7993870430763010" crossorigin="anonymous"></script>
+            --text-heading: #121215;
+            --text-main: #2C2C35;
+            --text-muted: #6B6B78;
+            --text-gold: #9A7B1C;
+
+            --border-light: rgba(184, 134, 11, 0.2);
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.04);
+            --shadow-card: 0 15px 35px rgba(184, 134, 11, 0.08);
+
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+
+            --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Dark Theme Override Class */
+        body.dark-mode {
+            --bg-canvas: #0A0A0D;
+            --bg-surface: #121217;
+            --bg-subtle: #1A1A22;
+            --bg-card: #14141A;
+
+            --gold-primary: #D4AF37;
+            --gold-light: #F3E5AB;
+            --gold-dark: #A07C10;
+            --gold-subtle: rgba(212, 175, 55, 0.15);
+            --gold-border: rgba(212, 175, 55, 0.3);
+            --gold-gradient: linear-gradient(135deg, #C59B27 0%, #F3E5AB 50%, #A07C10 100%);
+
+            --text-heading: #FFFFFF;
+            --text-main: #E2E2E8;
+            --text-muted: #9E9EA8;
+            --text-gold: #E5C158;
+
+            --border-light: rgba(212, 175, 55, 0.25);
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.5);
+            --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.6);
+        }
+
+        /* ==========================================
+           RESET & GLOBAL STYLES
+           ========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-canvas);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            line-height: 1.65;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-canvas);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-border);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gold-primary);
+        }
+
+        /* Gold Foil Typography & Accents */
+        .gold-text {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .gold-line {
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            margin: 2rem 0;
+            opacity: 0.5;
+        }
+
+        /* Ambient Cursor Glow */
+        #cursor-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 350px;
+            height: 350px;
+            margin-left: -175px;
+            margin-top: -175px;
+            background: radial-gradient(circle, rgba(184, 134, 11, 0.08) 0%, rgba(0,0,0,0) 70%);
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease-out;
+            border-radius: 50%;
+        }
+
+        /* ==========================================
+           HEADER & NAVIGATION
+           ========================================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: var(--transition);
+            background: rgba(250, 249, 245, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        body.dark-mode header {
+            background: rgba(10, 10, 13, 0.85);
+        }
+
+        header.scrolled {
+            padding: 1.1rem 6%;
+            box-shadow: var(--shadow-soft);
+        }
+
+        /* Clean Brand Typography - NO ICONS */
+        .brand-logo {
+            font-family: var(--font-heading);
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-decoration: none;
+            color: var(--text-heading);
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .brand-logo span {
+            color: var(--gold-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 4px 0;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--gold-primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 1px;
+            background: var(--gold-primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        /* Theme Switcher Toggle */
+        .theme-switch-btn {
+            background: transparent;
+            border: 1px solid var(--gold-border);
+            color: var(--text-main);
+            padding: 0.45rem 0.9rem;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: var(--transition);
+            font-family: var(--font-body);
+            font-weight: 500;
+        }
+
+        .theme-switch-btn:hover {
+            border-color: var(--gold-primary);
+            background: var(--gold-subtle);
+            color: var(--gold-primary);
+        }
+
+        .nav-cta-btn {
+            padding: 0.6rem 1.4rem;
+            border: 1px solid var(--gold-primary);
+            background: transparent;
+            color: var(--gold-primary);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border-radius: 2px;
+            text-decoration: none;
+        }
+
+        .nav-cta-btn:hover {
+            background: var(--gold-primary);
+            color: #FFFFFF;
+            box-shadow: 0 4px 15px var(--gold-subtle);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            width: 24px;
+            height: 2px;
+            background-color: var(--text-heading);
+            transition: var(--transition);
+        }
+
+        /* ==========================================
+           HERO SECTION
+           ========================================== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 9rem 6% 5rem 6%;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 30%, var(--bg-subtle) 0%, var(--bg-canvas) 70%);
+        }
+
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 920px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 6px 20px;
+            background: var(--gold-subtle);
+            border: 1px solid var(--gold-border);
+            border-radius: 30px;
+            font-size: 0.73rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-primary);
+            margin-bottom: 2.2rem;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(3.2rem, 7.5vw, 5.8rem);
+            font-weight: 700;
+            line-height: 1.08;
+            letter-spacing: -0.5px;
+            color: var(--text-heading);
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.2vw, 1.35rem);
+            color: var(--text-gold);
+            font-weight: 500;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .hero-description {
+            font-size: 1.08rem;
+            color: var(--text-muted);
+            max-width: 720px;
+            margin: 0 auto 3rem auto;
+            font-weight: 400;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-gold {
+            padding: 1rem 2.6rem;
+            background: var(--gold-primary);
+            color: #FFFFFF;
+            font-weight: 600;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid var(--gold-primary);
+            border-radius: 2px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            box-shadow: 0 4px 20px var(--gold-subtle);
+            display: inline-block;
+        }
+
+        .btn-gold:hover {
+            background: var(--gold-dark);
+            border-color: var(--gold-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.25);
+        }
+
+        .btn-outline {
+            padding: 1rem 2.6rem;
+            background: transparent;
+            color: var(--text-heading);
+            font-weight: 500;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid var(--gold-border);
+            border-radius: 2px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold-primary);
+            color: var(--gold-primary);
+            background: var(--gold-subtle);
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================
+           SECTION COMMON STYLES
+           ========================================== */
+        section {
+            padding: 7rem 6%;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto 4rem auto;
+        }
+
+        .section-tag {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold-primary);
+            margin-bottom: 0.8rem;
+            display: block;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.3rem, 4vw, 3.4rem);
+            font-weight: 700;
+            color: var(--text-heading);
+            line-height: 1.18;
+        }
+
+        .section-description {
+            color: var(--text-muted);
+            margin-top: 1rem;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        /* ==========================================
+           EXECUTIVE OVERVIEW & LEADERSHIP
+           ========================================== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4.5rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-image-frame {
+            position: relative;
+            width: 100%;
+            background: var(--bg-surface);
+            border: 1px solid var(--gold-border);
+            border-radius: 2px;
+            padding: 3rem 2.5rem;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 420px;
+        }
+
+        .quote-box {
+            position: relative;
+            z-index: 2;
+        }
+
+        .quote-text {
+            font-family: var(--font-heading);
+            font-size: 1.65rem;
+            font-style: italic;
+            color: var(--text-heading);
+            line-height: 1.45;
+            margin-bottom: 2rem;
+        }
+
+        .profile-title-card {
+            border-top: 1px solid var(--border-light);
+            padding-top: 1.5rem;
+        }
+
+        .profile-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--text-heading);
+        }
+
+        .profile-role {
+            font-size: 0.8rem;
+            color: var(--gold-primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 0.2rem;
+        }
+
+        .pillars-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .pillar-item {
+            padding-left: 1.8rem;
+            border-left: 2px solid var(--gold-primary);
+        }
+
+        .pillar-content h3 {
+            font-size: 1.2rem;
+            color: var(--text-heading);
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+        }
+
+        .pillar-content p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            font-weight: 400;
+        }
+
+        /* Stat Counters */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4.5rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stat-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-light);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            border-radius: 2px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            border-color: var(--gold-primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-card);
+        }
+
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+            line-height: 1;
+            margin-bottom: 0.6rem;
+        }
+
+        .stat-label {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* ==========================================
+           VENTURES & ECOSYSTEM SHOWCASE
+           ========================================== */
+        .ecosystem-section {
+            background: var(--bg-subtle);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .ecosystem-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.6rem;
+            background: transparent;
+            border: 1px solid var(--border-light);
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: var(--transition);
+            border-radius: 2px;
+            font-family: var(--font-body);
+            font-weight: 500;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: var(--gold-primary);
+            color: #FFFFFF;
+            background: var(--gold-primary);
+        }
+
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .eco-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 2px;
+            padding: 2.4rem;
+            position: relative;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .eco-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--gold-primary);
+            box-shadow: var(--shadow-card);
+        }
+
+        .eco-badge {
+            align-self: flex-start;
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold-primary);
+            background: var(--gold-subtle);
+            padding: 5px 12px;
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            border: 1px solid var(--gold-border);
+        }
+
+        .eco-title {
+            font-family: var(--font-heading);
+            font-size: 1.85rem;
+            color: var(--text-heading);
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .eco-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 400;
+            line-height: 1.65;
+            margin-bottom: 2rem;
+        }
+
+        .eco-footer {
+            border-top: 1px solid var(--border-light);
+            padding-top: 1.2rem;
+        }
+
+        .eco-link-btn {
+            background: transparent;
+            border: none;
+            color: var(--gold-primary);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 0;
+            font-family: var(--font-body);
+        }
+
+        .eco-link-btn:hover {
+            color: var(--gold-dark);
+            letter-spacing: 2px;
+        }
+
+        /* ==========================================
+           STRATEGIC COMPETENCIES MATRIX
+           ========================================== */
+        .toolkit-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .toolkit-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border-light);
+            background: var(--bg-subtle);
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 1.3rem 1.5rem;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+            border-bottom: 2px solid transparent;
+            font-weight: 600;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-heading);
+            background: rgba(184, 134, 11, 0.05);
+        }
+
+        .tab-btn.active {
+            color: var(--gold-primary);
+            background: var(--bg-card);
+            border-bottom-color: var(--gold-primary);
+        }
+
+        .tab-content {
+            padding: 3rem;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .matrix-item {
+            background: var(--bg-subtle);
+            padding: 1.8rem;
+            border-left: 2px solid var(--gold-primary);
+            border-radius: 0 2px 2px 0;
+        }
+
+        .matrix-item h4 {
+            color: var(--text-heading);
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+        }
+
+        .matrix-item p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .skill-bar-container {
+            margin-top: 1.2rem;
+        }
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.72rem;
+            color: var(--gold-primary);
+            margin-bottom: 0.4rem;
+            letter-spacing: 1px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .skill-bar-bg {
+            width: 100%;
+            height: 3px;
+            background: var(--border-light);
+            overflow: hidden;
+        }
+        .skill-bar-fill {
+            height: 100%;
+            background: var(--gold-primary);
+            width: 0%;
+            transition: width 1s ease-in-out;
+        }
+
+        /* ==========================================
+           LEADERSHIP INSIGHTS
+           ========================================== */
+        .insights-section {
+            background: var(--bg-subtle);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .insights-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto 2.5rem auto;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .search-box {
+            position: relative;
+            width: 320px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 1.4rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 2px;
+            color: var(--text-main);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .search-input:focus {
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 10px var(--gold-subtle);
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .insight-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 2px;
+            padding: 2.2rem;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .insight-card:hover {
+            border-color: var(--gold-primary);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-card);
+        }
+
+        .insight-date {
+            font-size: 0.72rem;
+            color: var(--gold-primary);
+            letter-spacing: 2px;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .insight-title {
+            font-family: var(--font-heading);
+            font-size: 1.45rem;
+            color: var(--text-heading);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
+        .insight-snippet {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 400;
+            line-height: 1.65;
+            margin-bottom: 1.8rem;
+        }
+
+        .insight-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .insight-tag {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            background: var(--bg-subtle);
+            padding: 4px 10px;
+            border-radius: 2px;
+            border: 1px solid var(--border-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ==========================================
+           DIRECT EXECUTIVE CONTACT
+           ========================================== */
+        .contact-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 2px;
+            padding: 4rem;
+            box-shadow: var(--shadow-card);
+        }
+
+        .contact-info h3 {
+            font-family: var(--font-heading);
+            font-size: 2.4rem;
+            color: var(--text-heading);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .contact-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .direct-copy-card {
+            background: var(--bg-subtle);
+            border: 1px solid var(--border-light);
+            padding: 1.2rem 1.4rem;
+            border-radius: 2px;
+            margin-bottom: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .copy-label {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold-primary);
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .copy-val {
+            font-size: 0.95rem;
+            color: var(--text-heading);
+            font-weight: 600;
+        }
+
+        .copy-btn {
+            background: transparent;
+            border: 1px solid var(--gold-border);
+            color: var(--gold-primary);
+            padding: 0.45rem 0.9rem;
+            font-size: 0.72rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border-radius: 2px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: var(--font-body);
+            font-weight: 600;
+        }
+
+        .copy-btn:hover {
+            background: var(--gold-primary);
+            color: #FFFFFF;
+        }
+
+        /* Form styling */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--gold-primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 0.95rem 1.1rem;
+            background: var(--bg-subtle);
+            border: 1px solid var(--border-light);
+            border-radius: 2px;
+            color: var(--text-heading);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            border-color: var(--gold-primary);
+            background: var(--bg-card);
+            box-shadow: 0 0 10px var(--gold-subtle);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 125px;
+        }
+
+        /* Modal & Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--bg-card);
+            border: 1px solid var(--gold-primary);
+            color: var(--text-heading);
+            padding: 1.1rem 2rem;
+            border-radius: 2px;
+            box-shadow: var(--shadow-card);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 10000;
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(18, 18, 21, 0.6);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            border: 1px solid var(--gold-primary);
+            border-radius: 2px;
+            max-width: 650px;
+            width: 100%;
+            padding: 3.5rem;
+            position: relative;
+            transform: scale(0.95);
+            transition: var(--transition);
+            box-shadow: var(--shadow-card);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.6rem;
+            cursor: pointer;
+            transition: var(--transition);
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: var(--gold-primary);
+        }
+
+        /* ==========================================
+           FOOTER
+           ========================================== */
+        footer {
+            background: var(--bg-subtle);
+            border-top: 1px solid var(--border-light);
+            padding: 4.5rem 6% 2.5rem 6%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.2rem;
+        }
+
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            color: var(--text-heading);
+            letter-spacing: 3px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-primary);
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            margin-top: 1.5rem;
+            border-top: 1px solid var(--border-light);
+            padding-top: 2rem;
+            width: 100%;
+            letter-spacing: 1px;
+        }
+
+        /* ==========================================
+           RESPONSIVE DESIGN
+           ========================================== */
+        @media (max-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                padding: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .nav-cta-btn {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .nav-links.mobile-active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--bg-canvas);
+                border-bottom: 1px solid var(--border-light);
+                padding: 2.5rem;
+                gap: 1.8rem;
+                text-align: center;
+                box-shadow: var(--shadow-card);
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .toolkit-tabs {
+                flex-direction: column;
+            }
+
+            .tab-btn {
+                text-align: left;
+                padding: 1rem 1.2rem;
+            }
+
+            .tab-content {
+                padding: 1.8rem;
+            }
+
+            .insights-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            #cursor-glow {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-  
-  <section data-bs-version="5.1" class="menu menu2 cid-tMvc89p8bU" once="menu" id="menu02-0">
-	
 
-	<nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
-		<div class="container">
-			<div class="navbar-brand">
-				<span class="navbar-logo">
-					
-						<img src="assets/images/kinbook-logo-24.02.22.png" alt="Mihigo ER Anaja" style="height: 3rem;">
-					
-				</span>
-				<span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-4">Mihigo ER Anaja</a></span>
-			</div>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-				<div class="hamburger">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
-						<a class="nav-link link text-black text-primary display-7" href="index.html#top" aria-expanded="false">Home</a>
-					</li><li class="nav-item dropdown"><a class="nav-link link text-black text-primary dropdown-toggle display-7" href="index.html#top" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">INFO</a><div class="dropdown-menu" aria-labelledby="dropdown-796"><a class="text-black text-primary dropdown-item display-7" href="index.html#features015-c">Projects<br></a><a class="text-black text-primary dropdown-item display-7" href="index.html#gallery09-g">Books<br></a><a class="text-black text-primary dropdown-item display-7" href="index.html#contacts01-7">Contact</a><a class="text-black text-primary dropdown-item display-7" href="https://mihigoanaja.blogspot.com/">Blog</a><a class="text-black text-primary dropdown-item display-7" href="index.html#list01-h">FAQs</a></div></li>
-					<li class="nav-item"><a class="nav-link link text-black text-primary display-7" href="index.html#article21-i">Thoughts</a></li><li class="nav-item"><a class="nav-link link text-black text-primary display-7" href="index.html#pricing01-8">Services</a></li>
-					<li class="nav-item"><a class="nav-link link text-black text-primary display-7" href="index.html#list03-n">Important Links</a></li><li class="nav-item"><a class="nav-link link text-black text-primary display-7" href="index.html#form02-j" aria-expanded="false">Text me</a></li></ul>
-				
-				
-			</div>
-		</div>
-	</nav>
-</section>
+    <!-- Ambient Cursor Glow -->
+    <div id="cursor-glow"></div>
 
-<section data-bs-version="5.1" class="article2 cid-tMvcMiOGGE mbr-fullscreen mbr-parallax-background" id="article02-1">
-	
-
-	
-	<div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
-
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-12 col-md-12 col-lg-4 image-wrapper">
-				<img class="w-100" src="assets/images/mihigo-er-anaja-3.png" alt="Mihigo ER Anaja">
-			</div>
-			<div class="col-12 col-md-12 col-lg">
-				<div class="text-wrapper align-left">
-					
-					<p class="mbr-text align-left mbr-fonts-style mb-4 display-7"><strong>I am Mihigo ER Anaja, the programmer, author and human watcher.  I have currently written over 10 books and have made more than 200 software. I have also made over 20 websites and up to 3 programming languages.<br><br>I have a strong belief system and a unique code of ethics. I don't break my own bounds and you can change what I am thinking but not what I believes. I work hard to shape my own life and leave a lasting positive impact on the world.</strong><br>
-					</p>
-					<div class="mbr-section-btn align-left mt-3"><a class="btn btn-primary display-7" href="index.html#form02-j">Connect</a> <a class="btn btn-danger display-7" href="index.html#article21-i">Learn more</a></div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section data-bs-version="5.1" class="features15 cid-uoDVRRHOh6" id="features015-c">
-	
-
-	
-	
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-12 content-head">
-				<div class="mbr-section-head mb-5">
-					<h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Project Highlights</strong></h4>
-					
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="item features-without-image col-12 col-lg-4 active">
-				<div class="item-wrapper">
-					<div class="img-wrapper">
-						<a href="https://iblink.ning.com"><img src="assets/images/iblink-logo-2.png" alt="iBlink Social Networking Website"></a>
-					</div>
-					<div class="card-box">
-						<h4 class="card-title mbr-fonts-style mb-0 display-7"><strong>iBlink</strong></h4>
-						<h5 class="card-text mbr-fonts-style mt-3 display-7">
-							<div>Social Networking Website Suitable For Digital Marketing</div>
-						</h5>
-					</div>
-				</div>
-			</div>
-			<div class="item features-without-image col-12 col-lg-4">
-				<div class="item-wrapper">
-					<div class="img-wrapper">
-						<a href="https://littlesharksoftware.blogspot.com"><img src="assets/images/little-shark-logo-1.png" alt="Little Shark Software" data-slide-to="1" data-bs-slide-to="1"></a>
-					</div>
-					<div class="card-box">
-						<h4 class="card-title mbr-fonts-style mb-0 display-7">
-							<strong>Little Shark</strong></h4>
-						<h5 class="card-text mbr-fonts-style mt-3 display-7">AI-Powered Developer Assistant with offline tools</h5>
-					</div>
-				</div>
-			</div>
-			<div class="item features-without-image col-12 col-lg-4">
-				<div class="item-wrapper">
-					<div class="img-wrapper">
-						<a href="https://couponeer.alreflections.net"><img src="assets/images/couponeer-logo-24.06.23.png" alt="Couponeer Business Solution" data-bs-slide-to="2" data-slide-to="2"></a>
-					</div>
-					<div class="card-box">
-						<h4 class="card-title mbr-fonts-style mb-0 display-7">
-							<strong>Couponeer</strong></h4>
-						<h5 class="card-text mbr-fonts-style mt-3 display-7">Affiliates Marketing Management Solution</h5>
-					</div>
-				</div>
-			</div><div class="item features-without-image col-12 col-lg-4">
-				<div class="item-wrapper">
-					<div class="img-wrapper">
-						<a href="https://gjshop.itch.io/black-tiger-100"><img src="assets/images/black-tiger-logo.jpg" alt="Black Tiger Software" data-bs-slide-to="3" data-slide-to="3"></a>
-					</div>
-					<div class="card-box">
-						<h4 class="card-title mbr-fonts-style mb-0 display-7">
-							<strong>Black Tiger</strong></h4>
-						<h5 class="card-text mbr-fonts-style mt-3 display-7">A collections of income generation tools and links</h5>
-					</div>
-				</div>
-			</div><div class="item features-without-image col-12 col-lg-4">
-				<div class="item-wrapper">
-					<div class="img-wrapper">
-						<a href="https://atinas.alreflections.net"><img src="assets/images/atinas-icon.jpg" alt="ATINAS Search Engine" data-bs-slide-to="5" data-slide-to="4"></a>
-					</div>
-					<div class="card-box">
-						<h4 class="card-title mbr-fonts-style mb-0 display-7"><strong>ATINAS</strong></h4>
-						<h5 class="card-text mbr-fonts-style mt-3 display-7">A new search engine design to make SEO easy and quick</h5>
-					</div>
-				</div>
-			</div><div class="item features-without-image col-12 col-lg-4">
-				<div class="item-wrapper">
-					<div class="img-wrapper">
-						<a href="http://skillbase.alreflections.net"><img src="assets/images/skillbase-logo-128.png" alt="Skillbase eLearning Solution" data-bs-slide-to="6" data-slide-to="5"></a>
-					</div>
-					<div class="card-box">
-						<h4 class="card-title mbr-fonts-style mb-0 display-7"><strong>Skillbase</strong></h4>
-						<h5 class="card-text mbr-fonts-style mt-3 display-7">A free eLearning solution with so many online courses</h5>
-					</div>
-				</div>
-			</div>
-			
-			
-			
-
-			
-			
-			
-		</div>
-	</div>
-</section>
-
-<section data-bs-version="5.1" class="gallery09 cid-uoE3b1V8Iq mbr-parallax-background" id="gallery09-g">
-  
-
-  <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(0, 0, 0);"></div>
-
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-12 col-lg-4 main-text">
-        <div class="">
-          <h5 class="mbr-section-title mbr-fonts-style mt-0 mb-4 display-2"><strong>Books For You</strong></h5>
-          <h6 class="mbr-section-subtitle mbr-fonts-style mt-0 mb-4 display-7">Know as the <strong><em>author of time and legacy</em></strong>,<br>I write self help books, educational books, business books and technology books.<br><br>With a spirit of innovation, we navigate uncharted territories, exploring new ideas,
-            technologies, and approaches.</h6>
-          <div class="mbr-section-btn mt-3 main-button"><a href="https://kinbook.alreflections.net" class="btn item-btn btn-primary display-7">View All</a></div>
-        </div>
-      </div>
-
-      <div class="col-lg-8 side-features row">
-        <div class="item features-image col-12 col-md-6 col-lg-4 active">
-          <div class="item-wrapper">
-            <div class="item-img">
-              <img src="assets/images/bookbrushimage3d-07-book-template-small.png" alt="How to attain success" title="" data-slide-to="0" data-bs-slide-to="0">
-            </div>
-            
-          </div>
-        </div>
-        <div class="item features-image col-12 col-md-6 col-lg-4 active">
-          <div class="item-wrapper">
-            <div class="item-img">
-              <img src="assets/images/getting-started-with-stylemate-user-preview.png" alt="PHP in 7 Steps" title="" data-slide-to="1" data-bs-slide-to="1">
-            </div>
-            
-          </div>
-        </div>
-        <div class="item features-image col-12 col-md-6 col-lg-4 active">
-          <div class="item-wrapper">
-            <div class="item-img">
-              <img src="assets/images/barefoot-discipline.jpg" alt="" title="" data-slide-to="2" data-bs-slide-to="2">
-            </div>
-            
-          </div>
-        </div>
-        <div class="item features-image col-12 col-md-6 col-lg-4 active">
-          <div class="item-wrapper">
-            <div class="item-img">
-              <img src="assets/images/nuts-1-in-12-hours.jpg" alt="" title="" data-slide-to="3" data-bs-slide-to="3">
-            </div>
-            
-          </div>
-        </div><div class="item features-image col-12 col-md-6 col-lg-4">
-          <div class="item-wrapper">
-            <div class="item-img">
-              <img src="assets/images/php-in-7-steps.jpg" alt="" title="" data-slide-to="4" data-bs-slide-to="4">
-            </div>
-            
-          </div>
-        </div><div class="item features-image col-12 col-md-6 col-lg-4">
-          <div class="item-wrapper">
-            <div class="item-img">
-              <img src="assets/images/nuts-1-programming-user-preview.png" alt="" title="" data-slide-to="5" data-bs-slide-to="6">
-            </div>
-            
-          </div>
-        </div>
-      </div>
+    <!-- Dynamic Toast Notification -->
+    <div id="toast" class="toast">
+        <span id="toast-message">Action executed successfully.</span>
     </div>
-  </div>
-</section>
 
-<section data-bs-version="5.1" class="article021 cid-uoElOnPQsQ" id="article21-i">
-    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-4">
-                <div class="col-12 col-md-12">
-                    <h5 class="mbr-section-title mbr-fonts-style mt-0 mb-4 display-2">
-                        <strong>Thoughts</strong></h5>
-                    <h6 class="mbr-section-subtitle mbr-fonts-style mt-0 mb-4 display-7">Hey, ready to learn how I think and sell?</h6>
-                    <div class="mbr-section-btn item-footer mt-3 main-button"><a href="index.html#form02-j" class="btn item-btn btn-primary display-7">Text Me Now</a></div>
-                </div>
-            </div>
-
-            <div class="col-lg-8 side-features">
-                <div class="item-wrapper align-left">
-                    <div class="counter-container mbr-text mbr-fonts-style display-7">
-                        <ul>
-                            <li><strong>No money? No problem.</strong>&nbsp;I am not just a seller but a problem solver; even when you have no money, I still have some free offers for you. These include promotional services and free online courses.</li>
-                            <li><strong>My network is not my net worth.</strong>&nbsp;My professional growth does not stop me from supporting others through trainings, guidance, growth opportunities and more.</li>
-                            <li><strong>I teach what you learn.</strong>&nbsp;Most of my courses and books include examples and ideas based on my personal experience.</li>
-                            <li><strong>I won't chase trends.</strong>&nbsp;I take a look on what everyone else considers professional but still focus on counter-balancing quality and affordability.</li>
-                        </ul>
-                    </div>
-                </div>
+    <!-- Modal Window -->
+    <div id="eco-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div id="modal-body">
+                <!-- Injected via JS -->
             </div>
         </div>
     </div>
-</section>
 
-<section data-bs-version="5.1" class="pricing1 cid-tMvuy1ckZn" id="pricing01-8">
-  
-  <div class="mbr-overlay"></div>
-  <div class="container">
-    <div class="mbr-section-head mb-5">
-      <h4 class="mbr-section-title mbr-fonts-style align-left mb-0 display-2">
-        <strong>Services</strong></h4>
-      
-    </div>
-    <div class="row mt-4"> 
-      <div class="item features-without-image col-12 col-md-6 col-lg-3 item-mb">
-        <div class="item-wrapper">
-          <div class="item-head">
-            <h5 class="item-title mbr-fonts-style mb-0 display-7"><strong>Website Development</strong></h5>
-            <h6 class="item-subtitle mbr-fonts-style mt-0 mb-0 display-7"><em>From $80</em></h6>
-          </div>
-          <div class="item-content">
-            <p class="mbr-text mbr-fonts-style display-7">
-              All kinds including commercial, managerial, social media and branding websites</p>
-          </div>
-          
-        </div>
-      </div><div class="item features-without-image col-12 col-md-6 col-lg-3 item-mb">
-        <div class="item-wrapper">
-          <div class="item-head">
-            <h5 class="item-title mbr-fonts-style mb-0 display-7"><strong>Software Development</strong></h5>
-            <h6 class="item-subtitle mbr-fonts-style mt-0 mb-0 display-7"><em>From $50</em></h6>
-          </div>
-          <div class="item-content">
-            <p class="mbr-text mbr-fonts-style display-7">Antiviruses, browser, data management software and virtual assistants</p>
-          </div>
-          
-        </div>
-      </div><div class="item features-without-image col-12 col-md-6 col-lg-3 item-mb">
-        <div class="item-wrapper">
-          <div class="item-head">
-            <h5 class="item-title mbr-fonts-style mb-0 display-7"><strong>Technology Consultancy</strong></h5>
-            <h6 class="item-subtitle mbr-fonts-style mt-0 mb-0 display-7"><em>From $9 per Hour</em></h6>
-          </div>
-          <div class="item-content">
-            <p class="mbr-text mbr-fonts-style display-7">Unlocking the power to fight off losses and to perform tasks more efficiently</p>
-          </div>
-          
-        </div>
-      </div><div class="item features-without-image col-12 col-md-6 col-lg-3 item-mb">
-        <div class="item-wrapper">
-          <div class="item-head">
-            <h5 class="item-title mbr-fonts-style mb-0 display-7"><strong>Content Development</strong></h5>
-            <h6 class="item-subtitle mbr-fonts-style mt-0 mb-0 display-7"><em>From $20</em></h6>
-          </div>
-          <div class="item-content">
-            <p class="mbr-text mbr-fonts-style display-7">Writing books, articles and other literal works with the proper industry vocabulary<br></p>
-          </div>
-          
-        </div>
-      </div><div class="item features-without-image col-12 col-md-6 col-lg-3 item-mb">
-        <div class="item-wrapper">
-          <div class="item-head">
-            <h5 class="item-title mbr-fonts-style mb-0 display-7"><strong>Computer Training</strong></h5>
-            <h6 class="item-subtitle mbr-fonts-style mt-0 mb-0 display-7"><em>From $13</em></h6>
-          </div>
-          <div class="item-content">
-            <p class="mbr-text mbr-fonts-style display-7">Providing computer skills including programming and inspiring creativity and innovation</p>
-          </div>
-          
-        </div>
-      </div><div class="item features-without-image col-12 col-md-6 col-lg-3 item-mb">
-        <div class="item-wrapper">
-          <div class="item-head">
-            <h5 class="item-title mbr-fonts-style mb-0 display-7"><strong>Website Deployment</strong></h5>
-            <h6 class="item-subtitle mbr-fonts-style mt-0 mb-0 display-7"><em>From $42</em></h6>
-          </div>
-          <div class="item-content">
-            <p class="mbr-text mbr-fonts-style display-7">Depriving newly developed websites from one computer to the public web<br></p>
-          </div>
-          
-        </div>
-      </div><div class="item features-without-image col-12 col-md-6 col-lg-3 item-mb">
-        <div class="item-wrapper">
-          <div class="item-head">
-            <h5 class="item-title mbr-fonts-style mb-0 display-7"><strong>Website Finalization</strong></h5>
-            <h6 class="item-subtitle mbr-fonts-style mt-0 mb-0 display-7"><em>From $38</em></h6>
-          </div>
-          <div class="item-content">
-            <p class="mbr-text mbr-fonts-style display-7">Activating forms, fixing bugs and finetuning the design to improve perfection</p>
-          </div>
-          
-        </div>
-      </div><div class="item features-without-image col-12 col-md-6 col-lg-3 item-mb">
-        <div class="item-wrapper">
-          <div class="item-head">
-            <h5 class="item-title mbr-fonts-style mb-0 display-7"><strong>Software</strong><br><strong>Packaging</strong></h5>
-            <h6 class="item-subtitle mbr-fonts-style mt-0 mb-0 display-7"><em>From $13</em></h6>
-          </div>
-          <div class="item-content">
-            <p class="mbr-text mbr-fonts-style display-7">Binding source files and generating noneditable standalone executables</p>
-          </div>
-          
-        </div>
-      </div>
-
-      
-
-      
-      
-    </div>
-  </div>
-</section>
-
-<section data-bs-version="5.1" class="list03 cid-uoEAjq1KM9" id="list03-n">
-  
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 mb-5 content-head">
-        <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Important Links</strong></h3>
+    <!-- BRAND NAVBAR -->
+    <header id="navbar">
+        <a href="#" class="brand-logo">Alreflections</a>
         
-      </div>
-    </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#hero" class="active">Overview</a></li>
+            <li><a href="#about">Leadership</a></li>
+            <li><a href="#ecosystem">Ecosystem</a></li>
+            <li><a href="#toolkit">Matrix</a></li>
+            <li><a href="#insights">Insights</a></li>
+            <li><a href="#contact">Inquiry</a></li>
+        </ul>
 
-    <div class="row justify-content-left item features-without-image mt-0 mb-5 active">
-      <div class="col-12 col-md-12 col-lg-3">
-        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-7"><strong>Facebook</strong></h5>
-      </div>
-      <div class="col-md-12 col-lg-9 item-wrapper">
-        <p class="mbr-text mbr-fonts-style mt-0 mb-0 display-7"><a href="https://www.facebook.com/mihigoanaja" class="text-primary">https://www.facebook.com/mihigoanaja</a></p>
-      </div>
-    </div>
-    <div class="row justify-content-left item features-without-image mt-0 mb-5">
-      <div class="col-12 col-md-12 col-lg-3">
-        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-7">
-          <strong>iBlink</strong></h5>
-      </div>
-      <div class="col-md-12 col-lg-9 item-wrapper">
-        <p class="mbr-text mbr-fonts-style mt-0 mb-0 display-7">
-          <a href="https://iblink.ning.com/members/mihigoeranaja" class="text-primary">https://iblink.ning.com/members/mihigoeranaja</a></p>
-      </div>
-    </div>
-    <div class="row justify-content-left item features-without-image mt-0 mb-5">
-      <div class="col-12 col-md-12 col-lg-3">
-        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-7"><strong>Personal Blog</strong></h5>
-      </div>
-      <div class="col-md-12 col-lg-9 item-wrapper">
-        <p class="mbr-text mbr-fonts-style mt-0 mb-0 display-7"><a href="https://mihigoanaja.blogspot.com/" class="text-primary">https://mihigoanaja.blogspot.com/<br></a>
-        </p>
-      </div>
-    </div><div class="row justify-content-left item features-without-image mt-0 mb-5">
-      <div class="col-12 col-md-12 col-lg-3">
-        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-7"><strong>My Bookstore</strong></h5>
-      </div>
-      <div class="col-md-12 col-lg-9 item-wrapper">
-        <p class="mbr-text mbr-fonts-style mt-0 mb-0 display-7"><a href="https://kinbook.alreflections.net" class="text-primary">https://kinbook.alreflections.net</a></p>
-      </div>
-    </div><div class="row justify-content-left item features-without-image mt-0 mb-5">
-      <div class="col-12 col-md-12 col-lg-3">
-        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-7"><strong>My Software Store</strong></h5>
-      </div>
-      <div class="col-md-12 col-lg-9 item-wrapper">
-        <p class="mbr-text mbr-fonts-style mt-0 mb-0 display-7"><a href="https://gjshop.itch.io/" class="text-primary">https://gjshop.itch.io/<br></a>
-        </p>
-      </div>
-    </div><div class="row justify-content-left item features-without-image mt-0 mb-5">
-      <div class="col-12 col-md-12 col-lg-3">
-        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-7"><strong>My Templates Store</strong></h5>
-      </div>
-      <div class="col-md-12 col-lg-9 item-wrapper">
-        <p class="mbr-text mbr-fonts-style mt-0 mb-0 display-7"><a href="https://templates.itch.io/" class="text-primary">https://templates.itch.io/<br></a>
-        </p>
-      </div>
-    </div><div class="row justify-content-left item features-without-image mt-0 mb-5">
-      <div class="col-12 col-md-12 col-lg-3">
-        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-7"><strong>LinkedIn Profile</strong></h5>
-      </div>
-      <div class="col-md-12 col-lg-9 item-wrapper">
-        <p class="mbr-text mbr-fonts-style mt-0 mb-0 display-7"><a href="https://linkedin.com/in/mihigoeranaja" class="text-primary">https://linkedin.com/in/mihigoeranaja<br></a>
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section data-bs-version="5.1" class="list1 cid-uoEeBPeIqg mbr-parallax-background" id="list01-h">	
-    
-	<div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-12 col-md-12 col-lg-10 m-auto">
-				<div class="content">
-					<div class="row justify-content-center mb-5">
-						<div class="col-12 content-head">
-							<div class="mbr-section-head">
-								<h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-									<strong>Got Questions?</strong>
-								</h4>
-								
-							</div>
-						</div>
-					</div>
-					<div id="bootstrap-accordion_12" class="panel-group accordionStyles accordion" role="tablist" aria-multiselectable="true">
-						<div class="card">
-							<div class="card-header" role="tab" id="headingOne">
-								<a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse1_12" aria-expanded="false" aria-controls="collapse1">
-									<h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
-										What kind of books have you written?
-									</h6>
-									<span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
-								</a>
-							</div>
-							<div id="collapse1_12" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_12">
-								<div class="panel-body">
-									<p class="mbr-fonts-style panel-text display-7">
-										I have written several books including personal development, business growth and technology.</p>
-								</div>
-							</div>
-						</div>
-						<div class="card">
-							<div class="card-header" role="tab" id="headingOne">
-								<a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse2_12" aria-expanded="false" aria-controls="collapse2">
-									<h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
-										What is the estimated delivery time?
-									</h6>
-									<span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
-								</a>
-							</div>
-							<div id="collapse2_12" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_12">
-								<div class="panel-body">
-									<p class="mbr-fonts-style panel-text display-7">
-										It depends the service you need, for most projects especially websites take less than 2 weeks.</p>
-								</div>
-							</div>
-						</div>
-						<div class="card">
-							<div class="card-header" role="tab" id="headingOne">
-								<a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse3_12" aria-expanded="false" aria-controls="collapse3">
-									<h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
-										Do you offer same-day delivery?
-									</h6>
-									<span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
-								</a>
-							</div>
-							<div id="collapse3_12" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_12">
-								<div class="panel-body">
-									<p class="mbr-fonts-style panel-text display-7">
-										I understand that you be having a very short time but same-day delivery is usually available for already built digital products. But I also offer other automated services the usually take seconds. And I when I have to put hands on your project directly, the minimum delivery time is 2 days.</p>
-								</div>
-							</div>
-						</div>
-						<div class="card">
-							<div class="card-header" role="tab" id="headingOne">
-								<a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse4_12" aria-expanded="false" aria-controls="collapse4">
-									<h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
-										How can I collaborate or partner with you?</h6>
-									<span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
-								</a>
-							</div>
-							<div id="collapse4_12" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_12">
-								<div class="panel-body">
-									<p class="mbr-fonts-style panel-text display-7">Feel free to reach out via the contact form.</p>
-								</div>
-							</div>
-						</div>
-						<div class="card">
-							<div class="card-header" role="tab" id="headingOne">
-								<a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse5_12" aria-expanded="false" aria-controls="collapse5">
-									<h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">
-										What services do you provide?</h6>
-									<span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
-								</a>
-							</div>
-							<div id="collapse5_12" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_12">
-								<div class="panel-body">
-									<p class="mbr-fonts-style panel-text display-7">
-										I offer consultation services, business strategy analysis, computer programming, graphic design, content development, community building, digital marketing and also provide online courses on business and technology.</p>
-								</div>
-							</div>
-						</div>
-						<div class="card">
-							<div class="card-header" role="tab" id="headingOne">
-								<a role="button" class="panel-title collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-core="" href="#collapse6_12" aria-expanded="false" aria-controls="collapse6">
-									<h6 class="panel-title-edit mbr-semibold mbr-fonts-style mb-0 display-5">Is it okay&nbsp; if request a quote just to no the cost?</h6>
-									<span class="sign mbr-iconfont mobi-mbri-arrow-down"></span>
-								</a>
-							</div>
-							<div id="collapse6_12" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_12">
-								<div class="panel-body">
-									<p class="mbr-fonts-style panel-text display-7">
-										Just a quote? I even have a free alternative for you if you have no money yet. For some services especially online courses I have offers you don't need to pay for or do anything in the return.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section data-bs-version="5.1" class="contacts01 cid-tMvt0OzDGB" id="contacts01-7">
-    
-
-    
-    
-    <div class="container">
-        <div class="mbr-section-head mb-5">
-            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                <strong>Contact Information</strong></h3>
-            
+        <div class="header-actions">
+            <button class="theme-switch-btn" id="theme-toggle" onclick="toggleTheme()">Dark Mode</button>
+            <a href="#contact" class="nav-cta-btn">Executive Contact</a>
+            <div class="mobile-menu-toggle" id="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-        <div class="row">
-            <div class="item features-without-image col-12 col-md-4 active">
-                <div class="item-wrapper">
-                    <div class="text-wrapper">
-                        <h6 class="card-title mbr-fonts-style mb-3 display-5">
-                            <strong>Phone</strong>
-                        </h6>
-                        <p class="mbr-text mbr-fonts-style display-7">+250 792 548 478</p>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-badge">Executive Leadership & Software Architecture</div>
+            <h1><span class="gold-text">Mihigo ER Anaja</span></h1>
+            <div class="hero-subtitle">CEO & Chief Architect at Alreflections</div>
+            <p class="hero-description">
+                Architecting high-scale digital ecosystems, autonomous technology infrastructure, and forward-engineered software solutions that redefine enterprise benchmarks across global markets.
+            </p>
+            <div class="hero-buttons">
+                <a href="#ecosystem" class="btn-gold">Explore Ecosystem</a>
+                <a href="#contact" class="btn-outline">Executive Contact</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXECUTIVE OVERVIEW & LEADERSHIP -->
+    <section id="about">
+        <div class="section-header">
+            <span class="section-tag">Strategic Vision</span>
+            <h2 class="section-title">Architecting Digital Epochs</h2>
+            <p class="section-description">Guiding Alreflections with commitment to technological precision, system resilience, and sustainable scale.</p>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-visual">
+                <div class="about-image-frame">
+                    <div class="quote-box">
+                        <p class="quote-text">"Engineering mastery resides in constructing resilient, adaptable systems that empower enterprise innovation and elevate structural capabilities."</p>
+                    </div>
+                    <div class="profile-title-card">
+                        <div class="profile-name">Mihigo ER Anaja</div>
+                        <div class="profile-role">Chief Executive Officer & Chief Architect</div>
                     </div>
                 </div>
             </div>
-            <div class="item features-without-image col-12 col-md-4">
-                <div class="item-wrapper">
-                    <div class="text-wrapper">
-                        <h6 class="card-title mbr-fonts-style mb-3 display-5">
-                            <strong>Email</strong>
-                        </h6>
-                        <p class="mbr-text mbr-fonts-style display-7">eranajam123@gmail.com</p>
+
+            <div class="pillars-list">
+                <div class="pillar-item">
+                    <div class="pillar-content">
+                        <h3>Architectural Rigor</h3>
+                        <p>Constructing scalable micro-service structures and zero-trust cloud frameworks built to endure high dynamic load.</p>
                     </div>
                 </div>
-            </div>
-            
-            <div class="item features-without-image col-12 col-md-4">
-                <div class="item-wrapper">
-                    <div class="text-wrapper">
-                        <h6 class="card-title mbr-fonts-style mb-3 display-5">
-                            <strong>Working Hours</strong>
-                        </h6>
-                        <p class="mbr-text mbr-fonts-style display-7">
-                            9:00 - 15:00 Mon - Fri</p>
+                <div class="pillar-item">
+                    <div class="pillar-content">
+                        <h3>Product Innovation</h3>
+                        <p>Directing multi-channel automation platforms, adaptive learning technologies, and workflow orchestration engines.</p>
+                    </div>
+                </div>
+                <div class="pillar-item">
+                    <div class="pillar-content">
+                        <h3>Ecosystem Growth</h3>
+                        <p>Fostering engineering communities and building platforms that connect high-velocity talent with market opportunities.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
 
-<section data-bs-version="5.1" class="form5 cid-uoEtBQr2DU mbr-parallax-background" id="form02-j">
-    
-    <div class="mbr-overlay"></div>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 content-head">
-                <div class="mbr-section-head mb-5">
-                    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Text Me Now</strong></h3>
-                    
+        <!-- Metric Badges -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number" data-target="150">0</div>
+                <div class="stat-label">Enterprise Deliveries</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="4">0</div>
+                <div class="stat-label">Core Ecosystem Pillars</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" data-target="98">0</div>
+                <div class="stat-label">Architectural Performance Rate %</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="gold-line"></div>
+
+    <!-- ECOSYSTEM & VENTURES -->
+    <section id="ecosystem" class="ecosystem-section">
+        <div class="section-header">
+            <span class="section-tag">Proprietary Ventures</span>
+            <h2 class="section-title">The Alreflections Ecosystem</h2>
+            <p class="section-description">A portfolio of software systems, automation frameworks, and developer networks crafted under executive leadership.</p>
+        </div>
+
+        <div class="ecosystem-filters">
+            <button class="filter-btn active" data-filter="all">All Ecosystems</button>
+            <button class="filter-btn" data-filter="platform">Platforms</button>
+            <button class="filter-btn" data-filter="automation">Automation</button>
+            <button class="filter-btn" data-filter="community">Community</button>
+        </div>
+
+        <div class="ecosystem-grid" id="ecosystem-grid">
+            <!-- Cards populated by JS -->
+        </div>
+    </section>
+
+    <!-- STRATEGIC COMPETENCIES MATRIX -->
+    <section id="toolkit">
+        <div class="section-header">
+            <span class="section-tag">Executive Capabilities</span>
+            <h2 class="section-title">Strategic Architecture Matrix</h2>
+            <p class="section-description">Domain competencies spanning software engineering, system architecture, and organizational strategy.</p>
+        </div>
+
+        <div class="toolkit-container">
+            <div class="toolkit-tabs">
+                <button class="tab-btn active" data-tab="arch">Software Architecture</button>
+                <button class="tab-btn" data-tab="ai">AI & Systems</button>
+                <button class="tab-btn" data-tab="leadership">Technical Leadership</button>
+                <button class="tab-btn" data-tab="strategy">Digital Strategy</button>
+            </div>
+
+            <!-- Tab 1: Software Architecture -->
+            <div class="tab-content active" id="tab-arch">
+                <div class="matrix-grid">
+                    <div class="matrix-item">
+                        <h4>Micro-Services & Cloud Networks</h4>
+                        <p>Designing decoupled, resilient enterprise cloud infrastructure engineered for zero-downtime scalability.</p>
+                        <div class="skill-bar-container">
+                            <div class="skill-info"><span>Proficiency</span><span>98%</span></div>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 98%;"></div></div>
+                        </div>
+                    </div>
+                    <div class="matrix-item">
+                        <h4>High-Throughput Data Streaming</h4>
+                        <p>Constructing stream processing pipelines capable of managing dynamic data throughput with ultra-low latency.</p>
+                        <div class="skill-bar-container">
+                            <div class="skill-info"><span>Proficiency</span><span>94%</span></div>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 94%;"></div></div>
+                        </div>
+                    </div>
+                    <div class="matrix-item">
+                        <h4>Zero-Trust Security Models</h4>
+                        <p>Embedding enterprise-grade security protocols, encryption boundaries, and compliance governance across software tiers.</p>
+                        <div class="skill-bar-container">
+                            <div class="skill-info"><span>Proficiency</span><span>95%</span></div>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: AI & Systems -->
+            <div class="tab-content" id="tab-ai">
+                <div class="matrix-grid">
+                    <div class="matrix-item">
+                        <h4>Autonomous Workflows</h4>
+                        <p>Embedding agentic models, structured logic parsers, and machine learning pipelines into live operations.</p>
+                        <div class="skill-bar-container">
+                            <div class="skill-info"><span>Proficiency</span><span>92%</span></div>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 92%;"></div></div>
+                        </div>
+                    </div>
+                    <div class="matrix-item">
+                        <h4>Multi-Channel Optimization</h4>
+                        <p>Building real-time data integration systems that programmatically parse market behavior and performance analytics.</p>
+                        <div class="skill-bar-container">
+                            <div class="skill-info"><span>Proficiency</span><span>96%</span></div>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 96%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Leadership -->
+            <div class="tab-content" id="tab-leadership">
+                <div class="matrix-grid">
+                    <div class="matrix-item">
+                        <h4>Engineering Scale & Culture</h4>
+                        <p>Cultivating software development talent, setting code standards, and steering high-velocity engineering cultures.</p>
+                        <div class="skill-bar-container">
+                            <div class="skill-info"><span>Proficiency</span><span>97%</span></div>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 97%;"></div></div>
+                        </div>
+                    </div>
+                    <div class="matrix-item">
+                        <h4>Cross-Domain Execution</h4>
+                        <p>Translating executive vision into functional technological roadmaps and production-ready enterprise systems.</p>
+                        <div class="skill-bar-container">
+                            <div class="skill-info"><span>Proficiency</span><span>95%</span></div>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 4: Strategy -->
+            <div class="tab-content" id="tab-strategy">
+                <div class="matrix-grid">
+                    <div class="matrix-item">
+                        <h4>Ecosystem Commercialization</h4>
+                        <p>Formulating go-to-market methodologies and revenue pipelines for proprietary software products.</p>
+                        <div class="skill-bar-container">
+                            <div class="skill-info"><span>Proficiency</span><span>90%</span></div>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+                        </div>
+                    </div>
+                    <div class="matrix-item">
+                        <h4>Venture Architecture</h4>
+                        <p>Structuring strategic alliances, joint ventures, and brand positioning across sub-brands within Alreflections.</p>
+                        <div class="skill-bar-container">
+                            <div class="skill-info"><span>Proficiency</span><span>93%</span></div>
+                            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 93%;"></div></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
-                <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="1vcWFWeXFpmpi9kxkRjiQsfT7mqbrla/Ffw7EoMcMmuuSPyYYuJH6DRibjMj/Foqlebj8s9ZOG3H10QiciIHG1L6ApvrTVrJdKmaH0h6XjnsdrPVUbesXxRGqmT7ubz9">
-                    <div class="row">
-                        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form! I will get back to you soon. Promise ☺️🫡</div>
-                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
-                            Oops...! some problem!
-                        </div>
-                    </div>
-                    <div class="dragArea row">
-                        <div class="col-md col-sm-12 form-group mb-3" data-for="name">
-                            <input type="text" name="name" placeholder="Name" data-form-field="name" class="form-control" value="" id="name-form02-j">
-                        </div>
-                        <div class="col-md col-sm-12 form-group mb-3" data-for="email">
-                            <input type="email" name="email" placeholder="E-mail" data-form-field="email" class="form-control" value="" id="email-form02-j">
-                        </div>
-                        
-                        <div class="col-12 form-group mb-3" data-for="textarea">
-                            <textarea name="textarea" placeholder="Message" data-form-field="textarea" class="form-control" id="textarea-form02-j"></textarea>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
-                            <button type="submit" class="btn btn-primary display-7">Send message</button>
-                        </div>
-                    </div>
-                </form>
+    </section>
+
+    <!-- LEADERSHIP INSIGHTS -->
+    <section id="insights" class="insights-section">
+        <div class="section-header">
+            <span class="section-tag">Perspectives</span>
+            <h2 class="section-title">Leadership Insights</h2>
+            <p class="section-description">Notes on software design, ecosystem longevity, and technical leadership.</p>
+        </div>
+
+        <div class="insights-controls">
+            <div style="color: var(--text-muted); font-size: 0.85rem;" id="insight-count">Displaying 3 Insights</div>
+            <div class="search-box">
+                <input type="text" id="insight-search" class="search-input" placeholder="Search perspectives...">
             </div>
         </div>
-    </div>
-</section>
 
-<section data-bs-version="5.1" class="footer3 programm5 cid-tMvDbeIUuY" once="footers" id="footer03-9">
+        <div class="insights-grid" id="insights-grid">
+            <!-- Rendered via JS -->
+        </div>
+    </section>
 
-        
+    <!-- DIRECT EXECUTIVE CONTACT -->
+    <section id="contact">
+        <div class="section-header">
+            <span class="section-tag">Executive Dialogue</span>
+            <h2 class="section-title">Direct Contact & Inquiry</h2>
+            <p class="section-description">A channel for strategic partnerships, architectural consultation, and ecosystem opportunities.</p>
+        </div>
 
-    
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Executive Inquiry Channel</h3>
+                <p>Mihigo ER Anaja is available for select corporate partnerships, high-level system consultations, and strategic leadership engagements.</p>
 
-    <div class="container">
-        <div class="row">
+                <div class="direct-copy-card">
+                    <div>
+                        <span class="copy-label">Executive Email</span>
+                        <div class="copy-val">ceo@alreflections.com</div>
+                    </div>
+                    <button class="copy-btn" onclick="copyToClipboard('ceo@alreflections.com')">Copy Address</button>
+                </div>
 
-            
-
-            <div class="col-12">
-                
+                <div class="direct-copy-card">
+                    <div>
+                        <span class="copy-label">Corporate Office</span>
+                        <div class="copy-val">Alreflections Executive Suite</div>
+                    </div>
+                    <button class="copy-btn" onclick="copyToClipboard('Alreflections Executive Suite')">Copy Details</button>
+                </div>
             </div>
-            <div class="col-12 mt-5">
-                <p class="mbr-fonts-style copyright display-7"><strong><em>
-                    © Copyright Mihigo ER Anaja- All Rights Reserved
-                </em></strong></p>
+
+            <!-- <form id="inquiry-form" onsubmit="handleFormSubmit(event)"> -->
+            <form id="inquiry-form" action="https://formworker.alreflections.net/plugin/ZXlKMWMyVnlJam9pTVNKOQ==" method="get">
+				<input name="next" value="https://www.alreflections.net/p/thank-you-for-reaching-out.html" hidden />
+                <div class="form-group">
+                    <label class="form-label">Full Name & Title</label>
+                    <input type="text" class="form-input" placeholder="e.g. Managing Director, Enterprise Group" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Corporate Email</label>
+                    <input type="email" class="form-input" placeholder="address@organization.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Inquiry Domain</label>
+                    <select class="form-input" required style="background: var(--bg-subtle);">
+                        <option value="strategic">Strategic Alliance / Partnership</option>
+                        <option value="architecture">Architectural Advisory</option>
+                        <option value="ecosystem">Ecosystem Platform Integration</option>
+                        <option value="media">Executive Keynote Address</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Executive Brief</label>
+                    <textarea class="form-textarea" placeholder="Detail your context or proposition..." required></textarea>
+                </div>
+                <button type="submit" class="btn-gold" style="width: 100%; justify-content: center;">
+                    Transmit Inquiry
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Alreflections</div>
+            <ul class="footer-links">
+                <li><a href="#hero">Overview</a></li>
+                <li><a href="#about">Leadership</a></li>
+                <li><a href="#ecosystem">Ecosystem</a></li>
+                <li><a href="#toolkit">Matrix</a></li>
+                <li><a href="#insights">Insights</a></li>
+                <li><a href="#contact">Inquiry</a></li>
+            </ul>
+            <div class="copyright">
+                &copy; 2026 Alreflections. All rights reserved. Mihigo ER Anaja, Chief Executive Officer & Chief Architect.
             </div>
         </div>
-    </div>
-</section>
-<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/parallax/jarallax.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/mbr-switch-arrow/mbr-switch-arrow.js"></script>  <script src="assets/theme/js/script.js"></script>  <script src="assets/formoid/formoid.min.js"></script>  
-<div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
-  </body>
+    </footer>
+
+    <!-- JAVASCRIPT CODE -->
+    <script>
+        /* ==========================================
+           ECOSYSTEM DATA & RENDER (STRICT CONTENT)
+           ========================================== */
+        const ecosystemData = [
+            {
+                id: 'skillbase',
+                name: 'Skillbase',
+                category: 'platform',
+                badge: 'Skill Development & Training',
+                description: 'Adaptive skill development and workforce training platform engineered to accelerate technical proficiency and bridge enterprise capabilities.',
+                fullDetails: 'Skillbase delivers structured learning paths, dynamic evaluation workflows, and enterprise capability tracking. Designed for scale, it enables organizations to continuously upskill software engineering talent.'
+            },
+            {
+                id: 'formworker',
+                name: 'Formworker',
+                category: 'automation',
+                badge: 'Workflow Automation',
+                description: 'Intelligent form engine and dynamic workflow automation solution designed to eliminate friction and streamline structured data processing.',
+                fullDetails: 'Formworker features conditional routing logic, automated schema verification, audit tracking, and zero-code workflow integration, transforming document collection into dynamic data streams.'
+            },
+            {
+                id: 'campaineer',
+                name: 'Campaineer',
+                category: 'automation',
+                badge: 'Multi-Channel Advertising Engine',
+                description: 'AI-driven multi-channel advertising engine empowering brands with algorithmic campaign orchestration and performance measurement.',
+                fullDetails: 'Campaineer leverages analytics engines to optimize multi-channel media budgets, continuously analyze messaging performance, and maximize returns across cross-platform campaigns.'
+            },
+            {
+                id: 'dwa',
+                name: 'Developers With Attitude',
+                category: 'community',
+                badge: 'Engineering Community',
+                description: 'Digital creator and software engineering network dedicated to advancing craftsmanship, open technical discourse, and modern architecture.',
+                fullDetails: 'Developers With Attitude convenes software engineers, system architects, and technical leaders to foster collaborative ventures, architectural peer reviews, and software innovation.'
+            }
+        ];
+
+        function renderEcosystem(filter = 'all') {
+            const container = document.getElementById('ecosystem-grid');
+            container.innerHTML = '';
+
+            const filtered = filter === 'all' 
+                ? ecosystemData 
+                : ecosystemData.filter(item => item.category === filter);
+
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'eco-card';
+                card.innerHTML = `
+                    <div>
+                        <span class="eco-badge">${item.badge}</span>
+                        <h3 class="eco-title">${item.name}</h3>
+                        <p class="eco-desc">${item.description}</p>
+                    </div>
+                    <div class="eco-footer">
+                        <button class="eco-link-btn" onclick="openEcoModal('${item.id}')">
+                            View Platform Insight &rarr;
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        /* Filter Controls */
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                renderEcosystem(e.target.dataset.filter);
+            });
+        });
+
+        /* Modal Interactivity */
+        function openEcoModal(id) {
+            const item = ecosystemData.find(i => i.id === id);
+            if (!item) return;
+
+            const modalBody = document.getElementById('modal-body');
+            modalBody.innerHTML = `
+                <span class="eco-badge">${item.badge}</span>
+                <h2 style="font-family: var(--font-heading); font-size: 2.2rem; color: var(--text-heading); margin: 0.6rem 0 1rem 0;">${item.name}</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.75; margin-bottom: 2rem;">${item.fullDetails}</p>
+                <div style="border-top: 1px solid var(--border-light); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.78rem; color: var(--gold-primary); font-weight: 600; text-transform: uppercase;">Status: Active Ecosystem Member</span>
+                    <button class="btn-gold" style="padding: 0.5rem 1.4rem; font-size: 0.75rem;" onclick="closeModal()">Close</button>
+                </div>
+            `;
+
+            document.getElementById('eco-modal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('eco-modal').classList.remove('active');
+        }
+
+        document.getElementById('modal-close').addEventListener('click', closeModal);
+        document.getElementById('eco-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'eco-modal') closeModal();
+        });
+
+        /* ==========================================
+           LEADERSHIP PERSPECTIVES DATA
+           ========================================== */
+        const insightsData = [
+            {
+                title: 'Interconnected Ecosystem Architecture vs. Product Silos',
+                date: 'OCTOBER 2026',
+                snippet: 'Analysis of why modern tech governance demands interconnected platform networks over isolated, single-function applications.',
+                tags: ['Architecture', 'Ecosystems']
+            },
+            {
+                title: 'Autonomous Workflow Optimization in Enterprise Software',
+                date: 'SEPTEMBER 2026',
+                snippet: 'Examining how automated processing frameworks like Formworker enhance execution velocity and accuracy in corporate data intake.',
+                tags: ['Automation', 'Systems']
+            },
+            {
+                title: 'Cultivating High-Velocity Engineering Communities',
+                date: 'AUGUST 2026',
+                snippet: 'Strategies for managing developer networks such as Developers With Attitude, where craftsmanship and structured execution align.',
+                tags: ['Leadership', 'Engineering']
+            }
+        ];
+
+        function renderInsights(query = '') {
+            const container = document.getElementById('insights-grid');
+            container.innerHTML = '';
+
+            const filtered = insightsData.filter(item => 
+                item.title.toLowerCase().includes(query.toLowerCase()) || 
+                item.snippet.toLowerCase().includes(query.toLowerCase()) ||
+                item.tags.some(t => t.toLowerCase().includes(query.toLowerCase()))
+            );
+
+            document.getElementById('insight-count').textContent = `Displaying ${filtered.length} Insights`;
+
+            if (filtered.length === 0) {
+                container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 3rem;">No insights matching your query.</div>`;
+                return;
+            }
+
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'insight-card';
+                card.innerHTML = `
+                    <div>
+                        <div class="insight-date">${item.date}</div>
+                        <h3 class="insight-title">${item.title}</h3>
+                        <p class="insight-snippet">${item.snippet}</p>
+                    </div>
+                    <div class="insight-tags">
+                        ${item.tags.map(tag => `<span class="insight-tag">${tag}</span>`).join('')}
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        document.getElementById('insight-search').addEventListener('input', (e) => {
+            renderInsights(e.target.value);
+        });
+
+        /* ==========================================
+           MATRIX TABS
+           ========================================== */
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+                e.target.classList.add('active');
+                const targetId = `tab-${e.target.dataset.tab}`;
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+
+        /* ==========================================
+           HERO PARTICLES CANVAS
+           ========================================== */
+        const canvas = document.getElementById('hero-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.3;
+                this.speedY = (Math.random() - 0.5) * 0.3;
+                this.alpha = Math.random() * 0.4 + 0.1;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                const isDark = document.body.classList.contains('dark-mode');
+                ctx.fillStyle = isDark 
+                    ? `rgba(212, 175, 55, ${this.alpha})` 
+                    : `rgba(184, 134, 11, ${this.alpha * 0.8})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 65; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const isDark = document.body.classList.contains('dark-mode');
+
+            for (let a = 0; a < particles.length; a++) {
+                for (let b = a; b < particles.length; b++) {
+                    let dx = particles[a].x - particles[b].x;
+                    let dy = particles[a].y - particles[b].y;
+                    let dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 100) {
+                        ctx.strokeStyle = isDark
+                            ? `rgba(212, 175, 55, ${0.12 - dist / 1000})`
+                            : `rgba(184, 134, 11, ${0.08 - dist / 1200})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[a].x, particles[a].y);
+                        ctx.lineTo(particles[b].x, particles[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            requestAnimationFrame(animateCanvas);
+        }
+
+        /* ==========================================
+           THEME TOGGLE (LIGHT DEFAULT)
+           ========================================== */
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            document.getElementById('theme-toggle').textContent = isDark ? 'Light Mode' : 'Dark Mode';
+            showToast(`Theme changed to ${isDark ? 'Dark' : 'Light'} Mode`);
+        }
+
+        /* Cursor Glow Motion */
+        const cursorGlow = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', (e) => {
+            cursorGlow.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+        });
+
+        /* Dynamic Stat Counters */
+        let statsAnimated = false;
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const statsSection = document.querySelector('.stats-container');
+            if (!statsSection) return;
+
+            const sectionPos = statsSection.getBoundingClientRect().top;
+            const screenPos = window.innerHeight;
+
+            if (sectionPos < screenPos && !statsAnimated) {
+                statsAnimated = true;
+                statNumbers.forEach(stat => {
+                    const target = +stat.getAttribute('data-target');
+                    let count = 0;
+                    const speed = target / 40;
+
+                    const updateCount = () => {
+                        count += speed;
+                        if (count < target) {
+                            stat.innerText = Math.ceil(count) + '+';
+                            setTimeout(updateCount, 30);
+                        } else {
+                            stat.innerText = target + (target === 98 ? '%' : '+');
+                        }
+                    };
+                    updateCount();
+                });
+            }
+        }
+
+        window.addEventListener('scroll', animateStats);
+
+        /* Navbar & Scrollspy */
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 40) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        /* Mobile Menu */
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navLinks = document.getElementById('nav-links');
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-active');
+        });
+
+        /* Toast Notifications */
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3200);
+        }
+
+        function copyToClipboard(text) {
+            const dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+            showToast(`Copied to clipboard: "${text}"`);
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            showToast("Inquiry successfully transmitted to executive office.");
+            document.getElementById('inquiry-form').reset();
+        }
+
+        /* Initial Setup */
+        window.onload = function() {
+            renderEcosystem('all');
+            renderInsights();
+            animateCanvas();
+        };
+    </script>
+</body>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7993870430763010" crossorigin="anonymous"></script>
+	<script src='https://reserve.alreflections.net/treateAlreflectionsBlogger.js' defer></script>
 </html>
