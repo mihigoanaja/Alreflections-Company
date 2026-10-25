@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Axisjobs</title>
+  <style>
+    .job-body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fff;
+      color: #000;
+      margin: 0;
+      padding: 20px;
+    }
+    .h1 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      color: #678;
+      margin-bottom: 20px;
+    }
+    .jobs {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+    .job {
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: inset 0 0 5px #0505;
+    }
+    .job h2 {
+      font-size: 1.1rem;
+      margin: 0 0 8px 0;
+    }
+    .company {
+      color: #070;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .meta {
+      font-size: 0.85rem;
+      color: #555;
+      margin-bottom: 12px;
+    }
+    .apply {
+      text-decoration: none;
+      background: #393;
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-align: center;
+    }
+    .apply:hover {
+      opacity: 0.9;
+    }
+    .loading {
+      color: #38bdf8;
+      font-style: italic;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+  </style>
+</head>
+	<body>
+		<div class="job-body">
+			<h1 class="h1">Axisjobs</h1>
+			<p class="subtitle">Powered by Alreflections</p>
+			<input id="search" type="text" placeholder="Search by title, company, or category…" style="width:100%;max-width:420px;padding:12px 14px;border-radius:10px;border: 2px solid #333;color: #000;margin-bottom:20px;background-color: #eee;" />
+			<div id="status" class="loading">Loading jobs…</div>
+			<div id="jobs" class="jobs"></div>
+			<br>
+			<hr>
+			<div class="atinas-results" data-limit="18" data-search="" data-query="" data-show-image="yes" data-blog="https://jobs.alreflections.net"></div>
+			<footer>Build By Alreflections Friends</footer>
+			<br><br>
+			<script>
+				const API_URL = "https://remotive.com/api/remote-jobs";
+				const jobsContainer = document.getElementById("jobs");
+				const statusText = document.getElementById("status");
+				const searchInput = document.getElementById("search");
+				let allJobs = [];
+				function renderJobs(list) {
+					jobsContainer.innerHTML = "";
+					if (list.length === 0) {
+						jobsContainer.innerHTML = "<p style='color:#94a3b8'>No jobs found.</p>";
+						return;
+					}
+					list.forEach(job => {
+						const jobEl = document.createElement("div");
+						jobEl.className = "job";
+						jobEl.innerHTML = `
+							<div>
+								<div class="company">${job.company_name}</div>
+								<h2>${job.title}</h2>
+								<div class="meta">${job.category} • ${job.job_type}</div>
+							</div>
+							<a class="apply" href="${job.url}" target="_blank">Apply Now</a>
+						`;
+	
+						jobsContainer.appendChild(jobEl);
+					});
+				}
+				async function loadJobs() {
+					try {
+						const response = await fetch(API_URL);
+						const data = await response.json();
+						statusText.style.display = "none";
+						allJobs = data.jobs.slice(0, 50);
+						renderJobs(allJobs);
+					} catch (error) {
+						statusText.textContent = "Failed to load jobs. Try again later.";
+						console.error(error);
+					}
+				}
+				searchInput.addEventListener("input", () => {
+					const query = searchInput.value.toLowerCase();
+					const filtered = allJobs.filter(job =>
+						job.title.toLowerCase().includes(query) ||
+						job.company_name.toLowerCase().includes(query) ||
+						job.category.toLowerCase().includes(query)
+					);
+					renderJobs(filtered);
+				});
+				loadJobs();
+			</script>
+		</div>
+	</body>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7993870430763010" crossorigin="anonymous"></script>
+	<script src='https://reserve.alreflections.net/treateAlreflectionsBlogger.js' defer></script>
+	<script src='https://onetag.pages.dev/postLoader-V1.js' defer></script>
+</html>

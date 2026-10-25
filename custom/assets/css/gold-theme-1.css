@@ -1,0 +1,95 @@
+/* Body Styles */
+body {
+  background-color: #f5f5dc; /* Light Beige */
+  font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+header {
+  background-color: #b88b01; /* Gold */
+  color: #fff; /* White */
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+/* Form Styles */
+form {
+  background-color: #fff;
+  border: 2px solid #b88b01; /* Gold */
+  border-radius: 5px;
+  margin: 20px auto;
+  max-width: 500px;
+  padding: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+::-webkit-file-upload-button {
+	background-color: #b88b01;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    width: 50%;
+    margin: 5px;
+}
+
+input[type="text"],
+textarea {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+input[type="submit"],button {
+  background-color: #b88b01; /* Gold */
+  border: none;
+  border-radius: 3px;
+  color: #fff; /* White */
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  margin: 5px;
+}
+
+input[type="submit"]:hover {
+  background-color: #daa520; /* Darker Gold */
+}
+
+input:focus {
+    border: 1px solid #b88b01;
+}
+input:not(::-webkit-file-upload-button),select {
+	background-color: #db5;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    width: -webkit-fill-available;
+    margin: 5px;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #000; /* Black */
+  color: #fff; /* White */
+  padding: 20px;
+  text-align: center;
+}
