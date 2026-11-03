@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <meta name="description" content="Discover freelancer platforms, explore client acquisition models, and find opportunities to grow your independent career with Alreflections.">
+	  <meta name="theme-color" content="#b88b01">
+
+	  <title>Freelancer Platforms | Alreflections</title>
+
+	  <style>
+		:root {
+		  --gold: #b88b01;
+		  --gold-dark: #8d6900;
+		  --gold-soft: #fff6d9;
+		  --ink: #202124;
+		  --muted: #686b72;
+		  --line: #e9e6dc;
+		  --surface: #ffffff;
+		  --page: #fbfaf7;
+		  --radius: 20px;
+		  --shadow: 0 12px 34px rgba(48, 39, 8, .07);
+		}
+
+		* {
+		  box-sizing: border-box;
+		}
+
+		html {
+		  scroll-behavior: smooth;
+		}
+
+		body {
+		  margin: 0;
+		  color: var(--ink);
+		  background: var(--page);
+		  font-family: Inter, Arial, sans-serif;
+		  line-height: 1.6;
+		}
+
+		a {
+		  color: inherit;
+		}
+
+		.wrap {
+		  width: min(1160px, calc(100% - 40px));
+		  margin-inline: auto;
+		}
+
+		/* Navigation */
+
+		.topbar {
+		  background: rgba(255, 255, 255, .94);
+		  border-bottom: 1px solid var(--line);
+		  position: sticky;
+		  top: 0;
+		  z-index: 10;
+		  backdrop-filter: blur(12px);
+		}
+
+		.nav {
+		  min-height: 74px;
+		  display: flex;
+		  align-items: center;
+		  justify-content: space-between;
+		  gap: 24px;
+		}
+
+		.brand {
+		  display: flex;
+		  align-items: center;
+		  gap: 11px;
+		  text-decoration: none;
+		  font-weight: 800;
+		  letter-spacing: -.03em;
+		}
+
+		.brand-mark {
+		  display: grid;
+		  place-items: center;
+		  width: 38px;
+		  height: 38px;
+		  border-radius: 12px;
+		  color: #fff;
+		  background: var(--gold);
+		  font-size: 19px;
+		}
+
+		.brand span:last-child {
+		  font-size: 1.08rem;
+		}
+
+		.nav-link {
+		  color: var(--muted);
+		  text-decoration: none;
+		  font-size: .92rem;
+		  font-weight: 650;
+		}
+
+		.nav-link:hover {
+		  color: var(--gold-dark);
+		}
+
+		/* Hero */
+
+		.hero {
+		  padding: 76px 0 62px;
+		  overflow: hidden;
+		  position: relative;
+		}
+
+		.hero:before {
+		  content: "";
+		  position: absolute;
+		  width: 440px;
+		  height: 440px;
+		  border-radius: 50%;
+		  background: radial-gradient(
+			circle,
+			#f7e6a8 0,
+			#fbfaf7 68%
+		  );
+		  right: -130px;
+		  top: -160px;
+		  z-index: -1;
+		}
+
+		.eyebrow {
+		  display: inline-flex;
+		  align-items: center;
+		  gap: 9px;
+		  color: var(--gold-dark);
+		  font-size: .78rem;
+		  font-weight: 800;
+		  letter-spacing: .12em;
+		  text-transform: uppercase;
+		}
+
+		.eyebrow:before {
+		  content: "";
+		  width: 24px;
+		  height: 2px;
+		  background: var(--gold);
+		}
+
+		h1 {
+		  max-width: 800px;
+		  margin: 18px 0;
+		  font-size: clamp(2.45rem, 6vw, 4.6rem);
+		  line-height: 1.06;
+		  letter-spacing: -.065em;
+		}
+
+		h1 em {
+		  color: var(--gold);
+		  font-style: normal;
+		}
+
+		.hero-copy {
+		  max-width: 650px;
+		  color: var(--muted);
+		  font-size: 1.1rem;
+		  margin: 0 0 28px;
+		}
+
+		.hero-actions {
+		  display: flex;
+		  flex-wrap: wrap;
+		  gap: 12px;
+		}
+
+		.btn {
+		  display: inline-flex;
+		  justify-content: center;
+		  align-items: center;
+		  gap: 9px;
+		  min-height: 48px;
+		  padding: 0 20px;
+		  border-radius: 12px;
+		  text-decoration: none;
+		  font-weight: 750;
+		  border: 1px solid transparent;
+		  transition: transform .18s, box-shadow .18s;
+		}
+
+		.btn:hover {
+		  transform: translateY(-2px);
+		}
+
+		.btn-primary {
+		  background: var(--gold);
+		  color: #fff;
+		  box-shadow: 0 8px 20px #b88b0130;
+		}
+
+		.btn-primary:hover {
+		  background: var(--gold-dark);
+		}
+
+		.btn-secondary {
+		  background: #fff;
+		  border-color: var(--line);
+		}
+
+		.hero-note {
+		  margin-top: 20px;
+		  color: #85827a;
+		  font-size: .86rem;
+		}
+
+		/* Directory */
+
+		.directory {
+		  padding: 42px 0 82px;
+		}
+
+		.section-head {
+		  display: flex;
+		  justify-content: space-between;
+		  align-items: end;
+		  gap: 24px;
+		  margin-bottom: 24px;
+		}
+
+		h2 {
+		  font-size: clamp(1.8rem, 3vw, 2.5rem);
+		  letter-spacing: -.045em;
+		  line-height: 1.15;
+		  margin: 8px 0;
+		}
+
+		.section-head p {
+		  margin: 0;
+		  color: var(--muted);
+		  max-width: 580px;
+		}
+
+		.controls {
+		  display: grid;
+		  grid-template-columns: minmax(220px, 1fr) minmax(190px, 260px);
+		  gap: 12px;
+		  margin-bottom: 22px;
+		}
+
+		.search-wrap {
+		  position: relative;
+		}
+
+		.search-wrap svg {
+		  position: absolute;
+		  top: 50%;
+		  left: 16px;
+		  transform: translateY(-50%);
+		  color: #85827a;
+		}
+
+		input,
+		select {
+		  width: 100%;
+		  min-height: 52px;
+		  padding: 0 16px;
+		  border: 1px solid var(--line);
+		  border-radius: 13px;
+		  background: #fff;
+		  color: var(--ink);
+		  font: inherit;
+		  outline: none;
+		}
+
+		input {
+		  padding-left: 46px;
+		}
+
+		input:focus,
+		select:focus {
+		  border-color: var(--gold);
+		  box-shadow: 0 0 0 3px #b88b011a;
+		}
+
+		.results-row {
+		  display: flex;
+		  justify-content: space-between;
+		  align-items: center;
+		  margin: 0 0 16px;
+		  color: var(--muted);
+		  font-size: .9rem;
+		}
+
+		.results-row strong {
+		  color: var(--ink);
+		}
+
+		.grid {
+		  display: grid;
+		  grid-template-columns: repeat(3, minmax(0, 1fr));
+		  gap: 18px;
+		}
+
+		/* Platform cards */
+
+		.platform-card {
+		  background: var(--surface);
+		  border: 1px solid var(--line);
+		  border-radius: var(--radius);
+		  padding: 23px;
+		  display: flex;
+		  flex-direction: column;
+		  min-height: 300px;
+		  box-shadow: 0 4px 16px rgba(48, 39, 8, .025);
+		  transition:
+			transform .2s,
+			box-shadow .2s,
+			border-color .2s;
+		}
+
+		.platform-card:hover {
+		  transform: translateY(-4px);
+		  box-shadow: var(--shadow);
+		  border-color: #e2d39e;
+		}
+
+		.card-top {
+		  display: flex;
+		  align-items: center;
+		  justify-content: space-between;
+		  gap: 12px;
+		}
+
+		.platform-icon {
+		  width: 48px;
+		  height: 48px;
+		  display: grid;
+		  place-items: center;
+		  border-radius: 14px;
+		  background: var(--gold-soft);
+		  color: var(--gold-dark);
+		  font-weight: 850;
+		  font-size: 1.2rem;
+		}
+
+		.category {
+		  display: inline-block;
+		  border-radius: 999px;
+		  padding: 5px 10px;
+		  background: #f6f4ee;
+		  color: #777164;
+		  font-size: .72rem;
+		  font-weight: 750;
+		}
+
+		.platform-card h3 {
+		  margin: 18px 0 6px;
+		  font-size: 1.3rem;
+		  letter-spacing: -.025em;
+		}
+
+		.skill {
+		  color: var(--muted);
+		  font-size: .91rem;
+		  margin: 0 0 16px;
+		}
+
+		.meta-label {
+		  color: #8a867b;
+		  font-size: .72rem;
+		  font-weight: 800;
+		  text-transform: uppercase;
+		  letter-spacing: .08em;
+		  margin-bottom: 4px;
+		}
+
+		.model {
+		  font-size: .9rem;
+		  font-weight: 700;
+		  margin-bottom: 14px;
+		}
+
+		.reason {
+		  color: var(--muted);
+		  font-size: .88rem;
+		  margin: 0 0 22px;
+		}
+
+		.card-link {
+		  margin-top: auto;
+		  display: flex;
+		  align-items: center;
+		  justify-content: space-between;
+		  text-decoration: none;
+		  color: var(--gold-dark);
+		  font-weight: 800;
+		  font-size: .9rem;
+		}
+
+		.card-link span {
+		  transition: transform .2s;
+		}
+
+		.card-link:hover span {
+		  transform: translateX(4px);
+		}
+
+		.empty {
+		  grid-column: 1 / -1;
+		  text-align: center;
+		  padding: 55px 20px;
+		  background: #fff;
+		  border: 1px dashed #ded8c5;
+		  border-radius: var(--radius);
+		  color: var(--muted);
+		}
+
+		.empty h3 {
+		  margin: 0 0 8px;
+		  color: var(--ink);
+		}
+
+		.loading {
+		  grid-column: 1 / -1;
+		  padding: 50px;
+		  text-align: center;
+		  color: var(--muted);
+		}
+
+		/* Call to action */
+
+		.cta {
+		  padding: 0 0 78px;
+		}
+
+		.cta-panel {
+		  border-radius: 26px;
+		  padding: clamp(28px, 5vw, 54px);
+		  background: #fff;
+		  border: 1px solid #eadcae;
+		  display: flex;
+		  justify-content: space-between;
+		  align-items: center;
+		  gap: 30px;
+		  box-shadow: var(--shadow);
+		}
+
+		.cta-panel p {
+		  max-width: 600px;
+		  margin: 10px 0 0;
+		  color: var(--muted);
+		}
+
+		/* Footer */
+
+		footer {
+		  border-top: 1px solid var(--line);
+		  padding: 26px 0;
+		  color: var(--muted);
+		  font-size: .85rem;
+		  background: #fff;
+		}
+
+		.footer-inner {
+		  display: flex;
+		  justify-content: space-between;
+		  align-items: center;
+		  gap: 16px;
+		  flex-wrap: wrap;
+		}
+
+		footer a {
+		  color: var(--gold-dark);
+		  text-decoration: none;
+		  font-weight: 700;
+		}
+
+		/* Responsive layout */
+
+		@media (max-width: 900px) {
+		  .grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		  }
+
+		  .hero {
+			padding-top: 60px;
+		  }
+		}
+
+		@media (max-width: 620px) {
+		  .wrap {
+			width: min(100% - 28px, 1160px);
+		  }
+
+		  .nav {
+			min-height: 64px;
+		  }
+
+		  .nav-link {
+			display: none;
+		  }
+
+		  .hero {
+			padding: 48px 0 42px;
+		  }
+
+		  .hero-copy {
+			font-size: 1rem;
+		  }
+
+		  .section-head {
+			display: block;
+		  }
+
+		  .controls {
+			grid-template-columns: 1fr;
+		  }
+
+		  .grid {
+			grid-template-columns: 1fr;
+		  }
+
+		  .platform-card {
+			min-height: unset;
+		  }
+
+		  .cta-panel {
+			display: block;
+		  }
+
+		  .cta-panel .btn {
+			margin-top: 22px;
+		  }
+		}
+	  </style>
+	</head>
+
+	<body>
+
+	  <!-- Navigation -->
+	  <header class="topbar">
+		<div class="wrap nav">
+
+		  <a class="brand"
+			 href="https://alreflections.net"
+			 aria-label="Alreflections home">
+			<span class="brand-mark">A</span>
+			<span>Alreflections</span>
+		  </a>
+
+		  <a class="nav-link" href="#directory">
+			Explore platforms ↘
+		  </a>
+
+		</div>
+	  </header>
+
+	  <main>
+
+		<!-- Hero section -->
+		<section class="hero">
+		  <div class="wrap">
+
+			<div class="eyebrow">
+			  Freelancer platforms directory
+			</div>
+
+			<h1>
+			  Your skills can reach
+			  <br>
+			  <em>the world.</em>
+			</h1>
+
+			<p class="hero-copy">
+			  Explore Freelancer platforms where independent
+			  professionals connect with clients, offer services,
+			  and turn their skills into meaningful work.
+			  Find a marketplace that fits the way you want to work.
+			</p>
+
+			<div class="hero-actions">
+
+			  <a class="btn btn-primary" href="#directory">
+				Explore platforms →
+			  </a>
+
+			  <a class="btn btn-secondary" href="#how-it-works">
+				How to get started
+			  </a>
+
+			</div>
+
+			<p class="hero-note">
+			  A curated starting point for your independent career.
+			  Platform terms and availability may vary by country.
+			</p>
+
+		  </div>
+		</section>
+
+		<!-- Platform directory -->
+		<section class="directory" id="directory">
+		  <div class="wrap">
+
+			<div class="section-head">
+
+			  <div>
+				<div class="eyebrow">
+				  Find your fit
+				</div>
+
+				<h2>Freelancer platforms</h2>
+
+				<p>
+				  Compare how platforms help you meet clients,
+				  then visit the one that matches your skills
+				  and approach.
+				</p>
+			  </div>
+
+			</div>
+
+			<!-- Search and category filters -->
+			<div class="controls">
+
+			  <div class="search-wrap">
+
+				<svg width="18" height="18"
+					 viewBox="0 0 24 24"
+					 fill="none"
+					 aria-hidden="true">
+
+				  <circle cx="11" cy="11" r="7"
+						  stroke="currentColor"
+						  stroke-width="2"/>
+
+				  <path d="m16 16 4 4"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"/>
+
+				</svg>
+
+				<input
+				  id="search"
+				  type="search"
+				  placeholder="Search platforms, skills, or client models…"
+				  aria-label="Search platforms">
+
+			  </div>
+
+			  <select id="category" aria-label="Filter by category">
+
+				<option value="">
+				  All categories
+				</option>
+
+			  </select>
+
+			</div>
+
+			<div class="results-row">
+
+			  <span id="result-count">
+				Loading directory…
+			  </span>
+
+			  <span>
+				Explore at your own pace
+			  </span>
+
+			</div>
+
+			<div class="grid"
+				 id="platform-grid"
+				 aria-live="polite">
+
+			  <div class="loading">
+				Loading Freelancer platforms…
+			  </div>
+
+			</div>
+
+		  </div>
+		</section>
+
+		<!-- Getting started section -->
+		<section class="cta" id="how-it-works">
+		  <div class="wrap">
+
+			<div class="cta-panel">
+
+			  <div>
+
+				<div class="eyebrow">
+				  Start with a plan
+				</div>
+
+				<h2>Make your skills visible.</h2>
+
+				<p>
+				  Choose a platform, prepare a clear service offer
+				  or portfolio, and keep improving through real
+				  client experience. Consistency and a strong
+				  body of work can help you build momentum.
+				</p>
+
+			  </div>
+
+			  <a class="btn btn-primary" href="#directory">
+				Find a platform →
+			  </a>
+
+			</div>
+
+		  </div>
+		</section>
+
+	  </main>
+
+	  <!-- Footer -->
+	  <footer>
+
+		<div class="wrap footer-inner">
+
+		  <span>
+			© <span id="year"></span> Alreflections.
+			Creating fair opportunities to influence growth.
+		  </span>
+
+		  <a href="https://alreflections.net">
+			Discover Alreflections ↗
+		  </a>
+
+		</div>
+
+	  </footer>
+
+	  <script>
+		const grid = document.getElementById("platform-grid");
+		const searchInput = document.getElementById("search");
+		const categorySelect = document.getElementById("category");
+		const resultCount = document.getElementById("result-count");
+
+		let platforms = [];
+
+		document.getElementById("year").textContent =
+		  new Date().getFullYear();
+
+
+		// Escape HTML to prevent unsafe content rendering.
+		function escapeHTML(value = "") {
+
+		  return String(value).replace(/[&<>"']/g, char => ({
+			"&": "&amp;",
+			"<": "&lt;",
+			">": "&gt;",
+			'"': "&quot;",
+			"'": "&#39;"
+		  })[char]);
+
+		}
+
+
+		// Generate initials for the platform icon.
+		function initials(name) {
+
+		  return name.trim()
+			.split(/\s+/)
+			.map(part => part[0])
+			.join("")
+			.slice(0, 2)
+			.toUpperCase();
+
+		}
+
+
+		// Render the platform directory.
+		function render() {
+
+		  const query = searchInput.value.trim().toLowerCase();
+		  const category = categorySelect.value;
+
+		  const filtered = platforms.filter(platform => {
+
+			const text = [
+			  platform.name,
+			  platform.category,
+			  platform.skill_focus,
+			  platform.client_acquisition_model,
+			  platform.why_easy_to_get_clients
+			].join(" ").toLowerCase();
+
+			return text.includes(query) &&
+			  (!category || platform.category === category);
+
+		  });
+
+
+		  resultCount.innerHTML =
+			`<strong>${filtered.length}</strong> ` +
+			`${filtered.length === 1 ? "platform" : "platforms"} found`;
+
+
+		  // Display empty state.
+		  if (!filtered.length) {
+
+			grid.innerHTML = `
+			  <div class="empty">
+
+				<h3>No matching platforms</h3>
+
+				<p>
+				  Try a different search term or choose another category.
+				</p>
+
+			  </div>
+			`;
+
+			return;
+
+		  }
+
+
+		  // Build platform cards from JSON.
+		  grid.innerHTML = filtered.map(platform => `
+
+			<article class="platform-card">
+
+			  <div class="card-top">
+
+				<div class="platform-icon" aria-hidden="true">
+				  ${escapeHTML(initials(platform.name))}
+				</div>
+
+				<span class="category">
+				  ${escapeHTML(platform.category)}
+				</span>
+
+			  </div>
+
+			  <h3>
+				${escapeHTML(platform.name)}
+			  </h3>
+
+			  <p class="skill">
+				${escapeHTML(platform.skill_focus)}
+			  </p>
+
+			  <div class="meta-label">
+				Client acquisition model
+			  </div>
+
+			  <div class="model">
+				${escapeHTML(platform.client_acquisition_model)}
+			  </div>
+
+			  <p class="reason">
+				${escapeHTML(platform.why_easy_to_get_clients)}
+			  </p>
+
+			  <a
+				class="card-link"
+				href="${escapeHTML(platform.url)}"
+				target="_blank"
+				rel="noopener noreferrer">
+
+				Visit platform
+
+				<span aria-hidden="true">↗</span>
+
+			  </a>
+
+			</article>
+
+		  `).join("");
+
+		}
+
+
+		// Load the external JSON file.
+		async function loadPlatforms() {
+
+		  try {
+
+			const response = await fetch(
+			  "./freelancing-platforms.json",
+			  { cache: "no-cache" }
+			);
+
+			if (!response.ok) {
+			  throw new Error("Could not load JSON data");
+			}
+
+			const data = await response.json();
+
+			if (!Array.isArray(data)) {
+			  throw new Error("Expected a JSON array");
+			}
+
+			platforms = data.filter(
+			  item => item && item.name && item.url
+			);
+
+
+			// Populate category filter automatically.
+			const categories = [
+			  ...new Set(
+				platforms
+				  .map(item => item.category)
+				  .filter(Boolean)
+			  )
+			].sort();
+
+
+			categorySelect.innerHTML =
+			  `<option value="">All categories</option>` +
+
+			  categories.map(category => `
+				<option value="${escapeHTML(category)}">
+				  ${escapeHTML(category)}
+				</option>
+			  `).join("");
+
+
+			render();
+
+		  } catch (error) {
+
+			grid.innerHTML = `
+			  <div class="empty">
+
+				<h3>Platform directory could not load</h3>
+
+				<p>
+				  Make sure freelancing-platforms.json is in the
+				  same folder and open this page through a web server.
+				</p>
+
+			  </div>
+			`;
+
+			resultCount.textContent = "Directory unavailable";
+
+			console.error(error);
+
+		  }
+
+		}
+
+
+		// Search dynamically as the user types.
+		searchInput.addEventListener("input", render);
+
+
+		// Filter when a category is selected.
+		categorySelect.addEventListener("change", render);
+
+
+		// Initialize directory.
+		loadPlatforms();
+
+	  </script>
+
+	</body>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7993870430763010" crossorigin="anonymous"></script>
+	<script src='https://reserve.alreflections.net/treateAlreflectionsBlogger.js' defer></script>
+</html>

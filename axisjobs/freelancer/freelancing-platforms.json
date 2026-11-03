@@ -1,0 +1,704 @@
+[
+  {
+    "id": 1,
+    "category": "Productized & Gig-Based",
+    "name": "Fiverr",
+    "url": "https://www.fiverr.com",
+    "skill_focus": "All Skill Categories",
+    "client_acquisition_model": "Service Catalog / Inbound Search",
+    "why_easy_to_get_clients": "Clients search and purchase pre-packaged gigs directly without proposal bidding."
+  },
+  {
+    "id": 2,
+    "category": "Productized & Gig-Based",
+    "name": "ComeUp",
+    "url": "https://comeup.com",
+    "skill_focus": "Digital Services, Design, Writing, Tech",
+    "client_acquisition_model": "Service Catalog / Gigs",
+    "why_easy_to_get_clients": "Fast-growing European gig site with lower seller competition than Fiverr."
+  },
+  {
+    "id": 3,
+    "category": "Productized & Gig-Based",
+    "name": "Kwork",
+    "url": "https://kwork.com",
+    "skill_focus": "SEO, Design, Web Dev, Micro-tasks",
+    "client_acquisition_model": "Fixed-Price Gigs",
+    "why_easy_to_get_clients": "Fixed package system that boosts new sellers in search rankings to gain initial reviews."
+  },
+  {
+    "id": 4,
+    "category": "Productized & Gig-Based",
+    "name": "Legiit",
+    "url": "https://www.legiit.com",
+    "skill_focus": "SEO, Digital Marketing, Link Building",
+    "client_acquisition_model": "Specialized Service Catalog",
+    "why_easy_to_get_clients": "Direct inbound traffic from SEO agencies and business owners buying specific packages."
+  },
+  {
+    "id": 5,
+    "category": "Productized & Gig-Based",
+    "name": "PeoplePerHour",
+    "url": "https://www.peopleperhour.com",
+    "skill_focus": "Design, Writing, Admin, Web Dev",
+    "client_acquisition_model": "Hourlies / Hourly Offers",
+    "why_easy_to_get_clients": "Strong UK/EU client density where buyers purchase fixed-price 'Hourlies' instantly."
+  },
+  {
+    "id": 6,
+    "category": "Productized & Gig-Based",
+    "name": "Guru",
+    "url": "https://www.guru.com",
+    "skill_focus": "General Tech, Admin, Legal, Creative",
+    "client_acquisition_model": "WorkSpaces / Escrow Bidding",
+    "why_easy_to_get_clients": "Lower freelancer saturation than Upwork with long-term client retention features."
+  },
+  {
+    "id": 7,
+    "category": "Productized & Gig-Based",
+    "name": "Truelancer",
+    "url": "https://www.truelancer.com",
+    "skill_focus": "Entry-level Admin, Writing, Data Entry",
+    "client_acquisition_model": "General Bidding Marketplace",
+    "why_easy_to_get_clients": "High volume of entry-level global job postings with quick turnarounds."
+  },
+  {
+    "id": 8,
+    "category": "Productized & Gig-Based",
+    "name": "Workana",
+    "url": "https://www.workana.com",
+    "skill_focus": "Dev, Design, Translation, Support",
+    "client_acquisition_model": "LATAM Regional Bidding",
+    "why_easy_to_get_clients": "Premier platform for Spanish/Portuguese markets with minimal global noise competition."
+  },
+  {
+    "id": 9,
+    "category": "Micro-Task & Instant Claim",
+    "name": "Clickworker",
+    "url": "https://www.clickworker.com",
+    "skill_focus": "Data Entry, AI Training, Research",
+    "client_acquisition_model": "Instant Task Selection Queue",
+    "why_easy_to_get_clients": "No pitching or interviews required; select tasks from a pool and start immediately."
+  },
+  {
+    "id": 10,
+    "category": "Micro-Task & Instant Claim",
+    "name": "SproutGigs (Picoworkers)",
+    "url": "https://sproutgigs.com",
+    "skill_focus": "Social Media, Micro-reviews, Testing",
+    "client_acquisition_model": "Proof-Based Micro-Gigs",
+    "why_easy_to_get_clients": "Instant approval micro-tasks that build quick worker feedback and fast earnings."
+  },
+  {
+    "id": 11,
+    "category": "Micro-Task & Instant Claim",
+    "name": "MicroWorkers",
+    "url": "https://www.microworkers.com",
+    "skill_focus": "Data Verification, Web Testing",
+    "client_acquisition_model": "Micro-Task Queue",
+    "why_easy_to_get_clients": "Automated task board system with fast client sign-off."
+  },
+  {
+    "id": 12,
+    "category": "Micro-Task & Instant Claim",
+    "name": "Amazon Mechanical Turk",
+    "url": "https://www.mturk.com",
+    "skill_focus": "Data Annotation, Surveys, Transcription",
+    "client_acquisition_model": "Enterprise Task Queue",
+    "why_easy_to_get_clients": "Massive 24/7 task volume directly from global enterprise requesters."
+  },
+  {
+    "id": 13,
+    "category": "Micro-Task & Instant Claim",
+    "name": "Fancy Hands",
+    "url": "https://www.fancyhands.com",
+    "skill_focus": "Virtual Assistance, Phone Calls, Research",
+    "client_acquisition_model": "Micro-VA Tasks",
+    "why_easy_to_get_clients": "Per-task payout model for quick administrative tasks like scheduling and research."
+  },
+  {
+    "id": 14,
+    "category": "Creative & Visual Arts",
+    "name": "Contra",
+    "url": "https://contra.com",
+    "skill_focus": "UI/UX, Graphic Design, Brand Identity",
+    "client_acquisition_model": "0% Fee Portfolio Match",
+    "why_easy_to_get_clients": "Commission-free portfolio marketplace with high organic client discovery."
+  },
+  {
+    "id": 15,
+    "category": "Creative & Visual Arts",
+    "name": "Behance",
+    "url": "https://www.behance.net",
+    "skill_focus": "Illustration, Branding, 3D Art, Motion",
+    "client_acquisition_model": "Visual Showcase & Job Board",
+    "why_easy_to_get_clients": "Integrated job board and direct 'Hire Me' buttons on project showcases."
+  },
+  {
+    "id": 16,
+    "category": "Creative & Visual Arts",
+    "name": "Dribbble",
+    "url": "https://dribbble.com",
+    "skill_focus": "UI/UX, Product Design, Brand Design",
+    "client_acquisition_model": "Designer Directory",
+    "why_easy_to_get_clients": "Primary destination for founders and tech leads searching specialized visual designers."
+  },
+  {
+    "id": 17,
+    "category": "Creative & Visual Arts",
+    "name": "99designs",
+    "url": "https://99designs.com",
+    "skill_focus": "Logos, Packaging, Web & App Layouts",
+    "client_acquisition_model": "Design Contests & 1-on-1",
+    "why_easy_to_get_clients": "Entering specific contests guarantees client eyes on your exact visual work."
+  },
+  {
+    "id": 18,
+    "category": "Creative & Visual Arts",
+    "name": "DesignHill",
+    "url": "https://www.designhill.com",
+    "skill_focus": "Branding, Apparel Design, Custom Graphics",
+    "client_acquisition_model": "Contest & Custom Storefront",
+    "why_easy_to_get_clients": "High client browsing volume across custom storefronts and logo contests."
+  },
+  {
+    "id": 19,
+    "category": "Creative & Visual Arts",
+    "name": "Crowdspring",
+    "url": "https://www.crowdspring.com",
+    "skill_focus": "Naming, Slogans, Custom Graphic Design",
+    "client_acquisition_model": "Niche Contests",
+    "why_easy_to_get_clients": "Higher average payouts and fewer competing entries per brief."
+  },
+  {
+    "id": 20,
+    "category": "Creative & Visual Arts",
+    "name": "DesignCrowd",
+    "url": "https://www.designcrowd.com",
+    "skill_focus": "Print, Flyers, Vector Art, Logos",
+    "client_acquisition_model": "High-Volume Crowdsourcing",
+    "why_easy_to_get_clients": "Frequent design postings with rapid client feedback loops."
+  },
+  {
+    "id": 21,
+    "category": "Creative & Visual Arts",
+    "name": "ArtStation",
+    "url": "https://www.artstation.com",
+    "skill_focus": "Game Art, 3D Modeling, Concept Art, VFX",
+    "client_acquisition_model": "Industry Portfolio Directory",
+    "why_easy_to_get_clients": "Directly targeted by game studios, entertainment industries, and indie developers."
+  },
+  {
+    "id": 22,
+    "category": "Creative & Visual Arts",
+    "name": "Coroflot",
+    "url": "https://www.coroflot.com",
+    "skill_focus": "Industrial Design, UI/UX, Graphic Design",
+    "client_acquisition_model": "Niche Creative Board",
+    "why_easy_to_get_clients": "Specialized design community job board with direct client applications."
+  },
+  {
+    "id": 23,
+    "category": "Creative & Visual Arts",
+    "name": "Twine",
+    "url": "https://www.twine.net",
+    "skill_focus": "Animation, Music Scoring, Video Editing",
+    "client_acquisition_model": "Brief-Based Pitching",
+    "why_easy_to_get_clients": "Targeted matching engine for media creators, animators, and sound designers."
+  },
+  {
+    "id": 24,
+    "category": "Creative & Visual Arts",
+    "name": "Working Not Working",
+    "url": "https://workingnotworking.com",
+    "skill_focus": "Advertising, Art Direction, Copywriting",
+    "client_acquisition_model": "Ad Agency Talent Network",
+    "why_easy_to_get_clients": "Vetted by top global ad agencies who directly contact available talent."
+  },
+  {
+    "id": 25,
+    "category": "Creative & Visual Arts",
+    "name": "YunoJuno",
+    "url": "https://www.yunojuno.com",
+    "skill_focus": "Creative & Tech (UK Focused)",
+    "client_acquisition_model": "Enterprise Matchmaking",
+    "why_easy_to_get_clients": "Direct matching with major UK/EU corporate briefs without middle bidding."
+  },
+  {
+    "id": 26,
+    "category": "Writing & Content",
+    "name": "ProBlogger Job Board",
+    "url": "https://problogger.com/jobs/",
+    "skill_focus": "Blog Posts, Copywriting, Tech Writing",
+    "client_acquisition_model": "High-Intent Job Board",
+    "why_easy_to_get_clients": "Daily job listings posted by clients with direct email or form applications."
+  },
+  {
+    "id": 27,
+    "category": "Writing & Content",
+    "name": "BloggingPro",
+    "url": "https://www.bloggingpro.com",
+    "skill_focus": "Content Writing, Editing, Ghostwriting",
+    "client_acquisition_model": "Free Content Job Board",
+    "why_easy_to_get_clients": "Clean job board focused on long-term remote blogging contracts."
+  },
+  {
+    "id": 28,
+    "category": "Writing & Content",
+    "name": "Freelance Writing Jobs",
+    "url": "https://www.freelancewriting.com",
+    "skill_focus": "Journalism, Web Content, Copywriting",
+    "client_acquisition_model": "Curated Daily Listings",
+    "why_easy_to_get_clients": "Aggregates hand-picked remote writing gigs with low application friction."
+  },
+  {
+    "id": 29,
+    "category": "Writing & Content",
+    "name": "Textbroker",
+    "url": "https://www.textbroker.com",
+    "skill_focus": "SEO Articles, Product Descriptions",
+    "client_acquisition_model": "Pooled Article Queue",
+    "why_easy_to_get_clients": "Pick available writing tasks directly from the queue based on star rating."
+  },
+  {
+    "id": 30,
+    "category": "Writing & Content",
+    "name": "iWriter",
+    "url": "https://www.iwriter.com",
+    "skill_focus": "Blog Posts, Rewrites, E-books",
+    "client_acquisition_model": "Open Access Task Pool",
+    "why_easy_to_get_clients": "Beginner-friendly access allowing instant claiming of client article requests."
+  },
+  {
+    "id": 31,
+    "category": "Writing & Content",
+    "name": "WriterAccess",
+    "url": "https://www.writeraccess.com",
+    "skill_focus": "Content Strategy, Marketing Copy",
+    "client_acquisition_model": "AI Talent Matching",
+    "why_easy_to_get_clients": "Proprietary matching algorithm assigns client projects directly to relevant profiles."
+  },
+  {
+    "id": 32,
+    "category": "Writing & Content",
+    "name": "nDash",
+    "url": "https://www.ndash.com",
+    "skill_focus": "B2B Content, Whitepapers, Tech Writing",
+    "client_acquisition_model": "Direct Pitching to Brands",
+    "why_easy_to_get_clients": "Pitch unique content ideas directly to brand editors actively seeking new topics."
+  },
+  {
+    "id": 33,
+    "category": "Writing & Content",
+    "name": "ClearVoice",
+    "url": "https://www.clearvoice.com",
+    "skill_focus": "Enterprise Content & Copywriting",
+    "client_acquisition_model": "Managed Talent Network",
+    "why_easy_to_get_clients": "ClearVoice in-house team assigns corporate clients to matching portfolios."
+  },
+  {
+    "id": 34,
+    "category": "Writing & Content",
+    "name": "Scribendi",
+    "url": "https://www.scribendi.com",
+    "skill_focus": "Proofreading, Editing, Academic Papers",
+    "client_acquisition_model": "Pooled Editing Queue",
+    "why_easy_to_get_clients": "Steady stream of editing assignments placed directly into worker queues."
+  },
+  {
+    "id": 35,
+    "category": "Writing & Content",
+    "name": "MediaBistro",
+    "url": "https://www.mediabistro.com",
+    "skill_focus": "Media, Journalism, Publishing",
+    "client_acquisition_model": "Media Industry Job Board",
+    "why_easy_to_get_clients": "Connects writers directly with publishing houses and digital media brands."
+  },
+  {
+    "id": 36,
+    "category": "Writing & Content",
+    "name": "Contena",
+    "url": "https://www.contena.co",
+    "skill_focus": "Niche Content Writing & Copywriting",
+    "client_acquisition_model": "Vetted Lead Database",
+    "why_easy_to_get_clients": "Indexes high-paying writing contracts with direct client contact information."
+  },
+  {
+    "id": 37,
+    "category": "Writing & Content",
+    "name": "Scripted",
+    "url": "https://www.scripted.com",
+    "skill_focus": "B2B Marketing & Blog Writing",
+    "client_acquisition_model": "Pooled Content Queue",
+    "why_easy_to_get_clients": "Approved writers claim client content requests directly without bidding."
+  },
+  {
+    "id": 38,
+    "category": "Tech, Software & Data",
+    "name": "Codementor",
+    "url": "https://www.codementor.io",
+    "skill_focus": "Live Coding Help, Debugging, Freelance Dev",
+    "client_acquisition_model": "1-on-1 Immediate Help",
+    "why_easy_to_get_clients": "Clients post urgent coding bugs or session requests with instant conversion rates."
+  },
+  {
+    "id": 39,
+    "category": "Tech, Software & Data",
+    "name": "Arc.dev",
+    "url": "https://arc.dev",
+    "skill_focus": "Remote Software Engineering",
+    "client_acquisition_model": "Vetted Matchmaking",
+    "why_easy_to_get_clients": "Direct matching platform connecting software engineers with vetted US tech startups."
+  },
+  {
+    "id": 40,
+    "category": "Tech, Software & Data",
+    "name": "Braintrust",
+    "url": "https://www.usebraintrust.com",
+    "skill_focus": "Senior Engineering, Product, AI",
+    "client_acquisition_model": "User-Owned 0% Fee Network",
+    "why_easy_to_get_clients": "Matches talent directly with top enterprise clients (Deloitte, NASA, Nike)."
+  },
+  {
+    "id": 41,
+    "category": "Tech, Software & Data",
+    "name": "Lemon.io",
+    "url": "https://lemon.io",
+    "skill_focus": "Full-Stack, Backend, Frontend Devs",
+    "client_acquisition_model": "1-on-1 Startup Pairing",
+    "why_easy_to_get_clients": "Vetted dev network pairing engineers 1-on-1 with US/EU startup clients."
+  },
+  {
+    "id": 42,
+    "category": "Tech, Software & Data",
+    "name": "Gun.io",
+    "url": "https://www.gun.io",
+    "skill_focus": "Mobile & Web Engineering",
+    "client_acquisition_model": "Hand-Managed Matching",
+    "why_easy_to_get_clients": "Gun.io sales team handles scope negotiation and introduces you to ready clients."
+  },
+  {
+    "id": 43,
+    "category": "Tech, Software & Data",
+    "name": "Toptal",
+    "url": "https://www.toptal.com",
+    "skill_focus": "Software Dev, QA, Data Science",
+    "client_acquisition_model": "Managed Talent Matchmakers",
+    "why_easy_to_get_clients": "Once accepted, Toptal matchmakers hand-deliver client projects with zero pitch competing."
+  },
+  {
+    "id": 44,
+    "category": "Tech, Software & Data",
+    "name": "Gigster",
+    "url": "https://gigster.com",
+    "skill_focus": "Enterprise AI & Custom Software",
+    "client_acquisition_model": "Managed Team Assembly",
+    "why_easy_to_get_clients": "Builds pre-vetted teams for high-budget corporate tech initiatives."
+  },
+  {
+    "id": 45,
+    "category": "Tech, Software & Data",
+    "name": "Dice",
+    "url": "https://www.dice.com",
+    "skill_focus": "Tech Contracts & Engineering",
+    "client_acquisition_model": "Tech Job Search Engine",
+    "why_easy_to_get_clients": "Dedicated contract search engine with direct recruiter contact for developers."
+  },
+  {
+    "id": 46,
+    "category": "Tech, Software & Data",
+    "name": "Kaggle Jobs",
+    "url": "https://www.kaggle.com/jobs",
+    "skill_focus": "Data Science, ML, AI Engineering",
+    "client_acquisition_model": "Portfolio & Challenge Outreach",
+    "why_easy_to_get_clients": "Direct recruiter outreach based on competition rankings and notebook portfolios."
+  },
+  {
+    "id": 47,
+    "category": "Virtual Assistance & Support",
+    "name": "Belay",
+    "url": "https://belaysolutions.com",
+    "skill_focus": "Executive VA, Bookkeeping",
+    "client_acquisition_model": "Managed Client Matching",
+    "why_easy_to_get_clients": "Matches vetted US virtual assistants directly with corporate executives."
+  },
+  {
+    "id": 48,
+    "category": "Virtual Assistance & Support",
+    "name": "TimeEtc",
+    "url": "https://timeetc.com",
+    "skill_focus": "Administrative & VA Support",
+    "client_acquisition_model": "Ongoing Client Placement",
+    "why_easy_to_get_clients": "Connects VAs with entrepreneurs looking for long-term 10-30 hrs/week assistance."
+  },
+  {
+    "id": 49,
+    "category": "Virtual Assistance & Support",
+    "name": "Zirtual",
+    "url": "https://www.zirtual.com",
+    "skill_focus": "Executive Assistance",
+    "client_acquisition_model": "Dedicated VA Placement",
+    "why_easy_to_get_clients": "Assigns dedicated US business clients based on your timezone and skill set."
+  },
+  {
+    "id": 50,
+    "category": "Virtual Assistance & Support",
+    "name": "Boldly",
+    "url": "https://boldly.com",
+    "skill_focus": "Subscription Remote Operations",
+    "client_acquisition_model": "Staff Placement",
+    "why_easy_to_get_clients": "Handles client acquisition on your behalf with predictable hourly pay."
+  },
+  {
+    "id": 51,
+    "category": "Virtual Assistance & Support",
+    "name": "Outsourcely",
+    "url": "https://www.outsourcely.com",
+    "skill_focus": "Remote Admin, Customer Support, Data",
+    "client_acquisition_model": "0% Fee Direct Hiring",
+    "why_easy_to_get_clients": "Connects international remote workers directly with startups for long-term roles."
+  },
+  {
+    "id": 52,
+    "category": "Audio, Voice & Video",
+    "name": "Voices.com",
+    "url": "https://www.voices.com",
+    "skill_focus": "Commercial Voiceover, Audiobooks",
+    "client_acquisition_model": "Algorithm Match Auditions",
+    "why_easy_to_get_clients": "Voice match engine pushes relevant auditions directly to your dashboard."
+  },
+  {
+    "id": 53,
+    "category": "Audio, Voice & Video",
+    "name": "Voice123",
+    "url": "https://voice123.com",
+    "skill_focus": "Global Voice Acting & Narration",
+    "client_acquisition_model": "Direct Demo Inquiries",
+    "why_easy_to_get_clients": "Clients listen to demo reels and invite talent to low-competition private auditions."
+  },
+  {
+    "id": 54,
+    "category": "Audio, Voice & Video",
+    "name": "SoundBetter (by Spotify)",
+    "url": "https://www.soundbetter.com",
+    "skill_focus": "Music Production, Vocalists, Mixing",
+    "client_acquisition_model": "Music Industry Marketplace",
+    "why_easy_to_get_clients": "Musicians receive direct project inquiries and track mixing requests from artists."
+  },
+  {
+    "id": 55,
+    "category": "Audio, Voice & Video",
+    "name": "ProductionHUB",
+    "url": "https://www.productionhub.com",
+    "skill_focus": "Film/TV Crew, Video Editing",
+    "client_acquisition_model": "Production Directory",
+    "why_easy_to_get_clients": "Producers search location-based freelance crews directly for shoot dates."
+  },
+  {
+    "id": 56,
+    "category": "Audio, Voice & Video",
+    "name": "VoiceActors.com",
+    "url": "https://voiceactors.com",
+    "skill_focus": "Indie Voiceover & Narration",
+    "client_acquisition_model": "Direct Profile Directory",
+    "why_easy_to_get_clients": "Lower-competition directory focused on direct buyer-to-artist contact."
+  },
+  {
+    "id": 57,
+    "category": "Translation & Transcription",
+    "name": "Rev",
+    "url": "https://www.rev.com",
+    "skill_focus": "Transcription, Subtitling, Captioning",
+    "client_acquisition_model": "Open Task Queue",
+    "why_easy_to_get_clients": "Select available audio/video files from an open queue and start working immediately."
+  },
+  {
+    "id": 58,
+    "category": "Translation & Transcription",
+    "name": "Gengo",
+    "url": "https://gengo.com",
+    "skill_focus": "Language Translation",
+    "client_acquisition_model": "First-Come Job Dashboard",
+    "why_easy_to_get_clients": "Approved translators claim jobs instantly from an order dashboard."
+  },
+  {
+    "id": 59,
+    "category": "Translation & Transcription",
+    "name": "ProZ.com",
+    "url": "https://www.proz.com",
+    "skill_focus": "Translation & Interpreting",
+    "client_acquisition_model": "Global Translator Directory",
+    "why_easy_to_get_clients": "World's largest translation portal where agencies actively source specialists."
+  },
+  {
+    "id": 60,
+    "category": "Translation & Transcription",
+    "name": "TranslatorsCafe",
+    "url": "https://www.translatorscafe.com",
+    "skill_focus": "Linguistic & Translation Services",
+    "client_acquisition_model": "Direct Agency Board",
+    "why_easy_to_get_clients": "Direct job board without middleman commission fees."
+  },
+  {
+    "id": 61,
+    "category": "Translation & Transcription",
+    "name": "TranscribeMe",
+    "url": "https://www.transcribeme.com",
+    "skill_focus": "Short-form Audio Transcription",
+    "client_acquisition_model": "Micro-Chunk Task Queue",
+    "why_easy_to_get_clients": "Instant task availability for rapid earnings turnaround."
+  },
+  {
+    "id": 62,
+    "category": "Translation & Transcription",
+    "name": "BLEND (One Hour Translation)",
+    "url": "https://www.getblend.com",
+    "skill_focus": "Enterprise Localization",
+    "client_acquisition_model": "Push Notification Dashboard",
+    "why_easy_to_get_clients": "Automated notification system pushes translation tasks directly to qualified linguists."
+  },
+  {
+    "id": 63,
+    "category": "Marketing & Consulting",
+    "name": "MarketerHire",
+    "url": "https://marketerhire.com",
+    "skill_focus": "Fractional CMOs, SEO, Paid Media",
+    "client_acquisition_model": "48-Hour Talent Matching",
+    "why_easy_to_get_clients": "Internal matchmakers pair pre-screened marketers with companies within 48 hours."
+  },
+  {
+    "id": 64,
+    "category": "Marketing & Consulting",
+    "name": "Mayple",
+    "url": "https://www.mayple.com",
+    "skill_focus": "Digital Marketing & E-commerce",
+    "client_acquisition_model": "Data-Driven Matching",
+    "why_easy_to_get_clients": "Matching engine pairs marketers with brands based on verified campaign results."
+  },
+  {
+    "id": 65,
+    "category": "Marketing & Consulting",
+    "name": "Clarity.fm",
+    "url": "https://clarity.fm",
+    "skill_focus": "Startup & Business Consulting",
+    "client_acquisition_model": "Per-Minute Phone Advice",
+    "why_easy_to_get_clients": "Set your per-minute consulting rate; clients book advice calls directly."
+  },
+  {
+    "id": 66,
+    "category": "Marketing & Consulting",
+    "name": "Catalant",
+    "url": "https://gocatalant.com",
+    "skill_focus": "Corporate Strategy, Financial Modeling",
+    "client_acquisition_model": "Enterprise Consulting Board",
+    "why_easy_to_get_clients": "High-budget corporate project board for senior management consultants."
+  },
+  {
+    "id": 67,
+    "category": "Marketing & Consulting",
+    "name": "GrowthMentor",
+    "url": "https://www.growthmentor.com",
+    "skill_focus": "Startup Advisory & Mentorship",
+    "client_acquisition_model": "Advisory Session Booking",
+    "why_easy_to_get_clients": "Connects growth marketers and founders for paid advice calls and retainer projects."
+  },
+  {
+    "id": 68,
+    "category": "Marketing & Consulting",
+    "name": "Flexing It",
+    "url": "https://www.flexingit.com",
+    "skill_focus": "Asian & Emerging Market Consulting",
+    "client_acquisition_model": "Corporate Assignment Portal",
+    "why_easy_to_get_clients": "Focused on corporate project assignments with low Western bidding saturation."
+  },
+  {
+    "id": 69,
+    "category": "Tutoring & Skill Coaching",
+    "name": "Preply",
+    "url": "https://preply.com",
+    "skill_focus": "Language & Academic Tutoring",
+    "client_acquisition_model": "Tutor Profile Search",
+    "why_easy_to_get_clients": "High organic search traffic brings students directly to your profile and booking calendar."
+  },
+  {
+    "id": 70,
+    "category": "Tutoring & Skill Coaching",
+    "name": "iTalki",
+    "url": "https://www.italki.com",
+    "skill_focus": "Conversational & Language Teaching",
+    "client_acquisition_model": "Student Discovery Portal",
+    "why_easy_to_get_clients": "Enormous global student base looking for native and informal language tutors."
+  },
+  {
+    "id": 71,
+    "category": "Tutoring & Skill Coaching",
+    "name": "Wyzant",
+    "url": "https://www.wyzant.com",
+    "skill_focus": "Academic Subjects, Test Prep, Coding",
+    "client_acquisition_model": "Direct Student Messaging",
+    "why_easy_to_get_clients": "Direct student/parent messaging alongside local and online job requests."
+  },
+  {
+    "id": 72,
+    "category": "Tutoring & Skill Coaching",
+    "name": "Outschool",
+    "url": "https://outschool.com",
+    "skill_focus": "Youth Skill & Academic Classes",
+    "client_acquisition_model": "Live Class Marketplace",
+    "why_easy_to_get_clients": "Create your own niche class topic and parents enroll students directly."
+  },
+  {
+    "id": 73,
+    "category": "Regional & Remote Job Boards",
+    "name": "Malt",
+    "url": "https://www.malt.com",
+    "skill_focus": "European Digital & Tech Freelance",
+    "client_acquisition_model": "Profile Search (No Bidding)",
+    "why_easy_to_get_clients": "Over 300,000 European companies search Malt freelancer profiles directly."
+  },
+  {
+    "id": 74,
+    "category": "Regional & Remote Job Boards",
+    "name": "Freelancermap",
+    "url": "https://www.freelancermap.com",
+    "skill_focus": "IT & Tech Contracting (DACH Region)",
+    "client_acquisition_model": "Enterprise IT Contract Board",
+    "why_easy_to_get_clients": "High hourly rates and enterprise contract postings in Germany, Austria, and Switzerland."
+  },
+  {
+    "id": 75,
+    "category": "Regional & Remote Job Boards",
+    "name": "We Work Remotely",
+    "url": "https://weworkremotely.com",
+    "skill_focus": "Remote Tech, Design, Marketing",
+    "client_acquisition_model": "Direct Application Board",
+    "why_easy_to_get_clients": "Direct application to vetted remote companies hiring contractors."
+  },
+  {
+    "id": 76,
+    "category": "Regional & Remote Job Boards",
+    "name": "Remotive",
+    "url": "https://remotive.com",
+    "skill_focus": "Remote Engineering, Support, Marketing",
+    "client_acquisition_model": "Hand-Screened Job Board",
+    "why_easy_to_get_clients": "Hand-screened remote contract roles with direct hiring manager contact."
+  },
+  {
+    "id": 77,
+    "category": "Regional & Remote Job Boards",
+    "name": "Jobspresso",
+    "url": "https://jobspresso.co",
+    "skill_focus": "Tech, Writing, Marketing Contracts",
+    "client_acquisition_model": "Curated Direct Roles",
+    "why_easy_to_get_clients": "Daily updated jobs reviewed for quality and direct client contact details."
+  },
+  {
+    "id": 78,
+    "category": "Regional & Remote Job Boards",
+    "name": "Joomlancers",
+    "url": "https://www.joomlancers.com",
+    "skill_focus": "Niche CMS (WordPress, Joomla, Web)",
+    "client_acquisition_model": "CMS Bidding Marketplace",
+    "why_easy_to_get_clients": "Extremely specialized CMS board with low freelancer proposal density."
+  }
+]
