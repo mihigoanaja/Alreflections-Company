@@ -1,0 +1,975 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+
+<title>GitHub Projects | Mihigo ER Anaja</title>
+
+<meta name="description" content="Explore the public GitHub repositories, software projects, experiments and development work of Mihigo ER Anaja.">
+
+<style>
+:root {
+    --gold: #b88b01;
+    --gold-light: #f9f3df;
+    --gold-border: #ead9a5;
+    --text: #292929;
+    --muted: #777;
+    --border: #eaeaea;
+    --background: #ffffff;
+    --surface: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, -apple-system, BlinkMacSystemFont,
+                 "Segoe UI", sans-serif;
+    background: #fafafa;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input, select {
+    font: inherit;
+}
+
+/* HEADER */
+
+.header {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    padding: 17px 6%;
+}
+
+.nav {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand {
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -.5px;
+}
+
+.brand span {
+    color: var(--gold);
+}
+
+.nav-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+}
+
+.nav-link:hover {
+    color: var(--gold);
+}
+
+/* HERO */
+
+.hero {
+    background: white;
+    padding: 65px 6% 55px;
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-inner {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.avatar {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    border: 3px solid var(--gold-border);
+    object-fit: cover;
+    background: #eee;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.eyebrow {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 9px;
+}
+
+.hero h1 {
+    font-size: clamp(27px, 4vw, 42px);
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 680px;
+    font-size: 14px;
+}
+
+.hero-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 5px;
+    padding: 11px 17px;
+    font-size: 12px;
+    font-weight: 700;
+    border: 1px solid var(--gold);
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #987200;
+}
+
+.btn-outline {
+    color: var(--gold);
+    background: white;
+}
+
+.btn-outline:hover {
+    background: var(--gold-light);
+}
+
+/* STATISTICS */
+
+.stats {
+    max-width: 1250px;
+    padding: 28px 6%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.stat {
+    padding: 20px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+}
+
+.stat strong {
+    display: block;
+    font-size: 27px;
+    letter-spacing: -1px;
+}
+
+.stat span {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+/* MAIN */
+
+.container {
+    max-width: 1250px;
+    margin: auto;
+    padding: 20px 6% 70px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    font-size: 25px;
+    letter-spacing: -.7px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* FILTERS */
+
+.filters {
+    display: grid;
+    grid-template-columns: 1fr 190px;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.filter-input, .filter-select {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 12px 14px;
+    outline: none;
+    width: 100%;
+    color: var(--text);
+    font-size: 13px;
+}
+
+.filter-input:focus, .filter-select:focus {
+    border-color: var(--gold);
+}
+
+.filter-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 17px;
+    gap: 10px;
+}
+
+.filter-meta span {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.filter-meta strong {
+    color: var(--gold);
+}
+
+/* REPOSITORIES */
+
+.repo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.repo {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 21px;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    transition: .2s;
+}
+
+.repo:hover {
+    border-color: var(--gold-border);
+    box-shadow: 0 8px 25px rgba(0,0,0,.045);
+    transform: translateY(-3px);
+}
+
+.repo-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.repo-title h3 {
+    font-size: 15px;
+    color: #252525;
+    overflow-wrap: anywhere;
+}
+
+.repo-title h3 a:hover {
+    color: var(--gold);
+}
+
+.repo-badge {
+    background: var(--gold-light);
+    color: #987200;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 4px 7px;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+.repo-description {
+    color: var(--muted);
+    font-size: 12px;
+    margin: 13px 0;
+    min-height: 58px;
+    overflow-wrap: anywhere;
+}
+
+.topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.topic {
+    font-size: 10px;
+    padding: 3px 7px;
+    border-radius: 3px;
+    background: #f5f5f5;
+    color: #666;
+}
+
+.repo-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 13px;
+    font-size: 11px;
+    color: #777;
+    margin-top: auto;
+    padding-top: 13px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.language-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.repo-links {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.repo-links a {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.repo-links a:hover {
+    text-decoration: underline;
+}
+
+.repo-links .github-link {
+    color: #333;
+}
+
+.updated {
+    font-size: 10px;
+    color: #999;
+    margin-top: 12px;
+}
+
+/* STATES */
+
+.state {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 50px 20px;
+    text-align: center;
+    color: var(--muted);
+    grid-column: 1 / -1;
+    font-size: 13px;
+}
+
+.spinner {
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    border: 3px solid #eee;
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: spin .8s linear infinite;
+    margin-bottom: 12px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* FOOTER */
+
+.footer {
+    background: white;
+    border-top: 1px solid var(--border);
+    padding: 30px 6%;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.footer strong {
+    color: var(--gold);
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+@media(max-width: 950px) {
+    .repo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media(max-width: 600px) {
+    .hero-inner {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .hero {
+        padding-top: 40px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .repo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .avatar {
+        width: 85px;
+        height: 85px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <nav class="nav">
+        <a href="#" class="brand">MIHIGO <span>ANAjA.</span></a>
+
+        <a class="nav-link"
+           href="https://github.com/mihigoanaja"
+           target="_blank">
+           GITHUB PROFILE ↗
+        </a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-inner">
+
+        <img id="avatar"
+             class="avatar"
+             src="https://github.com/mihigoanaja.png"
+             alt="Mihigo ER Anaja">
+
+        <div class="hero-content">
+            <div class="eyebrow">Developer Portfolio / GitHub</div>
+
+            <h1 id="profileName">Mihigo ER Anaja</h1>
+
+            <p id="profileBio">
+                Exploring technology, building software,
+                creating useful tools and developing digital solutions.
+            </p>
+
+            <div class="hero-actions">
+                <a class="btn btn-primary"
+                   href="https://github.com/mihigoanaja"
+                   target="_blank">
+                    Explore GitHub ↗
+                </a>
+
+                <a class="btn btn-outline"
+                   href="https://github.com/mihigoanaja?tab=repositories"
+                   target="_blank">
+                    All repositories
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="stats">
+
+    <div class="stat">
+        <strong id="totalRepos">—</strong>
+        <span>Public Repositories</span>
+    </div>
+
+    <div class="stat">
+        <strong id="totalStars">—</strong>
+        <span>Total Stars</span>
+    </div>
+
+    <div class="stat">
+        <strong id="totalForks">—</strong>
+        <span>Total Forks</span>
+    </div>
+
+    <div class="stat">
+        <strong id="totalLanguages">—</strong>
+        <span>Languages Used</span>
+    </div>
+
+</section>
+
+<main class="container">
+
+    <div class="section-heading">
+        <div>
+            <div class="eyebrow">Open Source & Development</div>
+            <h2>Explore My Projects</h2>
+            <p>Discover the repositories, ideas and tools I've published on GitHub.</p>
+        </div>
+    </div>
+
+    <div class="filters">
+
+        <input type="search"
+               id="search"
+               class="filter-input"
+               placeholder="Search repositories, descriptions or topics...">
+
+        <select id="languageFilter" class="filter-select">
+            <option value="">All Languages</option>
+        </select>
+
+    </div>
+
+    <div class="filter-meta">
+        <span id="resultCount">Loading repositories...</span>
+
+        <select id="sort" class="filter-select"
+                style="width:auto; padding:7px 10px;">
+            <option value="updated">Recently Updated</option>
+            <option value="stars">Most Stars</option>
+            <option value="forks">Most Forked</option>
+            <option value="name">Alphabetical</option>
+            <option value="created">Recently Created</option>
+        </select>
+    </div>
+
+    <div id="repositories" class="repo-grid">
+        <div class="state">
+            <div class="spinner"></div>
+            <div>Discovering public repositories...</div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="footer">
+    <p>
+        Built with curiosity and a passion for technology.
+        <br><br>
+        <strong>Mihigo ER Anaja</strong> |
+        <a href="https://github.com/mihigoanaja"
+           target="_blank">GitHub</a>
+    </p>
+</footer>
+
+<script>
+const USERNAME = "mihigoanaja";
+
+const API = "https://api.github.com";
+
+const repoContainer = document.getElementById("repositories");
+const searchInput = document.getElementById("search");
+const languageFilter = document.getElementById("languageFilter");
+const sortSelect = document.getElementById("sort");
+const resultCount = document.getElementById("resultCount");
+
+let allRepos = [];
+
+/* PROFILE */
+
+async function loadProfile() {
+    try {
+        const response = await fetch(
+            `${API}/users/${USERNAME}`
+        );
+
+        if (!response.ok) throw new Error("Profile unavailable");
+
+        const profile = await response.json();
+
+        document.getElementById("avatar").src =
+            profile.avatar_url;
+
+        document.getElementById("profileName").textContent =
+            profile.name || "Mihigo ER Anaja";
+
+        document.getElementById("profileBio").textContent =
+            profile.bio ||
+            "Software developer, author and technology enthusiast.";
+
+    } catch (error) {
+        console.warn("Profile information unavailable:", error);
+    }
+}
+
+/* FETCH ALL PUBLIC REPOSITORIES */
+
+async function loadRepositories() {
+    try {
+        let page = 1;
+        let repos = [];
+
+        while (true) {
+
+            const response = await fetch(
+                `${API}/users/${USERNAME}/repos?per_page=100&page=${page}&sort=updated&direction=desc`
+            );
+
+            if (!response.ok) {
+                if (response.status === 403 || response.status === 429) {
+                    throw new Error(
+                        "GitHub API rate limit reached. Please try again later."
+                    );
+                }
+
+                throw new Error(
+                    "Unable to retrieve repositories. HTTP " +
+                    response.status
+                );
+            }
+
+            const batch = await response.json();
+
+            repos = repos.concat(batch);
+
+            if (batch.length < 100) break;
+
+            page++;
+        }
+
+        allRepos = repos;
+
+        updateStatistics();
+        populateLanguages();
+        renderRepositories();
+
+    } catch (error) {
+
+        repoContainer.innerHTML = `
+            <div class="state">
+                <h3>Unable to load repositories</h3>
+                <p>${escapeHTML(error.message)}</p>
+                <br>
+                <button class="btn btn-primary"
+                        onclick="loadRepositories()">
+                    Try Again
+                </button>
+            </div>
+        `;
+
+        resultCount.textContent = "Repository loading failed.";
+    }
+}
+
+/* STATISTICS */
+
+function updateStatistics() {
+
+    const stars = allRepos.reduce(
+        (sum, repo) => sum + repo.stargazers_count, 0
+    );
+
+    const forks = allRepos.reduce(
+        (sum, repo) => sum + repo.forks_count, 0
+    );
+
+    const languages = new Set(
+        allRepos
+            .map(repo => repo.language)
+            .filter(Boolean)
+    );
+
+    document.getElementById("totalRepos").textContent =
+        allRepos.length;
+
+    document.getElementById("totalStars").textContent =
+        stars.toLocaleString();
+
+    document.getElementById("totalForks").textContent =
+        forks.toLocaleString();
+
+    document.getElementById("totalLanguages").textContent =
+        languages.size;
+}
+
+/* LANGUAGE FILTER */
+
+function populateLanguages() {
+
+    const languages = [...new Set(
+        allRepos
+            .map(repo => repo.language)
+            .filter(Boolean)
+    )].sort();
+
+    languageFilter.innerHTML =
+        '<option value="">All Languages</option>';
+
+    languages.forEach(language => {
+
+        const option = document.createElement("option");
+
+        option.value = language;
+        option.textContent = language;
+
+        languageFilter.appendChild(option);
+    });
+}
+
+/* SAFE HTML */
+
+function escapeHTML(value) {
+    return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+    })[char]);
+}
+
+/* DATE */
+
+function formatDate(date) {
+    if (!date) return "Unknown";
+
+    return new Date(date).toLocaleDateString(
+        undefined,
+        {
+            year: "numeric",
+            month: "short",
+            day: "numeric"
+        }
+    );
+}
+
+/* RENDER REPOSITORIES */
+
+function renderRepositories() {
+
+    const query = searchInput.value.toLowerCase().trim();
+
+    const selectedLanguage = languageFilter.value;
+
+    let repos = allRepos.filter(repo => {
+
+        const searchable = [
+            repo.name,
+            repo.description,
+            ...(repo.topics || []),
+            repo.language
+        ].join(" ").toLowerCase();
+
+        const matchesSearch = searchable.includes(query);
+
+        const matchesLanguage =
+            !selectedLanguage ||
+            repo.language === selectedLanguage;
+
+        return matchesSearch && matchesLanguage;
+    });
+
+    /* SORTING */
+
+    switch (sortSelect.value) {
+
+        case "stars":
+            repos.sort((a, b) =>
+                b.stargazers_count - a.stargazers_count
+            );
+            break;
+
+        case "forks":
+            repos.sort((a, b) =>
+                b.forks_count - a.forks_count
+            );
+            break;
+
+        case "name":
+            repos.sort((a, b) =>
+                a.name.localeCompare(b.name)
+            );
+            break;
+
+        case "created":
+            repos.sort((a, b) =>
+                new Date(b.created_at) - new Date(a.created_at)
+            );
+            break;
+
+        default:
+            repos.sort((a, b) =>
+                new Date(b.updated_at) - new Date(a.updated_at)
+            );
+    }
+
+    resultCount.innerHTML =
+        `Showing <strong>${repos.length}</strong> of ${allRepos.length} repositories`;
+
+    if (!repos.length) {
+        repoContainer.innerHTML = `
+            <div class="state">
+                <h3>No repositories found</h3>
+                <p>Try another search term or programming language.</p>
+            </div>
+        `;
+        return;
+    }
+
+    repoContainer.innerHTML = repos.map(repo => {
+
+        const topics = (repo.topics || [])
+            .slice(0, 5)
+            .map(topic =>
+                `<span class="topic">${escapeHTML(topic)}</span>`
+            ).join("");
+
+        const homepage = repo.homepage &&
+                         /^https?:\/\//i.test(repo.homepage)
+            ? repo.homepage
+            : "";
+
+        return `
+            <article class="repo">
+
+                <div class="repo-title">
+                    <h3>
+                        <a href="${escapeHTML(repo.html_url)}"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            ${escapeHTML(repo.name)}
+                        </a>
+                    </h3>
+
+                    ${repo.fork
+                        ? '<span class="repo-badge">FORK</span>'
+                        : repo.archived
+                        ? '<span class="repo-badge">ARCHIVED</span>'
+                        : '<span class="repo-badge">PUBLIC</span>'
+                    }
+                </div>
+
+                <p class="repo-description">
+                    ${escapeHTML(
+                        repo.description || "No description provided for this repository."
+                    )}
+                </p>
+
+                <div class="topics">
+                    ${topics}
+                </div>
+
+                <div class="repo-details">
+
+                    ${repo.language
+                        ? `<span>
+                            <i class="language-dot"></i>
+                            ${escapeHTML(repo.language)}
+                           </span>`
+                        : ""
+                    }
+
+                    <span>★ ${repo.stargazers_count}</span>
+
+                    <span>⑂ ${repo.forks_count}</span>
+
+                </div>
+
+                <div class="repo-links">
+
+                    <a class="github-link"
+                       href="${escapeHTML(repo.html_url)}"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                       GitHub Repository ↗
+                    </a>
+
+                    ${homepage
+                        ? `<a href="${escapeHTML(homepage)}"
+                              target="_blank"
+                              rel="noopener noreferrer">
+                              Live Website ↗
+                           </a>`
+                        : ""
+                    }
+
+                </div>
+
+                <div class="updated">
+                    Last updated: ${formatDate(repo.updated_at)}
+                </div>
+
+            </article>
+        `;
+    }).join("");
+}
+
+/* FILTER EVENTS */
+
+searchInput.addEventListener("input", renderRepositories);
+
+languageFilter.addEventListener("change", renderRepositories);
+
+sortSelect.addEventListener("change", renderRepositories);
+
+/* INITIALIZE */
+
+loadProfile();
+loadRepositories();
+
+</script>
+
+</body>
+</html>
