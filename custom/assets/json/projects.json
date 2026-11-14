@@ -256,5 +256,48 @@
 		"url": "https://emarket250.blogspot.com/",
 		"category": "Partner & Community Blogs",
 		"description": "E-commerce trends, local online store listings, and digital marketplace news."
-	}
+	},
+	{
+		"name": "Alrefliverse Marketplace",
+		"url": "https://alrefliverse.alreflections.net/p/marketplace.html",
+		"category": "Products & Services",
+		"description": "An online marketplace empowering local creators and small businesses across Africa to showcase, promote, and sell products online."
+	},
+	{
+		"name": "Alreflections News Websites",
+		"url": "https://news.alreflections.net/p/news-sites.html",
+	},
+	{
+		"name": "Alreflections Podcast Websites",
+		"url": "https://news.alreflections.net/p/podcasting-websites.html",
+	},
+	{
+		"name": "Alreflections Online Visibility Toolkit",
+		"url": "https://www.alreflections.net/p/alreflections-online-visibility-toolkit.html",
+	},
+	{
+		"name": "Alreflections Partners",
+		"url": "https://www.alreflections.net/p/partners.html",
+	},
+	{
+		"name": "QR Code Generator",
+		"url": "https://www.alreflections.net/p/qr-code-generator.html",
+	},
+	{
+		"name": "Alreflections Service Pricing",
+		"url": "https://www.alreflections.net/p/alreflections-service-catalog-pricing.html",
+	},
+	{
+		"name": "Headline Aggregator",
+		"url": "https://www.alreflections.net/p/headline-aggregator.html",
+	},
+	{
+		"name": "Shopbase",
+		"url": "https://www.alreflections.net/p/shopbase.html",
+	},
+	{
+		"name": "Alreflections Mobile Apps",
+		"url": "https://www.alreflections.net/p/our-apps.html",
+	},
+	
 ]
