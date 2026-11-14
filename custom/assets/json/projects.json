@@ -1,266 +1,268 @@
 [
-  {
-    "name": "Sawasoko",
-    "url": "https://sawasoko.alreflections.net/",
-    "category": "Products & Services",
-    "description": "An online marketplace empowering local creators and small businesses across Africa to showcase, promote, and sell products online."
-  },
-  {
-    "name": "Couponeer",
-    "url": "https://couponeer.alreflections.net/",
-    "category": "Products & Services",
-    "description": "A complete affiliate marketing and coupon management platform to find products to promote, manage campaigns, and earn commissions."
-  },
-  {
-    "name": "Alreflections Rwanda",
-    "url": "https://company.alreflections.net/rwanda/",
-    "category": "Products & Services",
-    "description": "Regional hub focused on empowering innovation, training talent, and building Rwanda's digital economy."
-  },
-  {
-    "name": "ATINAS",
-    "url": "https://atinas.alreflections.net/",
-    "category": "Digital Infrastructure & Tech Solutions",
-    "description": "A search engine designed to supercharge search results, improve search accuracy, and eliminate spam."
-  },
-  {
-    "name": "Prodcase",
-    "url": "https://prodcase.alreflections.net/",
-    "category": "Digital Infrastructure & Tech Solutions",
-    "description": "Digital product management and showcase platform under Alreflections."
-  },
-  {
-    "name": "Vidcase",
-    "url": "https://vidcase.alreflections.net/",
-    "category": "Digital Infrastructure & Tech Solutions",
-    "description": "Video aggregation, hosting, and showcase platform within the Alreflections ecosystem."
-  },
-  {
-    "name": "Promopot",
-    "url": "https://promopot.pages.dev/",
-    "category": "Digital Infrastructure & Tech Solutions",
-    "description": "Online visibility services, marketing campaigns, courses, and self-promotion toolkits."
-  },
-  {
-    "name": "Little Shark",
-    "url": "https://littlesharksoftware.blogspot.com/",
-    "category": "Digital Infrastructure & Tech Solutions",
-    "description": "AI-powered smart coding assistant platform for developers."
-  },
-  {
-    "name": "Skillbase",
-    "url": "https://skillbase.alreflections.net/",
-    "category": "Community Initiatives & Learning Platforms",
-    "description": "A free e-learning platform offering courses in business, technology, programming, and personal growth."
-  },
-  {
-    "name": "iBlink Social Media",
-    "url": "https://iblink.ning.com/",
-    "category": "Community Initiatives & Learning Platforms",
-    "description": "A social network and digital marketing hub tailored for creators to connect, promote, and monetize content."
-  },
-  {
-    "name": "Developers With Attitude (DWA)",
-    "url": "https://projects.synergize.co/",
-    "category": "Community Initiatives & Learning Platforms",
-    "description": "A developer community providing resources, bootcamps, hackathons, and growth opportunities."
-  },
-  {
-    "name": "Alreflections Daily",
-    "url": "https://alreflectionsdaily.blogspot.com/",
-    "category": "Network & Ecosystem Blog Hubs",
-    "description": "Digital platform and blog delivering daily news insights, curated content, and business updates."
-  },
-  {
-    "name": "Alreflections Digital Creative",
-    "url": "https://alreflectionsdc.blogspot.com/",
-    "category": "Network & Ecosystem Blog Hubs",
-    "description": "Showcase and updates for custom web development, branding, and digital transformation."
-  },
-  {
-    "name": "Alreflections Book Market",
-    "url": "https://alreflectionsbm.blogspot.com/",
-    "category": "Network & Ecosystem Blog Hubs",
-    "description": "Digital library and marketplace hub for free and affordable eBooks and publications."
-  },
-  {
-    "name": "Alreflections Development Society",
-    "url": "https://alreflectionsds.blogspot.com/",
-    "category": "Network & Ecosystem Blog Hubs",
-    "description": "Community outreach, open-source group, and tech enablement blog."
-  },
-  {
-    "name": "Alreflections Knowledge-sharing Organisation",
-    "url": "https://alreflectionsko.blogspot.com/",
-    "category": "Network & Ecosystem Blog Hubs",
-    "description": "Hub dedicated to sharing guides, tutorials, and technical notes."
-  },
-  {
-    "name": "Alreflections Job Press",
-    "url": "https://alreflectionsjp.blogspot.com/",
-    "category": "Network & Ecosystem Blog Hubs",
-    "description": "Career updates, job listings, and employment opportunities platform."
-  },
-  {
-    "name": "Alreflections Digital Hubris",
-    "url": "https://alreflectionsdh.blogspot.com/",
-    "category": "Network & Ecosystem Blog Hubs",
-    "description": "Platform featuring tech analysis, software tools, and project showcases."
-  },
-  {
-    "name": "Game Nation",
-    "url": "https://alreflectionsgn.blogspot.com/",
-    "category": "Network & Ecosystem Blog Hubs",
-    "description": "Browser gaming updates and digital gaming resources hub."
-  },
-  {
-    "name": "iBlink Academy",
-    "url": "https://alreflectionsia.blogspot.com/",
-    "category": "Network & Ecosystem Blog Hubs",
-    "description": "Educational branch focused on digital marketing, creation skills, and social monetization."
-  },
-  {
-    "name": "Alreflections Business",
-    "url": "https://alreflectionsbiz.blogspot.com/",
-    "category": "Network & Ecosystem Blog Hubs",
-    "description": "Insights, enterprise trends, and strategy advice for growing online businesses."
-  },
-  {
-    "name": "Alreflections Technologies",
-    "url": "https://alreflectionstechnologies.blogspot.com/",
-    "category": "Network & Ecosystem Blog Hubs",
-    "description": "Showcase of programming utilities, software experiments, and tech solutions."
-  },
-  {
-    "name": "Alreflections Service Market",
-    "url": "https://alreflectionssm.blogspot.com/",
-    "category": "Network & Ecosystem Blog Hubs",
-    "description": "Marketplace portal highlighting digital services and client offerings."
-  },
-  {
-    "name": "Alreflections Companions Academy",
-    "url": "https://alreflectionsca.blogspot.com/",
-    "category": "Network & Ecosystem Blog Hubs",
-    "description": "Mentorship and peer-learning support community web portal."
-  },
-  {
-    "name": "Global Junction",
-    "url": "https://alreflectionsgj.blogspot.com/",
-    "category": "Network & Ecosystem Blog Hubs",
-    "description": "Cross-border insights, global market trends, and international networking platform."
-  },
-  {
-    "name": "Alreflections Digital Market",
-    "url": "https://alreflectionsdm.blogspot.com/",
-    "category": "Network & Ecosystem Blog Hubs",
-    "description": "Catalog platform for digital products, templates, and creator assets."
-  },
-  {
-    "name": "Alreflections API Console",
-    "url": "https://alreflectionsac.blogspot.com/",
-    "category": "Network & Ecosystem Blog Hubs",
-    "description": "Developer resource center for API documentation, webhooks, and developer endpoints."
-  },
-  {
-    "name": "Alreflections Website Market",
-    "url": "https://alreflectionswm.blogspot.com",
-    "category": "Network & Ecosystem Blog Hubs",
-    "description": "Showcase portal for pre-built web templates, turnkey sites, and web design solutions."
-  },
-  {
-    "name": "Alrefliverse",
-    "url": "https://alrefliverse.blogspot.com/",
-    "category": "Network & Ecosystem Blog Hubs",
-    "description": "The central universe ecosystem portal linking together all sub-brands and initiatives."
-  },
-  {
-    "name": "Brandjet",
-    "url": "https://brandjet.blogspot.com/",
-    "category": "Network & Ecosystem Blog Hubs",
-    "description": "Branding solutions, design templates, and corporate identity insights."
-  },
-  {
-    "name": "Nuts Technologies",
-    "url": "https://alreflectionsnt.blogspot.com/",
-    "category": "Network & Ecosystem Blog Hubs",
-    "description": "Specialized tech blog featuring custom programming language experiments and software tools."
-  },
-  {
-    "name": "Digital Realm Instructor",
-    "url": "https://digitalrealminstructor.blogspot.com/",
-    "category": "Partner & Community Blogs",
-    "description": "Tutorials and educational notes focused on digital marketing and internet tools."
-  },
-  {
-    "name": "WhatsApp Group Links",
-    "url": "https://whatsappgrouplinx.blogspot.com/",
-    "category": "Partner & Community Blogs",
-    "description": "Curated directory of community networking and interest-based group links."
-  },
-  {
-    "name": "Rose of Ours",
-    "url": "https://roseofours.blogspot.com/",
-    "category": "Partner & Community Blogs",
-    "description": "Literary and creative writing project authored by Mihigo ER Anaja."
-  },
-  {
-    "name": "Rwanda TVET Press",
-    "url": "https://rwandatvetpress.blogspot.com/",
-    "category": "Partner & Community Blogs",
-    "description": "News and updates regarding technical and vocational education training in Rwanda."
-  },
-  {
-    "name": "Self Access",
-    "url": "https://selfaccesssoftware.blogspot.com/",
-    "category": "Partner & Community Blogs",
-    "description": "Software accessibility and tool distribution blog platform."
-  },
-  {
-    "name": "ADM Templates",
-    "url": "https://admtemplates.blogspot.com/",
-    "category": "Partner & Community Blogs",
-    "description": "Curated web development templates, UI layouts, and design resources."
-  },
-  {
-    "name": "Rwanda Apps & Website Services",
-    "url": "https://rwawebs.blogspot.com/",
-    "category": "Partner & Community Blogs",
-    "description": "Directory of digital services, local apps, and web solutions in Rwanda."
-  },
-  {
-    "name": "Digital Arts Hub",
-    "url": "https://digitalartshub.blogspot.com/",
-    "category": "Partner & Community Blogs",
-    "description": "Platform built for creative arts, digital portfolios, and community announcements."
-  },
-  {
-    "name": "Rwanda Toppers Lineup",
-    "url": "https://rwandatopperslineup.blogspot.com/",
-    "category": "Partner & Community Blogs",
-    "description": "High-achiever recognition and spotlight network for regional talents."
-  },
-  {
-    "name": "Veritas",
-    "url": "https://veritasbiz.blogspot.com/",
-    "category": "Partner & Community Blogs",
-    "description": "Business advisory and transparent enterprise insights blog."
-  },
-  {
-    "name": "AZAPAH",
-    "url": "https://azapah.blogspot.com/",
-    "category": "Partner & Community Blogs",
-    "description": "Regional educational directory and multi-topic resource blog."
-  },
-  {
-    "name": "Rwanda News",
-    "url": "https://rwandanewz.blogspot.com/",
-    "category": "Partner & Community Blogs",
-    "description": "Aggregated local and business news updates across Rwanda."
-  },
-  {
-    "name": "eMarket",
-    "url": "https://emarket250.blogspot.com/",
-    "category": "Partner & Community Blogs",
-    "description": "E-commerce trends, local online store listings, and digital marketplace news."
-  }
+	{
+		"name": "Sawasoko",
+		"url": "https://sawasoko.alreflections.net/",
+		"category": "Products & Services",
+		"description": "An online marketplace empowering local creators and small businesses across Africa to showcase, promote, and sell products online."
+	},
+	{
+		"name": "Couponeer",
+		"url": "https://couponeer.alreflections.net/",
+		"category": "Products & Services",
+		"description": "A complete affiliate marketing and coupon management platform to find products to promote, manage campaigns, and earn commissions."
+	},
+	{
+		"name": "Alreflections Rwanda",
+		"url": "https://company.alreflections.net/rwanda/",
+		"category": "Products & Services",
+		"description": "Regional hub focused on empowering innovation, training talent, and building Rwanda's digital economy."
+	},
+	{
+		"name": "ATINAS",
+		"url": "https://atinas.alreflections.net/",
+		"category": "Digital Infrastructure & Tech Solutions",
+		"description": "A search engine designed to supercharge search results, improve search accuracy, and eliminate spam."
+	},
+	{
+		"name": "Prodcase",
+		"url": "https://prodcase.alreflections.net/",
+		"category": "Digital Infrastructure & Tech Solutions",
+		"description": "Digital product management and showcase platform under Alreflections."
+	},
+	{
+		"name": "Vidcase",
+		"url": "https://vidcase.alreflections.net/",
+		"category": "Digital Infrastructure & Tech Solutions",
+		"description": "Video aggregation, hosting, and showcase platform within the Alreflections ecosystem."
+	},
+	{
+		"name": "Promopot",
+		"url": "https://promopot.pages.dev/",
+		"category": "Digital Infrastructure & Tech Solutions",
+		"description": "Online visibility services, marketing campaigns, courses, and self-promotion toolkits."
+	},
+	{
+		"name": "Little Shark",
+		"url": "https://littlesharksoftware.blogspot.com/",
+		"category": "Digital Infrastructure & Tech Solutions",
+		"description": "AI-powered smart coding assistant platform for developers."
+	},
+	{
+		"name": "Skillbase",
+		"url": "https://skillbase.alreflections.net/",
+		"category": "Community Initiatives & Learning Platforms",
+		"description": "A free e-learning platform offering courses in business, technology, programming, and personal growth."
+	},
+	{
+		"name": "iBlink Social Media",
+		"url": "https://iblink.ning.com/",
+		"category": "Community Initiatives & Learning Platforms",
+		"description": "A social network and digital marketing hub tailored for creators to connect, promote, and monetize content."
+	},
+	{
+		"name": "Developers With Attitude (DWA)",
+		"url": "https://projects.synergize.co/",
+		"category": "Community Initiatives & Learning Platforms",
+		"description": "A developer community providing resources, bootcamps, hackathons, and growth opportunities."
+	},
+	{
+		"name": "Alreflections Daily",
+		"url": "https://alreflectionsdaily.blogspot.com/",
+		"category": "Network & Ecosystem Blog Hubs",
+		"description": "Digital platform and blog delivering daily news insights, curated content, and business updates."
+	},
+	{
+		"name": "Alreflections Digital Creative",
+		"url": "https://alreflectionsdc.blogspot.com/",
+		"category": "Network & Ecosystem Blog Hubs",
+		"description": "Showcase and updates for custom web development, branding, and digital transformation."
+	},
+	{
+		"name": "Alreflections Book Market",
+		"url": "https://alreflectionsbm.blogspot.com/",
+		"category": "Network & Ecosystem Blog Hubs",
+		"description": "Digital library and marketplace hub for free and affordable eBooks and publications."
+	},
+	{
+		"name": "Alreflections Development Society",
+		"url": "https://alreflectionsds.blogspot.com/",
+		"category": "Network & Ecosystem Blog Hubs",
+		"description": "Community outreach, open-source group, and tech enablement blog."
+	},
+	{
+		"name": "Alreflections Knowledge-sharing Organisation",
+		"url": "https://alreflectionsko.blogspot.com/",
+		"category": "Network & Ecosystem Blog Hubs",
+		"description": "Hub dedicated to sharing guides, tutorials, and technical notes."
+	},
+	{
+		"name": "Alreflections Job Press",
+		"url": "https://alreflectionsjp.blogspot.com/",
+		"category": "Network & Ecosystem Blog Hubs",
+		"description": "Career updates, job listings, and employment opportunities platform."
+	},
+	{
+		"name": "Alreflections Digital Hubris",
+		"url": "https://alreflectionsdh.blogspot.com/",
+		"category": "Network & Ecosystem Blog Hubs",
+		"description": "Platform featuring tech analysis, software tools, and project showcases."
+	},
+	{
+		"name": "Game Nation",
+		"url": "https://alreflectionsgn.blogspot.com/",
+		"category": "Network & Ecosystem Blog Hubs",
+		"description": "Browser gaming updates and digital gaming resources hub."
+	},
+	{
+		"name": "iBlink Academy",
+		"url": "https://alreflectionsia.blogspot.com/",
+		"category": "Network & Ecosystem Blog Hubs",
+		"description": "Educational branch focused on digital marketing, creation skills, and social monetization."
+	},
+	{
+		"name": "Alreflections Business",
+		"url": "https://alreflectionsbiz.blogspot.com/",
+		"category": "Network & Ecosystem Blog Hubs",
+		"description": "Insights, enterprise trends, and strategy advice for growing online businesses."
+	},
+	{
+		"name": "Alreflections Technologies",
+		"url": "https://alreflectionstechnologies.blogspot.com/",
+		"category": "Network & Ecosystem Blog Hubs",
+		"description": "Showcase of programming utilities, software experiments, and tech solutions."
+	},
+	{
+		"name": "Alreflections Service Market",
+		"url": "https://alreflectionssm.blogspot.com/",
+		"category": "Network & Ecosystem Blog Hubs",
+		"description": "Marketplace portal highlighting digital services and client offerings."
+	},
+	{
+		"name": "Alreflections Companions Academy",
+		"url": "https://alreflectionsca.blogspot.com/",
+		"category": "Network & Ecosystem Blog Hubs",
+		"description": "Mentorship and peer-learning support community web portal."
+	},
+	{
+		"name": "Global Junction",
+		"url": "https://alreflectionsgj.blogspot.com/",
+		"category": "Network & Ecosystem Blog Hubs",
+		"description": "Cross-border insights, global market trends, and international networking platform."
+	},
+	{
+		"name": "Alreflections Digital Market",
+		"url": "https://alreflectionsdm.blogspot.com/",
+		"category": "Network & Ecosystem Blog Hubs",
+		"description": "Catalog platform for digital products, templates, and creator assets."
+	},
+	{
+		"name": "Alreflections API Console",
+		"url": "https://alreflectionsac.blogspot.com/",
+		"category": "Network & Ecosystem Blog Hubs",
+		"description": "Developer resource center for API documentation, webhooks, and developer endpoints."
+	},
+	{
+		"name": "Alreflections Website Market",
+		"url": "https://alreflectionswm.blogspot.com",
+		"category": "Network & Ecosystem Blog Hubs",
+		"description": "Showcase portal for pre-built web templates, turnkey sites, and web design solutions."
+	},
+	{
+		"name": "Alrefliverse",
+		"url": "https://alrefliverse.blogspot.com/",
+		"category": "Network & Ecosystem Blog Hubs",
+		"description": "The central universe ecosystem portal linking together all sub-brands and initiatives."
+	},
+	{
+		"name": "Brandjet",
+		"url": "https://brandjet.blogspot.com/",
+		"category": "Network & Ecosystem Blog Hubs",
+		"description": "Branding solutions, design templates, and corporate identity insights."
+	},
+	{
+		"name": "Nuts Technologies",
+		"url": "https://alreflectionsnt.blogspot.com/",
+		"category": "Network & Ecosystem Blog Hubs",
+		"description": "Specialized tech blog featuring custom programming language experiments and software tools."
+	},
+	{
+		"name": "Digital Realm Instructor",
+		"url": "https://digitalrealminstructor.blogspot.com/",
+		"category": "Partner & Community Blogs",
+		"description": "Tutorials and educational notes focused on digital marketing and internet tools."
+	},
+	{
+		"name": "WhatsApp Group Links",
+		"url": "https://whatsappgrouplinx.blogspot.com/",
+		"category": "Partner & Community Blogs",
+		"description": "Curated directory of community networking and interest-based group links."
+	},
+	{
+		"name": "Rose of Ours",
+		"url": "https://roseofours.blogspot.com/",
+		"category": "Partner & Community Blogs",
+		"description": "Literary and creative writing project authored by Mihigo ER Anaja."
+	},
+	{
+		"name": "Rwanda TVET Press",
+		"url": "https://rwandatvetpress.blogspot.com/",
+		"category": "Partner & Community Blogs",
+		"description": "News and updates regarding technical and vocational education training in Rwanda."
+	},
+	{
+		"name": "Self Access",
+		"url": "https://selfaccesssoftware.blogspot.com/",
+		"category": "Partner & Community Blogs",
+		"description": "Software accessibility and tool distribution blog platform."
+	},
+	{
+		"name": "ADM Templates",
+		"url": "https://admtemplates.blogspot.com/",
+		"category": "Partner & Community Blogs",
+		"description": "Curated web development templates, UI layouts, and design resources."
+	},
+	{
+		"name": "Rwanda Apps & Website Services",
+		"url": "https://rwawebs.blogspot.com/",
+		"category": "Partner & Community Blogs",
+		"description": "Directory of digital services, local apps, and web solutions in Rwanda."
+	},
+	/*
+	{
+		"name": "Digital Arts Hub",
+		"url": "https://digitalartshub.blogspot.com/",
+		"category": "Partner & Community Blogs",
+		"description": "Platform built for creative arts, digital portfolios, and community announcements."
+	},
+	*/
+	{
+		"name": "Rwanda Toppers Lineup",
+		"url": "https://rwandatopperslineup.blogspot.com/",
+		"category": "Partner & Community Blogs",
+		"description": "High-achiever recognition and spotlight network for regional talents."
+	},
+	{
+		"name": "Veritas",
+		"url": "https://veritasbiz.blogspot.com/",
+		"category": "Partner & Community Blogs",
+		"description": "Business advisory and transparent enterprise insights blog."
+	},
+	{
+		"name": "AZAPAH",
+		"url": "https://azapah.blogspot.com/",
+		"category": "Partner & Community Blogs",
+		"description": "Regional educational directory and multi-topic resource blog."
+	},
+	{
+		"name": "Rwanda News",
+		"url": "https://rwandanewz.blogspot.com/",
+		"category": "Partner & Community Blogs",
+		"description": "Aggregated local and business news updates across Rwanda."
+	},
+	{
+		"name": "eMarket",
+		"url": "https://emarket250.blogspot.com/",
+		"category": "Partner & Community Blogs",
+		"description": "E-commerce trends, local online store listings, and digital marketplace news."
+	}
 ]
