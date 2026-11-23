@@ -488,78 +488,50 @@ button, input, select {
 
 <header class="header">
     <nav class="nav">
-        <a href="#" class="brand">MIHIGO <span>ANAjA.</span></a>
-
-        <a class="nav-link"
-           href="https://github.com/mihigoanaja"
-           target="_blank">
-           GITHUB PROFILE ↗
-        </a>
+        <a href="#" class="brand"><span>MIHIGO ER ANAJA</span></a>
+		<div style="display:flex;gap:15px;">
+			<a class="nav-link" href="../">Full Profile</a>
+			<a class="nav-link" href="https://github.com/mihigoanaja" target="_blank">GITHUB PROFILE ↗</a>
+		</div>
     </nav>
 </header>
 
 <section class="hero">
     <div class="hero-inner">
 
-        <img id="avatar"
-             class="avatar"
-             src="https://github.com/mihigoanaja.png"
-             alt="Mihigo ER Anaja">
-
+        <img id="avatar" class="avatar" src="https://github.com/mihigoanaja.png" alt="Mihigo ER Anaja">
         <div class="hero-content">
             <div class="eyebrow">Developer Portfolio / GitHub</div>
-
             <h1 id="profileName">Mihigo ER Anaja</h1>
-
-            <p id="profileBio">
-                Exploring technology, building software,
-                creating useful tools and developing digital solutions.
-            </p>
-
+            <p id="profileBio">Exploring technology, building software, creating useful tools and developing digital solutions.</p>
             <div class="hero-actions">
-                <a class="btn btn-primary"
-                   href="https://github.com/mihigoanaja"
-                   target="_blank">
-                    Explore GitHub ↗
-                </a>
-
-                <a class="btn btn-outline"
-                   href="https://github.com/mihigoanaja?tab=repositories"
-                   target="_blank">
-                    All repositories
-                </a>
+                <a class="btn btn-primary" href="https://github.com/mihigoanaja" target="_blank">Explore GitHub ↗</a>
+                <a class="btn btn-outline" href="https://github.com/mihigoanaja?tab=repositories" target="_blank">All repositories</a>
             </div>
         </div>
-
     </div>
 </section>
 
 <section class="stats">
-
     <div class="stat">
         <strong id="totalRepos">—</strong>
         <span>Public Repositories</span>
     </div>
-
     <div class="stat">
         <strong id="totalStars">—</strong>
         <span>Total Stars</span>
     </div>
-
     <div class="stat">
         <strong id="totalForks">—</strong>
         <span>Total Forks</span>
     </div>
-
     <div class="stat">
         <strong id="totalLanguages">—</strong>
         <span>Languages Used</span>
     </div>
-
 </section>
 
 <main class="container">
-
     <div class="section-heading">
         <div>
             <div class="eyebrow">Open Source & Development</div>
@@ -567,25 +539,15 @@ button, input, select {
             <p>Discover the repositories, ideas and tools I've published on GitHub.</p>
         </div>
     </div>
-
     <div class="filters">
-
-        <input type="search"
-               id="search"
-               class="filter-input"
-               placeholder="Search repositories, descriptions or topics...">
-
+        <input type="search" id="search" class="filter-input" placeholder="Search repositories, descriptions or topics...">
         <select id="languageFilter" class="filter-select">
             <option value="">All Languages</option>
         </select>
-
     </div>
-
     <div class="filter-meta">
         <span id="resultCount">Loading repositories...</span>
-
-        <select id="sort" class="filter-select"
-                style="width:auto; padding:7px 10px;">
+        <select id="sort" class="filter-select" style="width:auto; padding:7px 10px;">
             <option value="updated">Recently Updated</option>
             <option value="stars">Most Stars</option>
             <option value="forks">Most Forked</option>
@@ -593,109 +555,63 @@ button, input, select {
             <option value="created">Recently Created</option>
         </select>
     </div>
-
     <div id="repositories" class="repo-grid">
         <div class="state">
             <div class="spinner"></div>
             <div>Discovering public repositories...</div>
         </div>
     </div>
-
 </main>
-
 <footer class="footer">
-    <p>
-        Built with curiosity and a passion for technology.
-        <br><br>
-        <strong>Mihigo ER Anaja</strong> |
-        <a href="https://github.com/mihigoanaja"
-           target="_blank">GitHub</a>
-    </p>
+    <p>Built with curiosity and a passion for technology.<br><br><strong>Mihigo ER Anaja</strong> | <a href="https://github.com/mihigoanaja" target="_blank">GitHub</a></p>
 </footer>
-
 <script>
 const USERNAME = "mihigoanaja";
-
 const API = "https://api.github.com";
-
 const repoContainer = document.getElementById("repositories");
 const searchInput = document.getElementById("search");
 const languageFilter = document.getElementById("languageFilter");
 const sortSelect = document.getElementById("sort");
 const resultCount = document.getElementById("resultCount");
-
 let allRepos = [];
 
 /* PROFILE */
-
 async function loadProfile() {
     try {
-        const response = await fetch(
-            `${API}/users/${USERNAME}`
-        );
-
+        const response = await fetch(`${API}/users/${USERNAME}`);
         if (!response.ok) throw new Error("Profile unavailable");
-
         const profile = await response.json();
-
-        document.getElementById("avatar").src =
-            profile.avatar_url;
-
-        document.getElementById("profileName").textContent =
-            profile.name || "Mihigo ER Anaja";
-
-        document.getElementById("profileBio").textContent =
-            profile.bio ||
-            "Software developer, author and technology enthusiast.";
-
+        document.getElementById("avatar").src=profile.avatar_url;
+        document.getElementById("profileName").textContent=profile.name||"Mihigo ER Anaja";
+        document.getElementById("profileBio").textContent=profile.bio||"Software developer, author and technology enthusiast.";
     } catch (error) {
         console.warn("Profile information unavailable:", error);
     }
 }
 
 /* FETCH ALL PUBLIC REPOSITORIES */
-
 async function loadRepositories() {
     try {
         let page = 1;
         let repos = [];
-
         while (true) {
-
-            const response = await fetch(
-                `${API}/users/${USERNAME}/repos?per_page=100&page=${page}&sort=updated&direction=desc`
-            );
-
+            const response = await fetch(`${API}/users/${USERNAME}/repos?per_page=100&page=${page}&sort=updated&direction=desc`);
             if (!response.ok) {
                 if (response.status === 403 || response.status === 429) {
-                    throw new Error(
-                        "GitHub API rate limit reached. Please try again later."
-                    );
+                    throw new Error("GitHub API rate limit reached. Please try again later.");
                 }
-
-                throw new Error(
-                    "Unable to retrieve repositories. HTTP " +
-                    response.status
-                );
+                throw new Error("Unable to retrieve repositories. HTTP "+response.status);
             }
-
             const batch = await response.json();
-
             repos = repos.concat(batch);
-
             if (batch.length < 100) break;
-
             page++;
         }
-
         allRepos = repos;
-
         updateStatistics();
         populateLanguages();
         renderRepositories();
-
     } catch (error) {
-
         repoContainer.innerHTML = `
             <div class="state">
                 <h3>Unable to load repositories</h3>
@@ -707,68 +623,34 @@ async function loadRepositories() {
                 </button>
             </div>
         `;
-
         resultCount.textContent = "Repository loading failed.";
     }
 }
 
 /* STATISTICS */
-
 function updateStatistics() {
-
-    const stars = allRepos.reduce(
-        (sum, repo) => sum + repo.stargazers_count, 0
-    );
-
-    const forks = allRepos.reduce(
-        (sum, repo) => sum + repo.forks_count, 0
-    );
-
-    const languages = new Set(
-        allRepos
-            .map(repo => repo.language)
-            .filter(Boolean)
-    );
-
-    document.getElementById("totalRepos").textContent =
-        allRepos.length;
-
-    document.getElementById("totalStars").textContent =
-        stars.toLocaleString();
-
-    document.getElementById("totalForks").textContent =
-        forks.toLocaleString();
-
-    document.getElementById("totalLanguages").textContent =
-        languages.size;
+    const stars = allRepos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+    const forks = allRepos.reduce((sum, repo) => sum + repo.forks_count, 0);
+    const languages = new Set(allRepos.map(repo => repo.language).filter(Boolean));
+    document.getElementById("totalRepos").textContent=allRepos.length;
+    document.getElementById("totalStars").textContent=stars.toLocaleString();
+    document.getElementById("totalForks").textContent=forks.toLocaleString();
+    document.getElementById("totalLanguages").textContent=languages.size;
 }
 
 /* LANGUAGE FILTER */
-
 function populateLanguages() {
-
-    const languages = [...new Set(
-        allRepos
-            .map(repo => repo.language)
-            .filter(Boolean)
-    )].sort();
-
-    languageFilter.innerHTML =
-        '<option value="">All Languages</option>';
-
+    const languages = [...new Set(allRepos.map(repo => repo.language).filter(Boolean))].sort();
+    languageFilter.innerHTML='<option value="">All Languages</option>';
     languages.forEach(language => {
-
         const option = document.createElement("option");
-
         option.value = language;
         option.textContent = language;
-
         languageFilter.appendChild(option);
     });
 }
 
 /* SAFE HTML */
-
 function escapeHTML(value) {
     return String(value ?? "").replace(/[&<>"']/g, char => ({
         "&": "&amp;",
@@ -780,83 +662,43 @@ function escapeHTML(value) {
 }
 
 /* DATE */
-
 function formatDate(date) {
     if (!date) return "Unknown";
-
-    return new Date(date).toLocaleDateString(
-        undefined,
-        {
-            year: "numeric",
-            month: "short",
-            day: "numeric"
-        }
-    );
+    return new Date(date).toLocaleDateString(undefined,{year: "numeric",month: "short",day: "numeric"});
 }
 
 /* RENDER REPOSITORIES */
-
 function renderRepositories() {
-
     const query = searchInput.value.toLowerCase().trim();
-
     const selectedLanguage = languageFilter.value;
-
     let repos = allRepos.filter(repo => {
-
-        const searchable = [
-            repo.name,
-            repo.description,
-            ...(repo.topics || []),
-            repo.language
-        ].join(" ").toLowerCase();
-
+        const searchable = [repo.name,repo.description,...(repo.topics || []),repo.language].join(" ").toLowerCase();
         const matchesSearch = searchable.includes(query);
-
-        const matchesLanguage =
-            !selectedLanguage ||
-            repo.language === selectedLanguage;
-
+        const matchesLanguage = !selectedLanguage || repo.language === selectedLanguage;
         return matchesSearch && matchesLanguage;
     });
 
     /* SORTING */
-
     switch (sortSelect.value) {
-
         case "stars":
-            repos.sort((a, b) =>
-                b.stargazers_count - a.stargazers_count
-            );
+            repos.sort((a, b) => b.stargazers_count - a.stargazers_count);
             break;
-
         case "forks":
-            repos.sort((a, b) =>
-                b.forks_count - a.forks_count
-            );
+            repos.sort((a, b) => b.forks_count - a.forks_count);
             break;
 
         case "name":
-            repos.sort((a, b) =>
-                a.name.localeCompare(b.name)
-            );
+            repos.sort((a, b) => a.name.localeCompare(b.name));
             break;
 
         case "created":
-            repos.sort((a, b) =>
-                new Date(b.created_at) - new Date(a.created_at)
-            );
+            repos.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
             break;
 
         default:
-            repos.sort((a, b) =>
-                new Date(b.updated_at) - new Date(a.updated_at)
-            );
+            repos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
     }
-
-    resultCount.innerHTML =
-        `Showing <strong>${repos.length}</strong> of ${allRepos.length} repositories`;
-
+    resultCount.innerHTML = `Showing <strong>${repos.length}</strong> of ${allRepos.length} repositories`;
     if (!repos.length) {
         repoContainer.innerHTML = `
             <div class="state">
@@ -868,21 +710,10 @@ function renderRepositories() {
     }
 
     repoContainer.innerHTML = repos.map(repo => {
-
-        const topics = (repo.topics || [])
-            .slice(0, 5)
-            .map(topic =>
-                `<span class="topic">${escapeHTML(topic)}</span>`
-            ).join("");
-
-        const homepage = repo.homepage &&
-                         /^https?:\/\//i.test(repo.homepage)
-            ? repo.homepage
-            : "";
-
+        const topics = (repo.topics || []).slice(0, 5).map(topic => `<span class="topic">${escapeHTML(topic)}</span>`).join("");
+        const homepage = repo.homepage && /^https?:\/\//i.test(repo.homepage) ? repo.homepage : "";
         return `
             <article class="repo">
-
                 <div class="repo-title">
                     <h3>
                         <a href="${escapeHTML(repo.html_url)}"
@@ -891,7 +722,6 @@ function renderRepositories() {
                             ${escapeHTML(repo.name)}
                         </a>
                     </h3>
-
                     ${repo.fork
                         ? '<span class="repo-badge">FORK</span>'
                         : repo.archived
@@ -899,19 +729,15 @@ function renderRepositories() {
                         : '<span class="repo-badge">PUBLIC</span>'
                     }
                 </div>
-
                 <p class="repo-description">
                     ${escapeHTML(
                         repo.description || "No description provided for this repository."
                     )}
                 </p>
-
                 <div class="topics">
                     ${topics}
                 </div>
-
                 <div class="repo-details">
-
                     ${repo.language
                         ? `<span>
                             <i class="language-dot"></i>
@@ -919,57 +745,31 @@ function renderRepositories() {
                            </span>`
                         : ""
                     }
-
                     <span>★ ${repo.stargazers_count}</span>
-
                     <span>⑂ ${repo.forks_count}</span>
-
                 </div>
-
                 <div class="repo-links">
-
-                    <a class="github-link"
-                       href="${escapeHTML(repo.html_url)}"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                       GitHub Repository ↗
-                    </a>
-
-                    ${homepage
-                        ? `<a href="${escapeHTML(homepage)}"
-                              target="_blank"
-                              rel="noopener noreferrer">
-                              Live Website ↗
-                           </a>`
-                        : ""
-                    }
-
+                    <a class="github-link" href="${escapeHTML(repo.html_url)}" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a>
+                    ${homepage ? `<a href="${escapeHTML(homepage)}" target="_blank" rel="noopener noreferrer">Live Website ↗</a>` : ""}
                 </div>
-
                 <div class="updated">
                     Last updated: ${formatDate(repo.updated_at)}
                 </div>
-
             </article>
         `;
     }).join("");
 }
 
 /* FILTER EVENTS */
-
 searchInput.addEventListener("input", renderRepositories);
-
 languageFilter.addEventListener("change", renderRepositories);
-
 sortSelect.addEventListener("change", renderRepositories);
 
 /* INITIALIZE */
-
 loadProfile();
 loadRepositories();
 
 </script>
-
 </body>
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7993870430763010" crossorigin="anonymous"></script>
 	<script src='https://reserve.alreflections.net/treateAlreflectionsBlogger.js' defer></script>
